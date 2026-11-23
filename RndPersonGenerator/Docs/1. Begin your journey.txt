@@ -1,57 +1,88 @@
 ==========================================================================
-                WELCOME TO THE REALITY ENGINE (v1)
+               WELCOME TO THE REALITY ENGINE (v2.0)
 ==========================================================================
 
-Reality Engine is a lightweight, JSON-driven framework designed to build 
-deep, logically consistent characters and entire universes from the 
-ground up. It acts as a "Universal Character Engine," allowing 
-you to create everything from Cyberpunk mercenaries to Eldritch horrors 
-simply by editing text files.
+Reality Engine is a lightweight, JSON-driven framework designed to build
+deep, logically consistent characters, ships, worlds, factions, and
+story casts from the ground up. It acts as a "Universal Entity Engine,"
+allowing you to create anything from sci-fi marines and starships to
+novel-ready character dossiers simply by editing text files.
 
 --------------------------------------------------------------------------
-🚀 WHAT CAN THIS APP DO?
+[ WHAT CAN THIS APP DO? ]
 --------------------------------------------------------------------------
 
-Reality Engine is more than a simple randomizer; it is a logic-driven 
-simulation of identity and history. Here is what it offers:
+Reality Engine v2.0 is more than a randomizer; it is a deterministic,
+logic-driven simulation of identity, gear, stats, and history.
 
-* **Deep Identity Logic**: Manages a three-part naming system (First, 
-  Last, and optional Nickname) that respects gender requirements.
-* **Gender & Pronoun Resolution**: Automatically rolls gender and 
-  assigns "Smart Pronouns" ({Subject}, {Object}, {Possessive}) for 
-  use in biographies.
-* **The "Tag" System**: Acts as the engine's brain, ensuring traits 
-  make sense (e.g., a "Laser Sword" requires an "Augmented" tag).
-* **Weighted Rarity Control**: You define exactly how rare an item is. 
-  Weight 100 is common; Weight 1 is a legendary find.
-* **RPG Stat Balancing**: Uses "Point Pools" to mathematically 
-  distribute points across custom attributes like Str, Dex, or Int.
-* **Narrative Storytelling**: Stitches together biography fragments 
-  into a cohesive life story based on the character's rolled data.
-
---------------------------------------------------------------------------
-💎 THE "SMART" BIO SYSTEM
---------------------------------------------------------------------------
-
-The standout feature of Reality Engine is its "Stat-Aware" narrative 
-engine. This allows for "Stat-Gating," where specific story 
-sentences only trigger if a character is strong, smart, or lucky enough 
-to "earn" them through their rolled attributes.
-
-* **Trait Injection**: Placeholders like {Starting Weapon} are 
-  automatically swapped for the actual items the character rolled.
-* **Tag-Based Branching**: A character's origin can change entirely 
-  based on tags like "Noble-Blood" or "Pauper".
+  - Deep Identity Logic: Manages a flexible three-part naming system
+    (First, optional Last, and optional Nickname) with gender gating.
+  - Smart Pronouns: Automatically assigns lowercase and capitalized
+    pronouns ({Subject}, {SubjectCap}, {Object}, {Possessive}) and
+    adapts to inanimate entities like ships, planets, and artifacts.
+  - The Tag System: Acts as the engine's brain using comma-separated
+    Requires, Excludes, and GrantsTag rules so traits stay coherent.
+  - Weighted Rarity Control: You set exact roll weights and optional
+    color-coded rarity badges (Common through Mythic).
+  - Multi-Traits & Ranges: Roll multi-item inventories, quirks, or
+    loadouts (MultiTraits) alongside independent numbers with units
+    like Age, Height, or Bounty (Ranges).
+  - RPG Point Pools & StatMods: Distribute points across custom stat
+    pools with visual stat bars, then let rolled traits modify those
+    stats or ranges dynamically.
+  - Modular Toggles: Turn rarity, gender, tags, stat bars, ranges,
+    multi-traits, point pools, or narrative on or off per universe.
 
 --------------------------------------------------------------------------
-🛠️ HOW TO LEARN
+[ THE "SMART" BIO SYSTEM ]
 --------------------------------------------------------------------------
 
-This library is organized into levels to help you master the engine:
+The standout feature of Reality Engine is its stat- and tag-aware
+narrative engine, which stitches biography fragments into a cohesive
+portrait using single-pass token injection:
 
-1. **Level 1**: Basic Randomization (Simple lists).
-2. **Level 2**: Weights & Rarity (Simulating scarcity).
-3. **Level 3**: Logic & Stats (Tags and RPG math).
-4. **Level 4**: Narrative Elite (Stat-gated storytelling).
+  - Trait & List Injection: Placeholders like {Primary Weapon} or
+    {Pockets & Keepsakes} automatically swap in rolled traits (with
+    MultiTraits formatted naturally as "A, B, and C").
+  - MinStat & MaxStat Gating: Trigger specific sentences when a stat
+    or range is high enough (MinStat) OR low enough (MaxStat).
+  - Multi-Tag Branching: Gate story lines on combinations of tags
+    (e.g., "Requires": "Military, Veteran") or exclude clashing tags.
+
+--------------------------------------------------------------------------
+[ WORKFLOW TOOLS BUILT IN ]
+--------------------------------------------------------------------------
+
+  - Reproducible Seeds: Every sheet displays a Seed. Enter any number
+    or word/phrase to recreate the exact same entity on demand.
+  - Instant Reroll & Export: Press [R] to reroll the same archetype,
+    [S] to save a clean .txt sheet, or [J] to export structured .json.
+  - Batch Roster Generator: Roll 1 to 500 entities at once into a
+    single timestamped roster file under Saves/.
+  - Live Hot-Reload & Validator: Edit your JSON in an external editor
+    and hit Reload Active Module; the Pre-Flight Validator checks for
+    dead tags, tag-order errors, broken tokens, and stat-pool math.
+  - Architect Mode & Debug Mode: Generate a starter v2.0 JSON module
+    in seconds, or toggle Debug Mode to watch every roll step-by-step.
+
+--------------------------------------------------------------------------
+[ CONTROLS AT A GLANCE ]
+--------------------------------------------------------------------------
+
+  - Menus:           Up/Down Arrows or W/S to move, Enter to select,
+                     Esc to go back.
+  - Character Sheet: [R] Reroll   |   [S] Save .txt
+                     [J] Export .json   |   [M / Esc] Main Menu
+
+--------------------------------------------------------------------------
+[ HOW TO LEARN ]
+--------------------------------------------------------------------------
+
+This Help Library is organized into levels to help you master the engine:
+
+  1. Level 1: Basic Randomization (Simple lists and structure).
+  2. Level 2: Weights, Rarity & Modules (Scarcity and display toggles).
+  3. Level 3: Logic, Ranges, MultiTraits & Stats (Tags and StatMods).
+  4. Level 4: Narrative Elite (Tokens, pronouns, and stat-gated bios).
 
 ==========================================================================

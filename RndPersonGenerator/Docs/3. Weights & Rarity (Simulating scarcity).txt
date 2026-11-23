@@ -1,67 +1,138 @@
 ==========================================================================
-                LEVEL 2: WEIGHTS & RARITY (Medium)
+          LEVEL 2: WEIGHTS, RARITY & MODULES (Scarcity & Style)
 ==========================================================================
-GOAL: Control the "feel" of your world and simulate scarcity.
 
-In Level 1, every item had an equal chance. In Level 2, we use "Weighted 
-Probability." This allows you to make a "Rusty Dagger" appear 99% of the 
-time while a "Dragon Blade" only appears 1% of the time.
+GOAL: Control the feel of your world, simulate scarcity, and customize
+what the engine displays.
 
---------------------------------------------------------------------------
-1. THE SHIFT: FROM STRINGS TO OBJECTS
---------------------------------------------------------------------------
-Instead of a simple list of words like ["Sword", "Axe"], we now use 
-Curly Braces { } to give the engine more information about each item.
-
-NEW KEYS:
-* Value: The actual name of the item.
-* Weight: A number representing how "heavy" (common) the item is.
-* Rarity: A custom label (Common, Rare, Legendary, etc.).
+In Level 1, every item had an equal chance. In Level 2, we use weighted
+probability so a "Sharpened Rebar" can roll 80% of the time while a
+"Pre-War Plasma Cutter" rolls 5% of the time.
 
 --------------------------------------------------------------------------
-2. UNDERSTANDING WEIGHTS
+[ 1. FROM STRINGS TO OBJECTS ]
 --------------------------------------------------------------------------
-Think of weights like "Raffle Tickets." If a Rusty Spoon has 100 tickets 
-and a Laser Sword has 1 ticket, the engine puts all 101 tickets in a hat. 
-The Spoon is 100x more likely to be picked.
 
-* High Weight (e.g., 50-100): Common trash, basic gear.
-* Low Weight (e.g., 1-5): Rare treasures, elite titles.
+Instead of a plain word like "Sword", wrap an option in curly braces { }
+to give the engine extra properties:
 
---------------------------------------------------------------------------
-3. SHOWING RARITY
---------------------------------------------------------------------------
-In your "Modules" block at the top of the JSON, you must set:
-"ShowRarity": true
+  - Value:  The text of the item or name.
+  - Weight: How likely it is to roll (defaults to 1 if omitted).
+            Setting Weight to 0 disables an option temporarily (the
+            Pre-Flight Validator will flag it as a reminder).
+  - Rarity: Optional badge label (Common, Uncommon, Rare, Epic, etc.).
 
-If this is true, the engine will display the rarity label in brackets 
-next to the item (e.g., Laser Sword [LEGENDARY]).
+You can freely mix plain strings and objects inside the same list. Any
+plain string is automatically treated as Weight 1 with no rarity badge.
 
 --------------------------------------------------------------------------
-🚀 LEVEL 2 EXAMPLE (Copy-Paste Ready)
+[ 2. UNDERSTANDING WEIGHTS ]
 --------------------------------------------------------------------------
+
+Think of weights like raffle tickets. If a Rusty Pipe has 80 tickets and
+a Plasma Cutter has 5 tickets, all tickets go into one hat. Weights do
+not need to add up to 100 -- the engine calculates the exact ratio for
+you automatically.
+
+  - High Weight (50-100): Everyday gear, common backgrounds.
+  - Mid Weight  (15-30):  Uncommon finds, specialized equipment.
+  - Low Weight  (1-5):    Rare treasures, mythic relics.
+
+--------------------------------------------------------------------------
+[ 3. COLOR-CODED RARITY ]
+--------------------------------------------------------------------------
+
+When "ShowRarity": true is set in Modules, the engine prints color-coded
+rarity badges next to rolled traits (without polluting narrative bios):
+
+  - Common                      -> Gray
+  - Uncommon                    -> Green
+  - Rare                        -> Cyan
+  - Epic                        -> Magenta
+  - Legendary / Mythic / Unique -> Yellow
+  - Any custom label            -> White
+
+--------------------------------------------------------------------------
+[ 4. PROBABILITY: NICKNAMES, GENDER & OPTIONAL TRAITS ]
+--------------------------------------------------------------------------
+
+Level 2 also unlocks three probability tools inside any archetype:
+
+  - NicknameChance: A decimal from 0.0 (never) to 1.0 (always).
+  - GenderOdds:     A weighted dictionary (e.g., {"Male": 45, "Female":
+                    45, "Non-Binary": 10}). Requires UseGender: true.
+  - OptionalTraits: Trait categories that only roll if they pass a
+                    Chance check (0.0 to 1.0). If the check fails, the
+                    trait is cleanly omitted from the character sheet.
+
+--------------------------------------------------------------------------
+[ 5. ALL 8 MODULE TOGGLES ]
+--------------------------------------------------------------------------
+
+Every flag in "Modules" defaults to true if omitted. Turn flags off to
+reshape the engine for non-game genres (such as novel character sheets):
+
+  - ShowRarity:     Display color-coded [Rarity] badges.
+  - UseNarrative:   Generate biographies from BioTemplates.
+  - UsePointPools:  Roll RPG/psychological stat pools.
+  - ShowStatBars:   Draw visual [█████░░░░░] bars next to PointPools.
+  - UseGender:      Roll GenderOdds and display the GENDER line.
+  - ShowTags:       Display the active [TAGS] line on the sheet.
+  - UseRanges:      Roll independent numeric Ranges (Age, Bounty, etc.).
+  - UseMultiTraits: Roll multi-pick lists (inventories, quirks, tells).
+
+--------------------------------------------------------------------------
+[ LEVEL 2 EXAMPLE FILE (Copy-Paste Ready) ]
+--------------------------------------------------------------------------
+
 {
   "UniverseName": "Loot Hunter Alpha",
-  "Modules": { "ShowRarity": true, "UseNarrative": false },
   "ArchetypeTitle": "Scavenger",
+  "Modules": {
+    "ShowRarity": true,
+    "UseNarrative": false,
+    "UseGender": true,
+    "ShowTags": false
+  },
   "Archetypes": {
     "Wastelander": {
-      "FirstNames": ["Dusty", "Cinder", "Jax"],
-      "LastNames": ["Scrap", "Waste", "Rad"],
+      "NicknameChance": 0.6,
+      "GenderOdds": {
+        "Male": 45,
+        "Female": 45,
+        "Non-Binary": 10
+      },
+      "FirstNames": ["Dusty", "Cinder", "Jax", "Mara", "Kestrel"],
+      "LastNames": ["Scrap", "Ash", "Voss", "Flint", "Mercer"],
+      "Nicknames": ["Rust-Hand", "Crow", "Sparks", "Two-Shot"],
       "MandatoryTraits": {
         "Starting Weapon": [
-          { "Value": "Sharpened Rebar", "Weight": 80, "Rarity": "Common" },
-          { "Value": "Old Revolver", "Weight": 15, "Rarity": "Rare" },
-          { "Value": "Plasma Cutter", "Weight": 5, "Rarity": "EPIC" }
+          { "Value": "Sharpened Rebar", "Weight": 70, "Rarity": "Common" },
+          { "Value": "Sawed-Off Pipe Gun", "Weight": 20, "Rarity": "Uncommon" },
+          { "Value": "Old Service Revolver", "Weight": 12, "Rarity": "Rare" },
+          { "Value": "Pre-War Plasma Cutter", "Weight": 4, "Rarity": "Epic" },
+          { "Value": "Prototype Rail Carbine", "Weight": 1, "Rarity": "Legendary" }
         ]
+      },
+      "OptionalTraits": {
+        "Lucky Find": {
+          "Chance": 0.4,
+          "Options": [
+            { "Value": "Cracked Geiger Counter", "Weight": 50, "Rarity": "Common" },
+            { "Value": "Sealed Military Ration", "Weight": 30, "Rarity": "Uncommon" },
+            { "Value": "Working Solar Battery", "Weight": 10, "Rarity": "Rare" }
+          ]
+        }
       }
     }
   }
 }
 
 --------------------------------------------------------------------------
-💡 PRO TIP: THE BALANCE
+[ PRO TIP ]
 --------------------------------------------------------------------------
-You can mix and match! You can have a simple list for names but a 
-weighted list for weapons. The engine is smart enough to read both.
+
+If you are making a non-RPG universe (like a novel cast or historical
+roster), set "ShowRarity": false. You can still use "Weight" to make
+certain traits rare without printing video-game loot labels on the sheet.
 ==========================================================================

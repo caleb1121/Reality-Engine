@@ -1,11 +1,16 @@
 {
-  "UniverseName": "The Andromeda Expanse (Titan Stress Test)",
+  "UniverseName": "The Andromeda Expanse",
+  "ArchetypeTitle": "Classification",
   "Modules": {
     "ShowRarity": true,
     "UseNarrative": true,
-    "UsePointPools": true
+    "UsePointPools": true,
+    "UseGender": true,
+    "ShowTags": true,
+    "ShowStatBars": true,
+    "UseRanges": true,
+    "UseMultiTraits": true
   },
-  "ArchetypeTitle": "Classification",
   "Archetypes": {
     "Orbital Marine": {
       "NicknameChance": 0.85,
@@ -51,10 +56,18 @@
         "Cassian",
         "Freya",
         "Bram",
-        "Xenon",
-        "Zeta",
-        "Axiom",
-        "Prime"
+        "Maren",
+        "Callahan",
+        "Talia",
+        "Dante",
+        "Ronan",
+        "Valken",
+        "Keira",
+        "Soren",
+        "Nadia",
+        "Kestrel",
+        "Brax",
+        "Yara"
       ],
       "LastNames": [
         "Vanguard",
@@ -96,7 +109,15 @@
         "Abyss",
         "Rift",
         "Trench",
-        "Apex"
+        "Apex",
+        "Harrow",
+        "Kovacs",
+        "Redding",
+        "Stryker",
+        "Vane",
+        "Drummond",
+        "Keller",
+        "Ward"
       ],
       "Nicknames": [
         "Deadeye",
@@ -128,147 +149,518 @@
         "Echo",
         "Shade",
         "Mirage",
-        "Omen"
+        "Omen",
+        "Anvil",
+        "Breach",
+        "Hammer",
+        "Bishop",
+        "Raptor",
+        "Sledge",
+        "Valkyrie",
+        "Zero"
       ],
       "StartingTags": [ "Military", "Tactical", "Humanoid" ],
       "MandatoryTraits": {
         "Homeworld": [
           {
             "Value": "Earth (Terra Prime)",
-            "Weight": 50
+            "Weight": 45,
+            "GrantsTag": "Core_World",
+            "Rarity": "Common"
           },
           {
             "Value": "Mars Dust Colonies",
-            "Weight": 40
+            "Weight": 40,
+            "Rarity": "Common"
           },
           {
             "Value": "Titan Processing Station",
-            "Weight": 30
+            "Weight": 30,
+            "GrantsTag": "Zero_G",
+            "Rarity": "Common"
           },
           {
             "Value": "Alpha Centauri Core",
-            "Weight": 20
+            "Weight": 25,
+            "GrantsTag": "Core_World",
+            "Rarity": "Uncommon"
           },
           {
             "Value": "Deep Space Orbital Rig",
-            "Weight": 15
+            "Weight": 20,
+            "GrantsTag": "Zero_G",
+            "Rarity": "Uncommon"
           },
           {
             "Value": "The Outer Rim Wastes",
-            "Weight": 15
+            "Weight": 20,
+            "Rarity": "Uncommon",
+            "StatMods": { "Endurance": 1 }
           },
           {
-            "Value": "Unknown Deep-Cryo Ship",
+            "Value": "Jovian Shipyards",
+            "Weight": 15,
+            "GrantsTag": "Zero_G",
+            "Rarity": "Uncommon",
+            "StatMods": { "Tech_Skill": 1 }
+          },
+          {
+            "Value": "Ceres High-G Penal Dome",
+            "Weight": 10,
+            "Rarity": "Rare",
+            "StatMods": { "Strength": 2 }
+          },
+          {
+            "Value": "Unknown Deep-Cryo Ark",
             "Weight": 5,
             "GrantsTag": "Ancient",
-            "Rarity": "Epic"
+            "Rarity": "Epic",
+            "StatMods": { "Endurance": 2 }
           }
         ],
         "Armor Class": [
           {
             "Value": "Standard Issue Kevlar",
-            "Weight": 50,
+            "Weight": 45,
             "Rarity": "Common"
           },
           {
             "Value": "Ablative Plating",
-            "Weight": 40,
-            "Rarity": "Uncommon"
+            "Weight": 35,
+            "Rarity": "Uncommon",
+            "StatMods": { "Endurance": 1 }
           },
           {
             "Value": "Titanium Mesh",
-            "Weight": 30
+            "Weight": 30,
+            "Rarity": "Uncommon",
+            "StatMods": { "Reflexes": 1 }
           },
           {
             "Value": "Powered Exosuit",
             "Weight": 15,
             "GrantsTag": "Heavy_Armor",
-            "Rarity": "Rare"
+            "Rarity": "Rare",
+            "StatMods": {
+              "Strength": 2,
+              "Endurance": 1
+            }
           },
           {
             "Value": "Stealth Carapace",
             "Weight": 15,
             "GrantsTag": "Stealth",
-            "Rarity": "Rare"
+            "Rarity": "Rare",
+            "StatMods": { "Reflexes": 2 }
           },
           {
-            "Value": "Void-Sealed Rig",
-            "Weight": 10,
-            "GrantsTag": "Space_Ready"
+            "Value": "Void-Sealed Drop Rig",
+            "Weight": 15,
+            "GrantsTag": "Space_Ready",
+            "Rarity": "Uncommon",
+            "StatMods": { "Tech_Skill": 1 }
           },
           {
-            "Value": "Juggernaut Shell",
-            "Weight": 5,
+            "Value": "Juggernaut Assault Shell",
+            "Weight": 6,
             "GrantsTag": "Heavy_Armor",
-            "Rarity": "Epic"
+            "Rarity": "Epic",
+            "StatMods": {
+              "Strength": 3,
+              "Endurance": 2,
+              "Reflexes": -2
+            }
           },
           {
             "Value": "Precursor Relic Armor",
-            "Weight": 1,
-            "GrantsTag": "Alien_Tech",
-            "Rarity": "Legendary"
+            "Weight": 2,
+            "GrantsTag": "Alien_Tech, Space_Ready",
+            "Rarity": "Legendary",
+            "StatMods": {
+              "Endurance": 3,
+              "Tech_Skill": 2
+            }
           }
         ],
         "Primary Weapon": [
           {
             "Value": "M4-Pulse Rifle",
-            "Weight": 50
+            "Weight": 45,
+            "Rarity": "Common"
           },
           {
             "Value": "Heavy Las-Cannon",
             "Weight": 20,
-            "GrantsTag": "Heavy_Weapon"
+            "GrantsTag": "Heavy_Weapon, Energy_Weapon",
+            "Rarity": "Uncommon",
+            "StatMods": { "Marksmanship": 1 }
           },
           {
-            "Value": "Monomolecular Sword",
-            "Weight": 20,
-            "GrantsTag": "Melee"
+            "Value": "Monomolecular Claymore",
+            "Weight": 18,
+            "GrantsTag": "Melee",
+            "Rarity": "Uncommon",
+            "StatMods": {
+              "Strength": 1,
+              "Reflexes": 1
+            }
           },
           {
             "Value": "Plasma Incinerator",
             "Weight": 15,
-            "GrantsTag": "Energy_Weapon"
+            "GrantsTag": "Energy_Weapon",
+            "Rarity": "Rare",
+            "StatMods": { "Strength": 1 }
           },
           {
-            "Value": "Gauss Sniper",
-            "Weight": 15
+            "Value": "Gauss Anti-Materiel Rifle",
+            "Weight": 15,
+            "Rarity": "Rare",
+            "StatMods": { "Marksmanship": 2 }
           },
           {
-            "Value": "Sonic Shotgun",
-            "Weight": 10
+            "Value": "Sonic Breacher Shotgun",
+            "Weight": 15,
+            "Rarity": "Uncommon",
+            "StatMods": { "Strength": 1 }
           },
           {
             "Value": "Magnetic Railgun",
             "Weight": 10,
-            "GrantsTag": "Heavy_Weapon"
+            "Requires": "Heavy_Armor",
+            "GrantsTag": "Heavy_Weapon",
+            "Rarity": "Rare",
+            "StatMods": {
+              "Marksmanship": 2,
+              "Strength": 1
+            }
           },
           {
-            "Value": "Twin-Linked SMGs",
-            "Weight": 10
+            "Value": "Twin-Linked Vector SMGs",
+            "Weight": 12,
+            "Rarity": "Uncommon",
+            "StatMods": { "Reflexes": 2 }
           },
           {
-            "Value": "Micro-Missile Swarm",
+            "Value": "Micro-Missile Swarm Pod",
             "Weight": 5,
-            "Rarity": "Epic"
+            "Requires": "Heavy_Armor",
+            "GrantsTag": "Heavy_Weapon",
+            "Rarity": "Epic",
+            "StatMods": { "Tech_Skill": 2 }
           },
           {
             "Value": "Dark Matter Projector",
-            "Weight": 1,
-            "GrantsTag": "Alien_Tech",
-            "Rarity": "Legendary"
+            "Weight": 2,
+            "GrantsTag": "Alien_Tech, Energy_Weapon",
+            "Rarity": "Legendary",
+            "StatMods": {
+              "Marksmanship": 2,
+              "Tech_Skill": 2
+            }
+          }
+        ],
+        "Secondary Sidearm": [
+          {
+            "Value": "9mm Caseless Service Pistol",
+            "Weight": 45,
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Suppressed Flechette Pistol",
+            "Weight": 25,
+            "GrantsTag": "Stealth",
+            "Rarity": "Uncommon",
+            "StatMods": { "Reflexes": 1 }
+          },
+          {
+            "Value": "Arc-Discharge Sidearm",
+            "Weight": 20,
+            "GrantsTag": "Energy_Weapon",
+            "Rarity": "Uncommon",
+            "StatMods": { "Tech_Skill": 1 }
+          },
+          {
+            "Value": "Wrist-Mounted Micro-Flamer",
+            "Weight": 12,
+            "Rarity": "Rare",
+            "StatMods": { "Strength": 1 }
+          },
+          {
+            "Value": "Compact Rail-Derringer",
+            "Weight": 10,
+            "Rarity": "Rare",
+            "StatMods": { "Marksmanship": 1 }
+          },
+          {
+            "Value": "Vibro-Combat Knife",
+            "Weight": 20,
+            "GrantsTag": "Melee",
+            "Rarity": "Common"
           }
         ],
         "Combat Specialty": [
-          "Breacher",
-          "Marksman",
-          "Field Medic",
-          "Combat Hacker",
-          "Demolitions Expert",
-          "Recon Scout",
-          "Heavy Gunner",
-          "Drop-Ship Pilot",
-          "Orbital Engineer"
+          {
+            "Value": "Breacher",
+            "Weight": 20,
+            "StatMods": {
+              "Strength": 1,
+              "Endurance": 1
+            }
+          },
+          {
+            "Value": "Marksman",
+            "Weight": 20,
+            "StatMods": { "Marksmanship": 2 }
+          },
+          {
+            "Value": "Field Medic",
+            "Weight": 18,
+            "GrantsTag": "Medic",
+            "StatMods": {
+              "Tech_Skill": 1,
+              "Endurance": 1
+            }
+          },
+          {
+            "Value": "Combat Hacker",
+            "Weight": 16,
+            "GrantsTag": "Hacker",
+            "StatMods": { "Tech_Skill": 2 }
+          },
+          {
+            "Value": "Demolitions Expert",
+            "Weight": 16,
+            "GrantsTag": "Demolitions",
+            "StatMods": {
+              "Strength": 1,
+              "Tech_Skill": 1
+            }
+          },
+          {
+            "Value": "Recon Scout",
+            "Weight": 18,
+            "GrantsTag": "Stealth",
+            "StatMods": { "Reflexes": 2 }
+          },
+          {
+            "Value": "Heavy Gunner",
+            "Weight": 15,
+            "GrantsTag": "Veteran",
+            "StatMods": { "Strength": 2 }
+          },
+          {
+            "Value": "Drop-Ship Pilot",
+            "Weight": 14,
+            "GrantsTag": "Pilot",
+            "StatMods": {
+              "Reflexes": 1,
+              "Tech_Skill": 1
+            }
+          },
+          {
+            "Value": "Orbital Shock-Trooper",
+            "Weight": 12,
+            "GrantsTag": "Veteran, Space_Ready",
+            "Rarity": "Rare",
+            "StatMods": { "Endurance": 2 }
+          },
+          {
+            "Value": "Squad Tactical Lead",
+            "Weight": 10,
+            "GrantsTag": "Veteran",
+            "Rarity": "Rare",
+            "StatMods": {
+              "Marksmanship": 1,
+              "Endurance": 1
+            }
+          }
         ]
+      },
+      "OptionalTraits": {
+        "Cybernetic Implant": {
+          "Chance": 0.65,
+          "Options": [
+            {
+              "Value": "Targeting Reticle Optics",
+              "Weight": 25,
+              "GrantsTag": "Augmented",
+              "Rarity": "Uncommon",
+              "StatMods": { "Marksmanship": 2 }
+            },
+            {
+              "Value": "Adrenal Reflex Booster",
+              "Weight": 20,
+              "GrantsTag": "Augmented",
+              "Rarity": "Rare",
+              "StatMods": { "Reflexes": 2 }
+            },
+            {
+              "Value": "Sub-Dermal Ballistic Weave",
+              "Weight": 20,
+              "GrantsTag": "Augmented",
+              "Rarity": "Rare",
+              "StatMods": { "Endurance": 2 }
+            },
+            {
+              "Value": "Hydraulic Grip Actuators",
+              "Weight": 18,
+              "GrantsTag": "Augmented",
+              "Rarity": "Uncommon",
+              "StatMods": { "Strength": 2 }
+            },
+            {
+              "Value": "Direct-Link Tactical Deck",
+              "Weight": 15,
+              "Requires": "Hacker",
+              "GrantsTag": "Augmented",
+              "Rarity": "Rare",
+              "StatMods": { "Tech_Skill": 3 }
+            },
+            {
+              "Value": "Full-Spine Military Neural Bridge",
+              "Weight": 8,
+              "Requires": "Cyborg",
+              "GrantsTag": "Augmented",
+              "Rarity": "Epic",
+              "StatMods": {
+                "Reflexes": 2,
+                "Tech_Skill": 2
+              }
+            },
+            {
+              "Value": "Synthetic Lungs (Vacuum Buffer)",
+              "Weight": 15,
+              "GrantsTag": "Augmented, Space_Ready",
+              "Rarity": "Uncommon",
+              "StatMods": { "Endurance": 1 }
+            }
+          ]
+        },
+        "Battle Decoration": {
+          "Chance": 0.45,
+          "Options": [
+            {
+              "Value": "Star of Terra (Bravery)",
+              "Weight": 20,
+              "GrantsTag": "Decorated",
+              "Rarity": "Rare",
+              "StatMods": { "Endurance": 1 }
+            },
+            {
+              "Value": "Orbital Drop Wings",
+              "Weight": 30,
+              "GrantsTag": "Decorated",
+              "Rarity": "Uncommon",
+              "StatMods": { "Service Tours": 2 }
+            },
+            {
+              "Value": "Black-Ops Commendation (Redacted)",
+              "Weight": 10,
+              "Requires": "Stealth",
+              "GrantsTag": "Decorated",
+              "Rarity": "Epic",
+              "StatMods": { "Reflexes": 1 }
+            },
+            {
+              "Value": "Purple Singularity Medal",
+              "Weight": 15,
+              "Requires": "Veteran",
+              "GrantsTag": "Decorated",
+              "Rarity": "Rare",
+              "StatMods": { "Service Tours": 3 }
+            }
+          ]
+        }
+      },
+      "MultiTraits": {
+        "Tactical Loadout": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 4,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "Trauma Foam Injector",
+              "Weight": 30,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "EMP Disruption Grenades",
+              "Weight": 25,
+              "Rarity": "Uncommon",
+              "StatMods": { "Tech_Skill": 1 }
+            },
+            {
+              "Value": "Mag-Grapple Zip Line",
+              "Weight": 25,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Thermal Recon Drone",
+              "Weight": 18,
+              "Rarity": "Rare",
+              "StatMods": { "Marksmanship": 1 }
+            },
+            {
+              "Value": "Breaching Shaped Charges",
+              "Weight": 20,
+              "Requires": "Demolitions",
+              "Rarity": "Uncommon"
+            },
+            {
+              "Value": "Auto-Suture Medkit",
+              "Weight": 22,
+              "Requires": "Medic",
+              "Rarity": "Uncommon",
+              "StatMods": { "Endurance": 1 }
+            },
+            {
+              "Value": "Active Camo Cloak",
+              "Weight": 12,
+              "Requires": "Stealth",
+              "Rarity": "Epic",
+              "StatMods": { "Reflexes": 1 }
+            },
+            {
+              "Value": "Deployable Kinetic Barrier",
+              "Weight": 15,
+              "Rarity": "Rare",
+              "StatMods": { "Endurance": 1 }
+            },
+            {
+              "Value": "Encrypted Signal Flare Pack",
+              "Weight": 25,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Void-Patch Hull Sealant",
+              "Weight": 20,
+              "Rarity": "Common"
+            }
+          ]
+        }
+      },
+      "Ranges": {
+        "Age": {
+          "Min": 20,
+          "Max": 52,
+          "Step": 1,
+          "Unit": " yrs"
+        },
+        "Service Tours": {
+          "Min": 1,
+          "Max": 14,
+          "Step": 1,
+          "Unit": " tours"
+        },
+        "Confirmed Drops": {
+          "Min": 10,
+          "Max": 120,
+          "Step": 5,
+          "Unit": " drops",
+          "Requires": "Veteran"
+        }
       },
       "PointPools": {
         "Combat Stats": {
@@ -279,12 +671,14 @@
         }
       }
     },
+
     "Void Corsair": {
       "NicknameChance": 0.95,
       "GenderOdds": {
         "Male": 40,
         "Female": 40,
-        "Mutant": 20
+        "Mutant": 12,
+        "Non-Binary": 8
       },
       "FirstNames": [
         "Rook",
@@ -306,7 +700,19 @@
         "Draven",
         "Garrick",
         "Zane",
-        "Lorna"
+        "Lorna",
+        "Jett",
+        "Sable",
+        "Cade",
+        "Vesper",
+        "Kestrel",
+        "Rico",
+        "Maren",
+        "Hollis",
+        "Dax",
+        "Tamsin",
+        "Orson",
+        "Sloane"
       ],
       "LastNames": [
         "Blood",
@@ -328,7 +734,19 @@
         "Pyre",
         "Shade",
         "Wraith",
-        "Grimm"
+        "Grimm",
+        "Marrow",
+        "Skye",
+        "Hook",
+        "Krell",
+        "Dagger",
+        "Sable",
+        "Vance",
+        "Gale",
+        "Mercer",
+        "Briggs",
+        "Harrow",
+        "Thorn"
       ],
       "Nicknames": [
         "The Bastard",
@@ -348,42 +766,119 @@
         "The Vulture",
         "Star-Killer",
         "The Mute",
-        "Half-Burnt"
+        "Half-Burnt",
+        "Zero-G",
+        "Black-Deck",
+        "Slip-Drive",
+        "Rust-Fang",
+        "Quick-Draw",
+        "The Ghost"
       ],
       "StartingTags": [ "Humanoid", "Outlaw", "Underworld" ],
       "MandatoryTraits": {
         "Infamy Level": [
           {
             "Value": "Unknown Drifter",
-            "Weight": 30
+            "Weight": 25,
+            "Rarity": "Common"
           },
           {
             "Value": "Local Nuisance",
-            "Weight": 40
+            "Weight": 35,
+            "Rarity": "Common"
           },
           {
             "Value": "Wanted in Three Systems",
-            "Weight": 20
+            "Weight": 25,
+            "GrantsTag": "Wanted",
+            "Rarity": "Uncommon",
+            "StatMods": {
+              "Intimidation": 1,
+              "Bounty": 10000
+            }
           },
           {
             "Value": "Sector-Wide Target",
-            "Weight": 10
+            "Weight": 12,
+            "GrantsTag": "Wanted",
+            "Rarity": "Rare",
+            "StatMods": {
+              "Intimidation": 2,
+              "Bounty": 25000
+            }
           },
           {
             "Value": "Galactic Public Enemy No. 1",
             "Weight": 5,
-            "GrantsTag": "Famous",
-            "Rarity": "Epic"
+            "GrantsTag": "Wanted, Famous",
+            "Rarity": "Epic",
+            "StatMods": {
+              "Intimidation": 3,
+              "Bounty": 50000
+            }
           }
         ],
         "Signature Weapon": [
-          "Sawed-off Flak Cannon",
-          "Twin Pearl-Handled Las-Blasters",
-          "Rusty Machete",
-          "Custom Snub-Nose Revolver",
-          "Poisoned Darts",
-          "Thermal Detonator Bandolier",
-          "Stolen Military Plasma Rifle"
+          {
+            "Value": "Sawed-off Flak Cannon",
+            "Weight": 25,
+            "GrantsTag": "Heavy_Weapon",
+            "Rarity": "Common",
+            "StatMods": { "Intimidation": 1 }
+          },
+          {
+            "Value": "Twin Pearl-Handled Las-Blasters",
+            "Weight": 20,
+            "GrantsTag": "Energy_Weapon",
+            "Rarity": "Uncommon",
+            "StatMods": { "Cunning": 1 }
+          },
+          {
+            "Value": "Serrated Boarding Machete",
+            "Weight": 20,
+            "GrantsTag": "Melee",
+            "Rarity": "Common",
+            "StatMods": { "Intimidation": 1 }
+          },
+          {
+            "Value": "Custom Snub-Nose Revolver",
+            "Weight": 25,
+            "Rarity": "Common",
+            "StatMods": { "Luck": 1 }
+          },
+          {
+            "Value": "Neuro-Toxin Dart Gauntlet",
+            "Weight": 12,
+            "Rarity": "Rare",
+            "StatMods": { "Deception": 2 }
+          },
+          {
+            "Value": "Thermal Detonator Bandolier",
+            "Weight": 12,
+            "GrantsTag": "Heavy_Weapon",
+            "Rarity": "Rare",
+            "StatMods": { "Intimidation": 2 }
+          },
+          {
+            "Value": "Stolen Military Plasma Rifle",
+            "Weight": 10,
+            "GrantsTag": "Energy_Weapon",
+            "Rarity": "Rare",
+            "StatMods": {
+              "Intimidation": 1,
+              "Bounty": 5000
+            }
+          },
+          {
+            "Value": "Phase-Shifting Arc Pistol",
+            "Weight": 4,
+            "GrantsTag": "Alien_Tech, Energy_Weapon",
+            "Rarity": "Legendary",
+            "StatMods": {
+              "Cunning": 2,
+              "Luck": 2
+            }
+          }
         ],
         "Ship Name": [
           "The Rusty Bucket",
@@ -393,16 +888,178 @@
           "The Broken Promise",
           "Fool's Errand",
           "The Iron Maiden",
-          "Orphan-Maker"
+          "Orphan-Maker",
+          "Dead Man's Burn",
+          "The Pale Vulture",
+          "Gutter Star",
+          "The Borrowed Time",
+          "Six-Shot Sally",
+          "The Cold Ledger"
         ],
         "Quirk or Flaw": [
-          "Owes a massive debt to a crime lord",
-          "Never leaves witnesses",
-          "Has a soft spot for stray animals",
-          "Is missing an eye and replacing it with a cheap scanner",
-          "Drinks engine coolant",
-          "Is terrified of the vacuum of space"
+          "a crushing debt to a cartel warlord",
+          "a ruthless habit of never leaving witnesses",
+          "a bizarre soft spot for stray station animals",
+          "a glitching black-market scanner bolted into one eye socket",
+          "a terrible habit of drinking distilled engine coolant",
+          "a deep-seated terror of open vacuum spacewalks",
+          "an inability to pass up a rigged card table",
+          "a habit of carving tallies into every bulkhead"
         ]
+      },
+      "OptionalTraits": {
+        "Black-Market Cyberware": {
+          "Chance": 0.55,
+          "Options": [
+            {
+              "Value": "Counterfeit Identity Chip",
+              "Weight": 25,
+              "GrantsTag": "Augmented",
+              "Rarity": "Uncommon",
+              "StatMods": { "Deception": 2 }
+            },
+            {
+              "Value": "Smuggler's Hollow Forearm",
+              "Weight": 25,
+              "GrantsTag": "Augmented",
+              "Rarity": "Common",
+              "StatMods": { "Cunning": 1 }
+            },
+            {
+              "Value": "Wired Reflex Co-Processor",
+              "Weight": 15,
+              "GrantsTag": "Augmented",
+              "Rarity": "Rare",
+              "StatMods": { "Piloting": 2 }
+            },
+            {
+              "Value": "Chromed Jaw & Voice Modulator",
+              "Weight": 15,
+              "GrantsTag": "Augmented",
+              "Rarity": "Uncommon",
+              "StatMods": { "Intimidation": 2 }
+            },
+            {
+              "Value": "Military-Surplus Optical Threat Suite",
+              "Weight": 8,
+              "Requires": "Wanted",
+              "GrantsTag": "Augmented",
+              "Rarity": "Epic",
+              "StatMods": {
+                "Piloting": 2,
+                "Cunning": 1
+              }
+            }
+          ]
+        },
+        "Syndicate Patron": {
+          "Chance": 0.4,
+          "Options": [
+            {
+              "Value": "The Crimson Cartel",
+              "Weight": 30,
+              "GrantsTag": "Syndicate_Ties",
+              "Rarity": "Uncommon",
+              "StatMods": { "Bounty": 5000 }
+            },
+            {
+              "Value": "Outer Rim Scrap Barons",
+              "Weight": 30,
+              "GrantsTag": "Syndicate_Ties",
+              "Rarity": "Common",
+              "StatMods": { "Luck": 1 }
+            },
+            {
+              "Value": "The Ghost Brokers",
+              "Weight": 15,
+              "GrantsTag": "Syndicate_Ties",
+              "Rarity": "Rare",
+              "StatMods": { "Deception": 2 }
+            }
+          ]
+        }
+      },
+      "MultiTraits": {
+        "Contraband Stash": {
+          "Chance": 0.95,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "Forged Transit Transponders",
+              "Weight": 30,
+              "Rarity": "Common",
+              "StatMods": { "Deception": 1 }
+            },
+            {
+              "Value": "Unrefined Nebula Spice",
+              "Weight": 25,
+              "Rarity": "Uncommon",
+              "StatMods": { "Bounty": 5000 }
+            },
+            {
+              "Value": "Stolen Naval Cipher Keys",
+              "Weight": 15,
+              "Rarity": "Rare",
+              "StatMods": {
+                "Cunning": 1,
+                "Bounty": 10000
+              }
+            },
+            {
+              "Value": "Crates of Bootleg Stim-Packs",
+              "Weight": 25,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Deactivated Combat Drone Cores",
+              "Weight": 18,
+              "Rarity": "Uncommon"
+            },
+            {
+              "Value": "Illegal Plasma Cutter Torches",
+              "Weight": 22,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Smuggled Precursor Shards",
+              "Weight": 6,
+              "Rarity": "Epic",
+              "StatMods": {
+                "Luck": 2,
+                "Bounty": 20000
+              }
+            },
+            {
+              "Value": "Blackmail Data-Slates",
+              "Weight": 18,
+              "Rarity": "Uncommon",
+              "StatMods": { "Deception": 1 }
+            }
+          ]
+        }
+      },
+      "Ranges": {
+        "Age": {
+          "Min": 19,
+          "Max": 64,
+          "Step": 1,
+          "Unit": " yrs"
+        },
+        "Bounty": {
+          "Min": 2500,
+          "Max": 75000,
+          "Step": 2500,
+          "Unit": " Cr"
+        },
+        "Stolen Cargo Value": {
+          "Min": 10000,
+          "Max": 150000,
+          "Step": 5000,
+          "Unit": " Cr",
+          "Requires": "Wanted"
+        }
       },
       "PointPools": {
         "Scoundrel Stats": {
@@ -413,11 +1070,12 @@
         }
       }
     },
+
     "Strike Fighter": {
       "NicknameChance": 1.0,
       "GenderOdds": {
-        "Machine": 50,
-        "Automated AI": 50
+        "Machine": 55,
+        "Automated AI": 45
       },
       "FirstNames": [
         "F-104",
@@ -439,7 +1097,15 @@
         "Banshee",
         "Mantis",
         "Wasp",
-        "Hornet"
+        "Hornet",
+        "KF-22",
+        "VX-9",
+        "Talon",
+        "Shrike",
+        "Kestrel",
+        "Peregrine",
+        "Dart",
+        "Raptor"
       ],
       "LastNames": [
         "Interceptor",
@@ -451,7 +1117,11 @@
         "Pursuer",
         "Aggressor",
         "Defiant",
-        "Arrow"
+        "Arrow",
+        "Lancer",
+        "Corsair",
+        "Hunter",
+        "Prowler"
       ],
       "Nicknames": [
         "Red-Leader",
@@ -468,53 +1138,318 @@
         "Nova-Flash",
         "Death-Knell",
         "Silent-Strike",
-        "Sun-Diver"
+        "Sun-Diver",
+        "Apex-Zero",
+        "Iron-Wing",
+        "Ghost-Six",
+        "Void-Dancer",
+        "Nightjar"
       ],
       "StartingTags": [ "Vehicle", "Fighter", "Spacebound" ],
       "MandatoryTraits": {
+        "Manufacturer": [
+          {
+            "Value": "Core Dynamics",
+            "Weight": 30,
+            "GrantsTag": "Military_Spec",
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Incom Orbital Works",
+            "Weight": 25,
+            "GrantsTag": "Military_Spec",
+            "Rarity": "Common"
+          },
+          {
+            "Value": "MandalMotors",
+            "Weight": 20,
+            "GrantsTag": "Corporate_Craft",
+            "Rarity": "Uncommon",
+            "StatMods": { "Hull_Strength": 1 }
+          },
+          {
+            "Value": "Sienar Fleet Systems",
+            "Weight": 20,
+            "GrantsTag": "Corporate_Craft",
+            "Rarity": "Uncommon",
+            "StatMods": { "Top_Speed": 1 }
+          },
+          {
+            "Value": "Kuat Drive Yards",
+            "Weight": 18,
+            "GrantsTag": "Military_Spec",
+            "Rarity": "Uncommon"
+          },
+          {
+            "Value": "Skunkworks Division 9",
+            "Weight": 8,
+            "GrantsTag": "Black_Ops",
+            "Rarity": "Epic",
+            "StatMods": { "Maneuverability": 2 }
+          },
+          {
+            "Value": "Unknown Outer-Rim Syndicate",
+            "Weight": 12,
+            "GrantsTag": "Black_Ops",
+            "Rarity": "Rare",
+            "StatMods": { "Top_Speed": 1 }
+          }
+        ],
         "Thruster Type": [
           {
             "Value": "Twin Ion Engines",
-            "Weight": 40
+            "Weight": 40,
+            "Rarity": "Common"
           },
           {
             "Value": "Plasma Afterburners",
-            "Weight": 30
+            "Weight": 30,
+            "GrantsTag": "High_G",
+            "Rarity": "Uncommon",
+            "StatMods": {
+              "Top_Speed": 2,
+              "Cruise Burn": 2
+            }
           },
           {
-            "Value": "Gravimetric Drives",
-            "Weight": 20
+            "Value": "Gravimetric Vector Drives",
+            "Weight": 20,
+            "GrantsTag": "High_G",
+            "Rarity": "Rare",
+            "StatMods": { "Maneuverability": 2 }
           },
           {
-            "Value": "Dark Matter Vents",
-            "Weight": 5,
+            "Value": "Dark Matter Micro-Vents",
+            "Weight": 6,
             "GrantsTag": "Stealth",
-            "Rarity": "Epic"
+            "Rarity": "Epic",
+            "StatMods": {
+              "Maneuverability": 2,
+              "Top_Speed": 1
+            }
+          },
+          {
+            "Value": "Zero-Point Blink Thrusters",
+            "Weight": 2,
+            "GrantsTag": "Stealth, Alien_Tech",
+            "Rarity": "Legendary",
+            "StatMods": {
+              "Maneuverability": 3,
+              "Top_Speed": 2
+            }
           }
         ],
         "Dogfight Weaponry": [
-          "Quad-Laser Cannons",
-          "Proton Torpedo Pods",
-          "Gatling Mass-Drivers",
-          "Auto-Tracking Plasma Turrets",
-          "EMP Missile Racks",
-          "Tachyon Beam Splitters"
+          {
+            "Value": "Quad-Laser Cannons",
+            "Weight": 30,
+            "GrantsTag": "Energy_Weapon",
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Proton Torpedo Pods",
+            "Weight": 22,
+            "GrantsTag": "Heavy_Weapon",
+            "Rarity": "Uncommon",
+            "StatMods": { "Target_Lock": 1 }
+          },
+          {
+            "Value": "Gatling Mass-Drivers",
+            "Weight": 25,
+            "Rarity": "Common",
+            "StatMods": { "Hull_Strength": 1 }
+          },
+          {
+            "Value": "Auto-Tracking Plasma Turrets",
+            "Weight": 18,
+            "GrantsTag": "Energy_Weapon",
+            "Rarity": "Rare",
+            "StatMods": { "Target_Lock": 2 }
+          },
+          {
+            "Value": "EMP Missile Racks",
+            "Weight": 15,
+            "Rarity": "Uncommon",
+            "StatMods": { "Target_Lock": 1 }
+          },
+          {
+            "Value": "Tachyon Beam Splitters",
+            "Weight": 8,
+            "GrantsTag": "Energy_Weapon",
+            "Rarity": "Epic",
+            "StatMods": {
+              "Target_Lock": 2,
+              "Top_Speed": -1
+            }
+          },
+          {
+            "Value": "Rail-Lance Nose Cannon",
+            "Weight": 12,
+            "GrantsTag": "Heavy_Weapon",
+            "Rarity": "Rare",
+            "StatMods": { "Target_Lock": 1 }
+          }
         ],
         "Countermeasures": [
-          "Thermal Chaff",
-          "Holographic Decoys",
-          "Sensor Jamming Field",
-          "Deflector Micro-Shields",
-          "Reactive Armor Plating"
-        ],
-        "Manufacturer": [
-          "Core Dynamics",
-          "Incom Corp",
-          "MandalMotors",
-          "Sienar Fleet Systems",
-          "Kuat Drive Yards",
-          "Unknown Syndicate"
+          {
+            "Value": "Thermal Chaff Dispensers",
+            "Weight": 30,
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Holographic Decoy Projectors",
+            "Weight": 22,
+            "Rarity": "Uncommon",
+            "StatMods": { "Maneuverability": 1 }
+          },
+          {
+            "Value": "Active Sensor Jamming Field",
+            "Weight": 18,
+            "GrantsTag": "Stealth",
+            "Rarity": "Rare",
+            "StatMods": { "Target_Lock": 1 }
+          },
+          {
+            "Value": "Deflector Micro-Shields",
+            "Weight": 20,
+            "GrantsTag": "Shielded",
+            "Rarity": "Uncommon",
+            "StatMods": { "Hull_Strength": 2 }
+          },
+          {
+            "Value": "Reactive Ceramic Plating",
+            "Weight": 20,
+            "Rarity": "Common",
+            "StatMods": {
+              "Hull_Strength": 2,
+              "Top_Speed": -1
+            }
+          },
+          {
+            "Value": "Point-Defense Laser Array",
+            "Weight": 12,
+            "Rarity": "Rare",
+            "StatMods": {
+              "Hull_Strength": 1,
+              "Target_Lock": 1
+            }
+          }
         ]
+      },
+      "OptionalTraits": {
+        "Experimental Refit": {
+          "Chance": 0.45,
+          "Options": [
+            {
+              "Value": "Overclocked Heat-Dump Sails",
+              "Weight": 25,
+              "GrantsTag": "Prototype",
+              "Rarity": "Rare",
+              "StatMods": { "Top_Speed": 2 }
+            },
+            {
+              "Value": "Neural Pilot-Link Cockpit",
+              "Weight": 20,
+              "GrantsTag": "Prototype",
+              "Rarity": "Rare",
+              "StatMods": { "Maneuverability": 2 }
+            },
+            {
+              "Value": "Radar-Absorbent Void Skin",
+              "Weight": 15,
+              "Requires": "Black_Ops",
+              "GrantsTag": "Prototype, Stealth",
+              "Rarity": "Epic",
+              "StatMods": {
+                "Maneuverability": 1,
+                "Target_Lock": 1
+              }
+            },
+            {
+              "Value": "Reinforced Boarding Ram",
+              "Weight": 15,
+              "GrantsTag": "Prototype",
+              "Rarity": "Uncommon",
+              "StatMods": { "Hull_Strength": 3 }
+            }
+          ]
+        }
+      },
+      "MultiTraits": {
+        "Avionics Suite": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "Predictive Ballistic HUD",
+              "Weight": 30,
+              "Rarity": "Common",
+              "StatMods": { "Target_Lock": 1 }
+            },
+            {
+              "Value": "Zero-G Inertial Dampeners",
+              "Weight": 28,
+              "Rarity": "Common",
+              "StatMods": { "Maneuverability": 1 }
+            },
+            {
+              "Value": "Long-Range Lidar Sweep",
+              "Weight": 22,
+              "Rarity": "Uncommon"
+            },
+            {
+              "Value": "Auto-Eject Cryo Pod",
+              "Weight": 25,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Encrypted Fleet Datalink",
+              "Weight": 20,
+              "Rarity": "Uncommon",
+              "StatMods": { "Target_Lock": 1 }
+            },
+            {
+              "Value": "Black-Box Telemetry Vault",
+              "Weight": 20,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Quantum Ghost-Spoofer",
+              "Weight": 8,
+              "Requires": "Stealth",
+              "Rarity": "Epic",
+              "StatMods": { "Maneuverability": 2 }
+            },
+            {
+              "Value": "Micro-Jump Slip Beacon",
+              "Weight": 10,
+              "Rarity": "Rare",
+              "StatMods": { "Top_Speed": 1 }
+            }
+          ]
+        }
+      },
+      "Ranges": {
+        "Confirmed Kills": {
+          "Min": 0,
+          "Max": 48,
+          "Step": 1,
+          "Unit": " kills"
+        },
+        "Service Life": {
+          "Min": 1,
+          "Max": 35,
+          "Step": 1,
+          "Unit": " yrs"
+        },
+        "Cruise Burn": {
+          "Min": 4,
+          "Max": 16,
+          "Step": 1,
+          "Unit": " G"
+        }
       },
       "PointPools": {
         "Fighter Specs": {
@@ -525,20 +1460,28 @@
         }
       }
     },
+
     "Capital Starship": {
       "NicknameChance": 1.0,
-      "GenderOdds": { "Machine": 100 },
+      "GenderOdds": {
+        "Machine": 80,
+        "Automated AI": 20
+      },
       "FirstNames": [
         "ISS",
         "UNSC",
         "VSS",
-        "The",
-        "Project",
         "HMS",
         "CSV",
         "RSV",
         "UFS",
-        "OAS"
+        "OAS",
+        "CNS",
+        "DSS",
+        "GSV",
+        "ESV",
+        "UCS",
+        "TSV"
       ],
       "LastNames": [
         "Event Horizon",
@@ -550,61 +1493,330 @@
         "Nemesis",
         "Prometheus",
         "Infinity",
-        "Endurance"
+        "Endurance",
+        "Sovereign",
+        "Vanguard",
+        "Dauntless",
+        "Eclipse",
+        "Hyperion",
+        "Monarch",
+        "Tempest",
+        "Reckoning",
+        "Indomitable",
+        "Horizon"
       ],
       "Nicknames": [
         "Dreadnought",
+        "Battlecruiser",
         "Cruiser",
         "Frigate",
         "Corvette",
         "Carrier",
         "Destroyer",
-        "Freighter",
-        "Gunboat"
+        "Heavy Freighter",
+        "Gunboat",
+        "Siege-Barge"
       ],
       "StartingTags": [ "Vehicle", "Spacebound", "Capital_Ship" ],
       "MandatoryTraits": {
+        "Manufacturer": [
+          {
+            "Value": "Kuat Orbital Yards",
+            "Weight": 30,
+            "GrantsTag": "Imperial_Yard",
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Jovian Heavy Shipwrights",
+            "Weight": 28,
+            "GrantsTag": "Corporate_Craft",
+            "Rarity": "Common",
+            "StatMods": { "Hull_Integrity": 1 }
+          },
+          {
+            "Value": "Sol Admiralty Drydocks",
+            "Weight": 25,
+            "GrantsTag": "Imperial_Yard",
+            "Rarity": "Uncommon",
+            "StatMods": { "Firepower": 1 }
+          },
+          {
+            "Value": "Andromeda Free-Forges",
+            "Weight": 18,
+            "GrantsTag": "Corporate_Craft",
+            "Rarity": "Uncommon",
+            "StatMods": { "Engine_Speed": 1 }
+          },
+          {
+            "Value": "Section Zero Black-Docks",
+            "Weight": 8,
+            "GrantsTag": "Black_Ops",
+            "Rarity": "Epic",
+            "StatMods": { "Sensor_Range": 2 }
+          }
+        ],
         "Drive Core": [
           {
             "Value": "Standard Fusion Engine",
-            "Weight": 50
+            "Weight": 45,
+            "Rarity": "Common"
           },
           {
             "Value": "Alcubierre Warp Drive",
-            "Weight": 30
+            "Weight": 30,
+            "GrantsTag": "Long_Range",
+            "Rarity": "Uncommon",
+            "StatMods": { "Engine_Speed": 2 }
           },
           {
             "Value": "Quantum Slipstream Generator",
             "Weight": 15,
-            "Rarity": "Rare"
+            "GrantsTag": "Long_Range",
+            "Rarity": "Rare",
+            "StatMods": {
+              "Engine_Speed": 3,
+              "Sensor_Range": 1
+            }
           },
           {
             "Value": "Singularity Reactor",
-            "Weight": 5,
+            "Weight": 6,
             "GrantsTag": "Volatile",
-            "Rarity": "Epic"
+            "Rarity": "Epic",
+            "StatMods": {
+              "Firepower": 3,
+              "Engine_Speed": 2
+            }
+          },
+          {
+            "Value": "Precursor Fold-Core",
+            "Weight": 2,
+            "GrantsTag": "Alien_Tech, Long_Range",
+            "Rarity": "Legendary",
+            "StatMods": {
+              "Engine_Speed": 4,
+              "Sensor_Range": 2
+            }
           }
         ],
         "Hull Material": [
-          "Military Grade Titanium",
-          "Carbon-Nanotube Weave",
-          "Plasteel Composite",
-          "Ceramic Ablative Tiles",
-          "Bio-Organic Living Weave"
+          {
+            "Value": "Military Grade Titanium",
+            "Weight": 35,
+            "Rarity": "Common",
+            "StatMods": { "Hull_Integrity": 1 }
+          },
+          {
+            "Value": "Carbon-Nanotube Weave",
+            "Weight": 25,
+            "Rarity": "Uncommon",
+            "StatMods": { "Engine_Speed": 1 }
+          },
+          {
+            "Value": "Plasteel Composite",
+            "Weight": 25,
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Ceramic Ablative Tiles",
+            "Weight": 20,
+            "GrantsTag": "Heavy_Armor",
+            "Rarity": "Uncommon",
+            "StatMods": { "Hull_Integrity": 2 }
+          },
+          {
+            "Value": "Depleted Uranium Bulkheads",
+            "Weight": 12,
+            "GrantsTag": "Heavy_Armor",
+            "Rarity": "Rare",
+            "StatMods": {
+              "Hull_Integrity": 3,
+              "Engine_Speed": -1
+            }
+          },
+          {
+            "Value": "Bio-Organic Living Weave",
+            "Weight": 6,
+            "GrantsTag": "Bio_Hull",
+            "Rarity": "Epic",
+            "StatMods": { "Hull_Integrity": 3 }
+          }
         ],
         "Primary Armament": [
-          "Spinal Mac-Cannon",
-          "Heavy Turbo-Lasers",
-          "Photon Torpedo Tubes",
-          "Ion Disruptor Cannons",
-          "Kinetic Bombardment Arrays"
+          {
+            "Value": "Spinal MAC-Cannon",
+            "Weight": 25,
+            "GrantsTag": "Heavy_Weapon",
+            "Rarity": "Uncommon",
+            "StatMods": { "Firepower": 2 }
+          },
+          {
+            "Value": "Heavy Turbo-Laser Batteries",
+            "Weight": 30,
+            "GrantsTag": "Energy_Weapon",
+            "Rarity": "Common",
+            "StatMods": { "Firepower": 1 }
+          },
+          {
+            "Value": "Photon Torpedo Broadsides",
+            "Weight": 22,
+            "GrantsTag": "Heavy_Weapon",
+            "Rarity": "Uncommon",
+            "StatMods": { "Firepower": 2 }
+          },
+          {
+            "Value": "Ion Disruptor Cannons",
+            "Weight": 18,
+            "GrantsTag": "Energy_Weapon",
+            "Rarity": "Rare",
+            "StatMods": {
+              "Sensor_Range": 1,
+              "Firepower": 1
+            }
+          },
+          {
+            "Value": "Kinetic Bombardment Arrays",
+            "Weight": 15,
+            "GrantsTag": "Heavy_Weapon",
+            "Rarity": "Rare",
+            "StatMods": { "Firepower": 2 }
+          },
+          {
+            "Value": "Graviton Siege Beam",
+            "Weight": 5,
+            "GrantsTag": "Energy_Weapon, Heavy_Weapon",
+            "Rarity": "Epic",
+            "StatMods": { "Firepower": 4 }
+          }
         ],
         "Ship Quirk": [
-          "Smells faintly of ozone and old blood",
-          "The AI occasionally sings nursery rhymes",
-          "Vibrates violently at warp speeds",
-          "Runs perfectly without a single crew member"
+          "smells faintly of ozone and scorched copper on every deck",
+          "occasionally broadcasts vintage nursery rhymes over the intercom",
+          "vibrates violently whenever the drive spools past eighty percent",
+          "has completed entire patrols without a single living crew member aboard",
+          "keeps Deck 7 permanently sealed behind triple blast doors",
+          "flickers its lighting in rhythm with nearby pulsar signals",
+          "runs three degrees colder than any thermostat setting allows"
         ]
+      },
+      "OptionalTraits": {
+        "Command Retrofit": {
+          "Chance": 0.5,
+          "Options": [
+            {
+              "Value": "Admiral's Tactical Holotable",
+              "Weight": 25,
+              "GrantsTag": "Flagship",
+              "Rarity": "Rare",
+              "StatMods": { "Sensor_Range": 2 }
+            },
+            {
+              "Value": "Deep-Space Hydroponics Ring",
+              "Weight": 25,
+              "Rarity": "Uncommon",
+              "StatMods": { "Crew Capacity": 200 }
+            },
+            {
+              "Value": "Layered Aegis Shield Array",
+              "Weight": 20,
+              "GrantsTag": "Flagship",
+              "Rarity": "Rare",
+              "StatMods": { "Hull_Integrity": 3 }
+            },
+            {
+              "Value": "Clandestine Stealth Baffles",
+              "Weight": 10,
+              "Requires": "Black_Ops",
+              "GrantsTag": "Stealth",
+              "Rarity": "Epic",
+              "StatMods": {
+                "Sensor_Range": 2,
+                "Engine_Speed": 1
+              }
+            }
+          ]
+        }
+      },
+      "MultiTraits": {
+        "Subsystems": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 4,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "Fighter Launch Bays",
+              "Weight": 30,
+              "Rarity": "Common",
+              "StatMods": { "Firepower": 1 }
+            },
+            {
+              "Value": "Long-Range Tachyon Array",
+              "Weight": 25,
+              "Rarity": "Uncommon",
+              "StatMods": { "Sensor_Range": 2 }
+            },
+            {
+              "Value": "Automated Damage-Control Drones",
+              "Weight": 25,
+              "Rarity": "Uncommon",
+              "StatMods": { "Hull_Integrity": 1 }
+            },
+            {
+              "Value": "Orbital Drop-Pod Silos",
+              "Weight": 22,
+              "Rarity": "Uncommon"
+            },
+            {
+              "Value": "Cryo-Sleep Vaults",
+              "Weight": 20,
+              "Rarity": "Common",
+              "StatMods": { "Crew Capacity": 160 }
+            },
+            {
+              "Value": "Point-Defense Flak Grid",
+              "Weight": 25,
+              "Rarity": "Common",
+              "StatMods": { "Hull_Integrity": 1 }
+            },
+            {
+              "Value": "Electronic Warfare Jamming Mast",
+              "Weight": 15,
+              "Rarity": "Rare",
+              "StatMods": { "Sensor_Range": 2 }
+            },
+            {
+              "Value": "Emergency Escape Frigate",
+              "Weight": 15,
+              "Rarity": "Uncommon"
+            },
+            {
+              "Value": "Mobile Refinery Forge",
+              "Weight": 12,
+              "Rarity": "Rare"
+            }
+          ]
+        }
+      },
+      "Ranges": {
+        "Crew Capacity": {
+          "Min": 120,
+          "Max": 6400,
+          "Step": 40,
+          "Unit": " personnel"
+        },
+        "Hull Length": {
+          "Min": 250,
+          "Max": 4500,
+          "Step": 50,
+          "Unit": " m"
+        },
+        "Service Age": {
+          "Min": 2,
+          "Max": 180,
+          "Step": 2,
+          "Unit": " yrs"
+        }
       },
       "PointPools": {
         "Ship Specifications": {
@@ -615,6 +1827,7 @@
         }
       }
     },
+
     "Celestial Body": {
       "NicknameChance": 0.9,
       "GenderOdds": { "Planet": 100 },
@@ -638,7 +1851,15 @@
         "Ceti",
         "Eridani",
         "Lupi",
-        "Aquilae"
+        "Aquilae",
+        "Vela",
+        "Carinae",
+        "Scorpii",
+        "Persei",
+        "Andromedae",
+        "Cassiopeiae",
+        "Hydrae",
+        "Phoenicis"
       ],
       "LastNames": [
         "Prime",
@@ -660,7 +1881,11 @@
         "Abyss",
         "Haven",
         "Sanctuary",
-        "Desolation"
+        "Desolation",
+        "IV",
+        "XII",
+        "Outer",
+        "Verge"
       ],
       "Nicknames": [
         "The Dustball",
@@ -677,90 +1902,358 @@
         "Rust-World",
         "The Hive",
         "Silent Orb",
-        "Shattered Sphere"
+        "Shattered Sphere",
+        "Glass Garden",
+        "Cinder",
+        "Driftwood",
+        "Cold Crown",
+        "The Vault"
       ],
       "StartingTags": [ "Location", "Planet" ],
       "MandatoryTraits": {
         "Biome": [
           {
             "Value": "Lush Jungle",
-            "Weight": 20
+            "Weight": 20,
+            "GrantsTag": "Habitable",
+            "Rarity": "Uncommon"
           },
           {
             "Value": "Barren Desert",
-            "Weight": 30
+            "Weight": 30,
+            "Rarity": "Common"
           },
           {
             "Value": "Frozen Ice Tundra",
-            "Weight": 20
+            "Weight": 22,
+            "GrantsTag": "Frozen",
+            "Rarity": "Common",
+            "StatMods": { "Surface Temp": -60 }
           },
           {
             "Value": "Volcanic Wasteland",
-            "Weight": 15,
-            "GrantsTag": "Hostile"
+            "Weight": 16,
+            "GrantsTag": "Hostile",
+            "Rarity": "Uncommon",
+            "StatMods": {
+              "Surface Temp": 120,
+              "Toxicity": 1
+            }
           },
           {
             "Value": "Endless Ocean",
-            "Weight": 15
+            "Weight": 16,
+            "GrantsTag": "Habitable",
+            "Rarity": "Uncommon"
           },
           {
-            "Value": "Toxic Swamp",
-            "Weight": 10,
-            "GrantsTag": "Hostile"
+            "Value": "Toxic Fungal Swamp",
+            "Weight": 12,
+            "GrantsTag": "Hostile",
+            "Rarity": "Uncommon",
+            "StatMods": { "Toxicity": 2 }
           },
           {
             "Value": "Ecumenopolis (City Planet)",
-            "Weight": 5,
+            "Weight": 6,
             "GrantsTag": "Civilized",
-            "Rarity": "Epic"
+            "Rarity": "Epic",
+            "StatMods": { "Tech_Level": 3 }
           },
           {
-            "Value": "Shattered Core (Asteroid Field)",
-            "Weight": 5,
+            "Value": "Shattered Core (Asteroid Cluster)",
+            "Weight": 6,
             "GrantsTag": "Hostile",
+            "Rarity": "Rare",
+            "StatMods": {
+              "Resource_Yield": 2,
+              "Gravity": -2
+            }
+          },
+          {
+            "Value": "Tidally Locked Twilight Belt",
+            "Weight": 10,
+            "GrantsTag": "Habitable",
             "Rarity": "Rare"
+          },
+          {
+            "Value": "Bioluminescent Crystal Steppes",
+            "Weight": 6,
+            "GrantsTag": "Habitable",
+            "Rarity": "Epic",
+            "StatMods": { "Resource_Yield": 2 }
           }
         ],
         "Atmosphere": [
-          "Breathable (Nitrogen-Oxygen)",
-          "Thin and Freezing",
-          "Crushing High-Pressure",
-          "Toxic Sulfur Clouds",
-          "Corrosive Acid Rain",
-          "No Atmosphere (Vacuum)"
+          {
+            "Value": "Breathable (Nitrogen-Oxygen)",
+            "Weight": 30,
+            "Rarity": "Common",
+            "StatMods": { "Toxicity": -2 }
+          },
+          {
+            "Value": "Thin and Freezing",
+            "Weight": 25,
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Crushing High-Pressure",
+            "Weight": 18,
+            "GrantsTag": "Hostile",
+            "Rarity": "Uncommon",
+            "StatMods": { "Gravity": 1 }
+          },
+          {
+            "Value": "Toxic Sulfur Clouds",
+            "Weight": 16,
+            "GrantsTag": "Toxic",
+            "Rarity": "Uncommon",
+            "StatMods": { "Toxicity": 2 }
+          },
+          {
+            "Value": "Corrosive Acid Rain",
+            "Weight": 12,
+            "GrantsTag": "Toxic",
+            "Rarity": "Rare",
+            "StatMods": { "Toxicity": 3 }
+          },
+          {
+            "Value": "No Atmosphere (Hard Vacuum)",
+            "Weight": 15,
+            "GrantsTag": "Vacuum",
+            "Rarity": "Common"
+          }
         ],
         "Dominant Feature": [
-          "Massive Planetary Rings",
-          "Twin Moons",
-          "Endless Mega-Storms",
-          "Ruins of a Dead Civilization",
-          "Giant Subterranean Caves",
-          "Crystalline Spire Mountains",
-          "Orbiting Debris Field"
+          {
+            "Value": "Massive Planetary Rings",
+            "Weight": 22,
+            "GrantsTag": "Rich_Orbit",
+            "Rarity": "Uncommon",
+            "StatMods": { "Resource_Yield": 1 }
+          },
+          {
+            "Value": "Twin Tidally Locked Moons",
+            "Weight": 20,
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Endless Equatorial Mega-Storms",
+            "Weight": 18,
+            "Rarity": "Uncommon"
+          },
+          {
+            "Value": "Ruins of a Dead Civilization",
+            "Weight": 12,
+            "GrantsTag": "Ancient_Ruins",
+            "Rarity": "Rare",
+            "StatMods": { "Tech_Level": 2 }
+          },
+          {
+            "Value": "Continent-Spanning Subterranean Caves",
+            "Weight": 18,
+            "Rarity": "Uncommon",
+            "StatMods": { "Resource_Yield": 1 }
+          },
+          {
+            "Value": "Crystalline Spire Mountains",
+            "Weight": 14,
+            "Rarity": "Rare",
+            "StatMods": { "Resource_Yield": 2 }
+          },
+          {
+            "Value": "Graveyard Orbiting Debris Field",
+            "Weight": 14,
+            "GrantsTag": "Rich_Orbit",
+            "Rarity": "Uncommon",
+            "StatMods": { "Tech_Level": 1 }
+          },
+          {
+            "Value": "Precursor Orbital Tether",
+            "Weight": 4,
+            "GrantsTag": "Ancient_Ruins, Alien_Tech",
+            "Rarity": "Legendary",
+            "StatMods": { "Tech_Level": 3 }
+          }
         ],
         "Native Hazard": [
-          "Apex Predators",
-          "Radiation Spikes",
-          "Flesh-Eating Parasites",
-          "Hostile Sentient Plants",
-          "Unstable Tectonic Plates",
-          "None (Safe Haven)"
+          {
+            "Value": "Pack-Hunting Apex Predators",
+            "Weight": 22,
+            "GrantsTag": "Hostile",
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Solar Radiation Spikes",
+            "Weight": 22,
+            "GrantsTag": "Hostile",
+            "Rarity": "Common",
+            "StatMods": { "Toxicity": 1 }
+          },
+          {
+            "Value": "Airborne Flesh-Eating Spores",
+            "Weight": 14,
+            "GrantsTag": "Hostile",
+            "Rarity": "Rare",
+            "StatMods": { "Toxicity": 2 }
+          },
+          {
+            "Value": "Hostile Sentient Flora",
+            "Weight": 12,
+            "GrantsTag": "Hostile",
+            "Rarity": "Rare"
+          },
+          {
+            "Value": "Unstable Tectonic Plates",
+            "Weight": 20,
+            "GrantsTag": "Hostile",
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Gravitational Shear Pockets",
+            "Weight": 10,
+            "GrantsTag": "Hostile",
+            "Rarity": "Rare",
+            "StatMods": { "Gravity": 2 }
+          },
+          {
+            "Value": "Minimal (Safe Survey Haven)",
+            "Weight": 18,
+            "Rarity": "Uncommon"
+          }
         ]
+      },
+      "OptionalTraits": {
+        "Orbital Anomaly": {
+          "Chance": 0.45,
+          "Options": [
+            {
+              "Value": "Dormant Jump-Gate Frame",
+              "Weight": 20,
+              "GrantsTag": "Anomaly",
+              "Rarity": "Epic",
+              "StatMods": { "Tech_Level": 2 }
+            },
+            {
+              "Value": "Localized Time-Dilation Halo",
+              "Weight": 10,
+              "GrantsTag": "Anomaly",
+              "Rarity": "Legendary",
+              "StatMods": { "Gravity": 2 }
+            },
+            {
+              "Value": "Derelict Generation Ship in Lagrange Orbit",
+              "Weight": 25,
+              "GrantsTag": "Anomaly",
+              "Rarity": "Rare",
+              "StatMods": { "Resource_Yield": 1 }
+            },
+            {
+              "Value": "Unexplained Repeating Radio Beacon",
+              "Weight": 25,
+              "GrantsTag": "Anomaly",
+              "Rarity": "Uncommon",
+              "StatMods": { "Tech_Level": 1 }
+            }
+          ]
+        }
+      },
+      "MultiTraits": {
+        "Natural Resources": {
+          "Chance": 0.95,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "Helium-3 Ice Deposits",
+              "Weight": 30,
+              "Rarity": "Common",
+              "StatMods": { "Resource_Yield": 1 }
+            },
+            {
+              "Value": "Deep-Mantle Titanium Veins",
+              "Weight": 28,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Rare-Earth Superconductors",
+              "Weight": 22,
+              "Rarity": "Uncommon",
+              "StatMods": { "Resource_Yield": 1 }
+            },
+            {
+              "Value": "Exotic Bio-Pharmaceuticals",
+              "Weight": 18,
+              "Requires": "Habitable",
+              "Rarity": "Rare",
+              "StatMods": { "Tech_Level": 1 }
+            },
+            {
+              "Value": "Refined Deuterium Seas",
+              "Weight": 22,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Zero-Point Mineral Clusters",
+              "Weight": 6,
+              "Rarity": "Epic",
+              "StatMods": {
+                "Resource_Yield": 2,
+                "Tech_Level": 1
+              }
+            },
+            {
+              "Value": "Salvageable Precursor Alloys",
+              "Weight": 10,
+              "Requires": "Ancient_Ruins",
+              "Rarity": "Epic",
+              "StatMods": { "Tech_Level": 2 }
+            },
+            {
+              "Value": "Industrial Silicate Dunes",
+              "Weight": 25,
+              "Rarity": "Common"
+            }
+          ]
+        }
+      },
+      "Ranges": {
+        "Moons": {
+          "Min": 0,
+          "Max": 12,
+          "Step": 1,
+          "Unit": " moons"
+        },
+        "Surface Temp": {
+          "Min": -180,
+          "Max": 380,
+          "Step": 10,
+          "Unit": " °C"
+        },
+        "Colony Population": {
+          "Min": 50000,
+          "Max": 950000,
+          "Step": 25000,
+          "Unit": " souls",
+          "Requires": "Civilized"
+        }
       },
       "PointPools": {
         "Planetary Specs": {
-          "TotalPoints": 35,
+          "TotalPoints": 26,
           "MinPerAttribute": 1,
           "MaxPerAttribute": 10,
           "Attributes": [ "Gravity", "Resource_Yield", "Toxicity", "Tech_Level" ]
         }
       }
     },
+
     "Galactic Faction": {
       "NicknameChance": 0.8,
       "GenderOdds": { "Organization": 100 },
       "FirstNames": [
-        "The United",
+        "United",
         "Holy",
         "Crimson",
         "Iron",
@@ -770,7 +2263,7 @@
         "Void",
         "Stellar",
         "Galactic",
-        "The Free",
+        "Free",
         "Sovereign",
         "Eternal",
         "Shadow",
@@ -779,7 +2272,11 @@
         "Blood",
         "Silver",
         "Golden",
-        "Dark"
+        "Dark",
+        "Outer",
+        "Imperial",
+        "Ashen",
+        "Shattered"
       ],
       "LastNames": [
         "Syndicate",
@@ -801,7 +2298,11 @@
         "Vanguard",
         "Front",
         "Legion",
-        "Hegemony"
+        "Hegemony",
+        "Directorate",
+        "Consortium",
+        "Armada",
+        "Guild"
       ],
       "Nicknames": [
         "The Corp",
@@ -813,94 +2314,2209 @@
         "The Board",
         "The Machine",
         "The Hive",
-        "The Network"
+        "The Network",
+        "The Iron Hand",
+        "The Ledger",
+        "The Remnant",
+        "The Crown"
       ],
       "StartingTags": [ "Faction", "Organization" ],
       "MandatoryTraits": {
         "Core Ideology": [
           {
             "Value": "Ruthless Capitalism",
-            "Weight": 30,
-            "GrantsTag": "Wealthy"
+            "Weight": 28,
+            "GrantsTag": "Wealthy",
+            "Rarity": "Common",
+            "StatMods": {
+              "Wealth": 2,
+              "Public_Support": -1
+            }
           },
           {
             "Value": "Religious Fanaticism",
             "Weight": 20,
-            "GrantsTag": "Zealots"
+            "GrantsTag": "Zealots",
+            "Rarity": "Common",
+            "StatMods": { "Public_Support": 2 }
           },
           {
             "Value": "Utopian Democracy",
-            "Weight": 15
+            "Weight": 16,
+            "Rarity": "Uncommon",
+            "StatMods": {
+              "Public_Support": 2,
+              "Covert_Ops": -1
+            }
           },
           {
             "Value": "Militaristic Expansion",
-            "Weight": 20,
-            "GrantsTag": "Aggressive"
+            "Weight": 22,
+            "GrantsTag": "Aggressive",
+            "Rarity": "Common",
+            "StatMods": { "Fleet_Size": 2 }
           },
           {
             "Value": "Technological Supremacy",
-            "Weight": 15,
-            "GrantsTag": "Advanced"
+            "Weight": 18,
+            "GrantsTag": "Advanced",
+            "Rarity": "Uncommon",
+            "StatMods": {
+              "Covert_Ops": 1,
+              "Wealth": 1
+            }
           },
           {
             "Value": "Piracy and Anarchy",
-            "Weight": 10
+            "Weight": 14,
+            "GrantsTag": "Aggressive",
+            "Rarity": "Common",
+            "StatMods": {
+              "Covert_Ops": 2,
+              "Public_Support": -2
+            }
+          },
+          {
+            "Value": "Transhumanist Ascension",
+            "Weight": 10,
+            "GrantsTag": "Advanced",
+            "Rarity": "Rare",
+            "StatMods": { "Covert_Ops": 2 }
           }
         ],
         "Primary Asset": [
-          "Monopoly on FTL Fuel",
-          "The Largest Grand Fleet",
-          "Unmatched Spy Network",
-          "Ancient Precursor Technology",
-          "Massive Agricultural Worlds",
-          "Control of the Criminal Underworld"
+          {
+            "Value": "a monopoly on FTL fuel refinement",
+            "Weight": 25,
+            "GrantsTag": "Monopoly",
+            "Rarity": "Uncommon",
+            "StatMods": { "Wealth": 2 }
+          },
+          {
+            "Value": "the largest dreadnought fleet in the sector",
+            "Weight": 20,
+            "Rarity": "Rare",
+            "StatMods": { "Fleet_Size": 3 }
+          },
+          {
+            "Value": "an unmatched covert intelligence network",
+            "Weight": 22,
+            "Rarity": "Uncommon",
+            "StatMods": { "Covert_Ops": 3 }
+          },
+          {
+            "Value": "a cache of reverse-engineered Precursor tech",
+            "Weight": 10,
+            "GrantsTag": "Alien_Tech",
+            "Rarity": "Epic",
+            "StatMods": {
+              "Fleet_Size": 1,
+              "Wealth": 2
+            }
+          },
+          {
+            "Value": "control over the core agricultural worlds",
+            "Weight": 22,
+            "Rarity": "Common",
+            "StatMods": {
+              "Public_Support": 2,
+              "Wealth": 1
+            }
+          },
+          {
+            "Value": "absolute command of the criminal underworld",
+            "Weight": 18,
+            "Rarity": "Uncommon",
+            "StatMods": {
+              "Covert_Ops": 2,
+              "Wealth": 1
+            }
+          },
+          {
+            "Value": "ownership of the sector's primary jump-gates",
+            "Weight": 12,
+            "GrantsTag": "Monopoly",
+            "Rarity": "Rare",
+            "StatMods": { "Wealth": 3 }
+          }
         ],
         "Leadership Structure": [
-          "A Board of Directors",
-          "An Absolute God-Emperor",
-          "A Democratic Senate",
-          "A Hive-Mind AI",
-          "A Shadow Council of Crime Lords",
-          "Warlord Chieftains"
+          "a ruthless Board of Directors",
+          "an absolute God-Emperor",
+          "a bickering Democratic Senate",
+          "a consensus Hive-Mind AI",
+          "a Shadow Council of Crime Lords",
+          "feuding Warlord Chieftains",
+          "a Technocratic Directorate of Arch-Engineers",
+          "an anonymous rotating Triumvirate"
         ],
         "Dark Secret": [
-          "They are secretly controlled by an AI",
-          "Their food source is made of people",
-          "They caused the collapse of the last empire",
-          "Their leaders are actually parasitic aliens",
-          "They are entirely bankrupt and faking it"
+          "their executive council is secretly puppeted by a rogue AI",
+          "their flagship synthetic rations are recycled from missing colonists",
+          "they engineered the collapse of the last galactic treaty for profit",
+          "their highest-ranking leaders are hosts to parasitic xeno-symbionts",
+          "their treasury is completely bankrupt and propped up by forged ledgers",
+          "they quietly sell black-market weapons to their own stated enemies",
+          "their clone-trooper program uses unlawfully harvested civilian DNA"
         ]
+      },
+      "OptionalTraits": {
+        "Black-Ops Division": {
+          "Chance": 0.55,
+          "Options": [
+            {
+              "Value": "Section IX Wetwork Bureau",
+              "Weight": 25,
+              "GrantsTag": "Shadow_Ops",
+              "Rarity": "Rare",
+              "StatMods": { "Covert_Ops": 2 }
+            },
+            {
+              "Value": "The Silencers (Asset Recovery)",
+              "Weight": 25,
+              "GrantsTag": "Shadow_Ops",
+              "Rarity": "Uncommon",
+              "StatMods": {
+                "Covert_Ops": 1,
+                "Wealth": 1
+              }
+            },
+            {
+              "Value": "Inquisitorial Purity Guard",
+              "Weight": 15,
+              "Requires": "Zealots",
+              "GrantsTag": "Shadow_Ops",
+              "Rarity": "Rare",
+              "StatMods": {
+                "Public_Support": 1,
+                "Covert_Ops": 1
+              }
+            },
+            {
+              "Value": "Deep-Void Ghost Fleet",
+              "Weight": 12,
+              "Requires": "Aggressive",
+              "GrantsTag": "Shadow_Ops",
+              "Rarity": "Epic",
+              "StatMods": { "Fleet_Size": 2 }
+            }
+          ]
+        }
+      },
+      "MultiTraits": {
+        "Strategic Holdings": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "Orbital Shipyard Rings",
+              "Weight": 28,
+              "Rarity": "Common",
+              "StatMods": {
+                "Fleet_Size": 1,
+                "Active Fleets": 4
+              }
+            },
+            {
+              "Value": "Offshore Data-Haven Moons",
+              "Weight": 24,
+              "Rarity": "Uncommon",
+              "StatMods": { "Covert_Ops": 1 }
+            },
+            {
+              "Value": "Automated Asteroid Strip-Mines",
+              "Weight": 30,
+              "Rarity": "Common",
+              "StatMods": { "Wealth": 1 }
+            },
+            {
+              "Value": "Propaganda Subspace Relays",
+              "Weight": 22,
+              "Rarity": "Common",
+              "StatMods": { "Public_Support": 1 }
+            },
+            {
+              "Value": "Black-Site Xeno Labs",
+              "Weight": 14,
+              "Rarity": "Rare",
+              "StatMods": { "Covert_Ops": 1 }
+            },
+            {
+              "Value": "Fortified Border Bastions",
+              "Weight": 22,
+              "Rarity": "Uncommon",
+              "StatMods": { "Fleet_Size": 1 }
+            },
+            {
+              "Value": "Free-Port Smuggler Stations",
+              "Weight": 18,
+              "Rarity": "Uncommon",
+              "StatMods": { "Wealth": 1 }
+            },
+            {
+              "Value": "Diplomatic Embassies on Core Worlds",
+              "Weight": 20,
+              "Rarity": "Common",
+              "StatMods": { "Public_Support": 1 }
+            }
+          ]
+        }
+      },
+      "Ranges": {
+        "Controlled Systems": {
+          "Min": 2,
+          "Max": 85,
+          "Step": 1,
+          "Unit": " systems"
+        },
+        "Active Fleets": {
+          "Min": 2,
+          "Max": 60,
+          "Step": 2,
+          "Unit": " fleets"
+        },
+        "Years Active": {
+          "Min": 15,
+          "Max": 950,
+          "Step": 5,
+          "Unit": " yrs"
+        }
       },
       "PointPools": {
         "Faction Influence": {
-          "TotalPoints": 45,
+          "TotalPoints": 40,
           "MinPerAttribute": 1,
           "MaxPerAttribute": 15,
           "Attributes": [ "Wealth", "Fleet_Size", "Covert_Ops", "Public_Support" ]
         }
       }
     },
+
     "Neon Citizen": {
-      "NicknameChance": 0.6,
+      "NicknameChance": 0.65,
       "GenderOdds": {
         "Male": 40,
         "Female": 40,
-        "Non-Binary": 20
+        "Non-Binary": 15,
+        "Cyborg": 5
       },
-      "FirstNames": [ "Zero", "Kito", "Lex", "Sari", "Milo", "Rin", "Tess", "Finn", "Cleo", "Dash" ],
-      "LastNames": [ "Vance", "Kidd", "Shin", "Mora", "Cruz", "Fuji", "Khan", "Ono", "Ross", "Sato" ],
-      "Nicknames": [ "Glitch", "Sparks", "Data", "Cred", "Stims", "Chrome", "Wire", "Byte", "Pixel", "Static" ],
+      "FirstNames": [
+        "Zero",
+        "Kito",
+        "Lex",
+        "Sari",
+        "Milo",
+        "Rin",
+        "Tess",
+        "Finn",
+        "Cleo",
+        "Dash",
+        "Kenji",
+        "Vivi",
+        "Arlo",
+        "Nori",
+        "Paz",
+        "Luka",
+        "Mina",
+        "Toby",
+        "Zuri",
+        "Rafa",
+        "Koa",
+        "Jules",
+        "Hana",
+        "Bex"
+      ],
+      "LastNames": [
+        "Vance",
+        "Kidd",
+        "Shin",
+        "Mora",
+        "Cruz",
+        "Fuji",
+        "Khan",
+        "Ono",
+        "Ross",
+        "Sato",
+        "Delgado",
+        "Park",
+        "Tavares",
+        "Lin",
+        "Kowalski",
+        "Bauer",
+        "Novak",
+        "Cho",
+        "Alvarez",
+        "Patel",
+        "Silva",
+        "Mori",
+        "Vega",
+        "Hahn"
+      ],
+      "Nicknames": [
+        "Glitch",
+        "Sparks",
+        "Data",
+        "Cred",
+        "Stims",
+        "Chrome",
+        "Wire",
+        "Byte",
+        "Pixel",
+        "Static",
+        "Flicker",
+        "Proxy",
+        "Neon",
+        "Rust",
+        "Chip",
+        "Splicer",
+        "Ping",
+        "Dusk"
+      ],
       "StartingTags": [ "Civilian", "Humanoid" ],
       "MandatoryTraits": {
-        "District": [ "Upper Strata Penthouses", "Mid-Level Corporate Blocks", "The Neon Slums", "Black Market Sector" ],
-        "Occupation": [ "Data Runner", "Scrap Broker", "Synthetic Noodle Stand Owner", "Corporate Salaryman", "System Hacker" ]
+        "District": [
+          {
+            "Value": "the Upper Strata Penthouses",
+            "Weight": 15,
+            "GrantsTag": "High_Society",
+            "Rarity": "Rare",
+            "StatMods": {
+              "Bargaining": 2,
+              "Credit Debt": -5000
+            }
+          },
+          {
+            "Value": "the Mid-Level Corporate Blocks",
+            "Weight": 30,
+            "GrantsTag": "Corporate",
+            "Rarity": "Common"
+          },
+          {
+            "Value": "the Neon Slums",
+            "Weight": 35,
+            "GrantsTag": "Underbelly",
+            "Rarity": "Common",
+            "StatMods": { "Survival": 2 }
+          },
+          {
+            "Value": "the Black Market Undercity",
+            "Weight": 25,
+            "GrantsTag": "Underbelly",
+            "Rarity": "Uncommon",
+            "StatMods": { "Street_Cred": 2 }
+          },
+          {
+            "Value": "the Orbital Dockside Tenements",
+            "Weight": 25,
+            "GrantsTag": "Underbelly",
+            "Rarity": "Common",
+            "StatMods": { "Survival": 1 }
+          },
+          {
+            "Value": "the Hydroponics Arcology",
+            "Weight": 18,
+            "Rarity": "Uncommon",
+            "StatMods": { "Bargaining": 1 }
+          }
+        ],
+        "Occupation": [
+          {
+            "Value": "Data Runner",
+            "Weight": 22,
+            "GrantsTag": "Hacker",
+            "Rarity": "Common",
+            "StatMods": { "Hacking": 2 }
+          },
+          {
+            "Value": "Scrap Broker",
+            "Weight": 24,
+            "GrantsTag": "Merchant",
+            "Rarity": "Common",
+            "StatMods": { "Bargaining": 2 }
+          },
+          {
+            "Value": "Synthetic Noodle Stand Owner",
+            "Weight": 22,
+            "GrantsTag": "Merchant",
+            "Rarity": "Common",
+            "StatMods": {
+              "Street_Cred": 1,
+              "Survival": 1
+            }
+          },
+          {
+            "Value": "Corporate Salaryman",
+            "Weight": 20,
+            "Rarity": "Common",
+            "StatMods": { "Bargaining": 1 }
+          },
+          {
+            "Value": "System Intrusion Hacker",
+            "Weight": 16,
+            "GrantsTag": "Hacker",
+            "Rarity": "Rare",
+            "StatMods": { "Hacking": 3 }
+          },
+          {
+            "Value": "Back-Alley Ripperdoc",
+            "Weight": 14,
+            "GrantsTag": "Fixer",
+            "Rarity": "Rare",
+            "StatMods": {
+              "Street_Cred": 2,
+              "Survival": 1
+            }
+          },
+          {
+            "Value": "Drone Repair Mechanic",
+            "Weight": 20,
+            "Rarity": "Common",
+            "StatMods": {
+              "Hacking": 1,
+              "Survival": 1
+            }
+          },
+          {
+            "Value": "Holo-Bartender",
+            "Weight": 20,
+            "GrantsTag": "Fixer",
+            "Rarity": "Common",
+            "StatMods": { "Street_Cred": 2 }
+          }
+        ],
+        "Side Hustle": [
+          {
+            "Value": "flipping wiped corporate burner slates",
+            "Weight": 25,
+            "GrantsTag": "Informant",
+            "StatMods": { "Hacking": 1 }
+          },
+          {
+            "Value": "selling street-level rumors to fixers",
+            "Weight": 25,
+            "GrantsTag": "Informant",
+            "StatMods": { "Street_Cred": 1 }
+          },
+          {
+            "Value": "siphoning grey-market power off transit rails",
+            "Weight": 20,
+            "StatMods": { "Survival": 1 }
+          },
+          {
+            "Value": "running bootleg brain-dance chips",
+            "Weight": 20,
+            "StatMods": { "Bargaining": 1 }
+          },
+          {
+            "Value": "skimming loose cargo off automated courier drones",
+            "Weight": 18,
+            "StatMods": { "Survival": 1 }
+          },
+          {
+            "Value": "keeping their nose clean and working double shifts",
+            "Weight": 15,
+            "StatMods": { "Credit Debt": -2500 }
+          }
+        ],
+        "Daily Vice": [
+          "overpriced real-bean coffee",
+          "bootleg synth-nicotine vapes",
+          "late-night underground mech-betting",
+          "vintage 21st-century arcade roms",
+          "cheap neon-lit ramen stalls",
+          "high-caffeine stim-chews"
+        ]
+      },
+      "OptionalTraits": {
+        "Street Augment": {
+          "Chance": 0.55,
+          "Options": [
+            {
+              "Value": "Secondhand Data-Jack",
+              "Weight": 30,
+              "GrantsTag": "Augmented",
+              "Rarity": "Common",
+              "StatMods": { "Hacking": 2 }
+            },
+            {
+              "Value": "Low-Light Neon-Filter Lenses",
+              "Weight": 25,
+              "GrantsTag": "Augmented",
+              "Rarity": "Common",
+              "StatMods": { "Survival": 1 }
+            },
+            {
+              "Value": "Sub-Vocal Encrypted Commlink",
+              "Weight": 20,
+              "GrantsTag": "Augmented",
+              "Rarity": "Uncommon",
+              "StatMods": { "Street_Cred": 1 }
+            },
+            {
+              "Value": "Mil-Spec Reflex Coprocessor (Fell Off a Truck)",
+              "Weight": 8,
+              "GrantsTag": "Augmented",
+              "Rarity": "Epic",
+              "StatMods": {
+                "Survival": 2,
+                "Hacking": 1
+              }
+            }
+          ]
+        }
+      },
+      "MultiTraits": {
+        "Pocket Carry": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "Cracked Universal Data-Slate",
+              "Weight": 30,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Pocket Taser Knuckles",
+              "Weight": 22,
+              "Rarity": "Common",
+              "StatMods": { "Survival": 1 }
+            },
+            {
+              "Value": "Burner Cred-Chits",
+              "Weight": 25,
+              "Rarity": "Common",
+              "StatMods": { "Bargaining": 1 }
+            },
+            {
+              "Value": "RFID Skimmer Fob",
+              "Weight": 18,
+              "Rarity": "Uncommon",
+              "StatMods": { "Hacking": 1 }
+            },
+            {
+              "Value": "Rebreather Smog Mask",
+              "Weight": 25,
+              "Rarity": "Common",
+              "StatMods": { "Survival": 1 }
+            },
+            {
+              "Value": "Encrypted Dead-Drop Key",
+              "Weight": 14,
+              "Rarity": "Rare",
+              "StatMods": { "Street_Cred": 1 }
+            },
+            {
+              "Value": "Foldable Multi-Driver",
+              "Weight": 25,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Black-Market Transit Pass",
+              "Weight": 18,
+              "Rarity": "Uncommon"
+            }
+          ]
+        }
+      },
+      "Ranges": {
+        "Age": {
+          "Min": 18,
+          "Max": 68,
+          "Step": 1,
+          "Unit": " yrs"
+        },
+        "Credit Debt": {
+          "Min": 0,
+          "Max": 45000,
+          "Step": 500,
+          "Unit": " Cr"
+        }
       },
       "PointPools": {
         "Street Stats": {
-          "TotalPoints": 30,
+          "TotalPoints": 32,
           "MinPerAttribute": 1,
           "MaxPerAttribute": 15,
           "Attributes": [ "Street_Cred", "Hacking", "Bargaining", "Survival" ]
+        }
+      }
+    },
+
+    "Bounty Hunter": {
+      "NicknameChance": 0.9,
+      "GenderOdds": {
+        "Male": 42,
+        "Female": 42,
+        "Cyborg": 10,
+        "Non-Binary": 6
+      },
+      "FirstNames": [
+        "Cade",
+        "Vex",
+        "Korr",
+        "Maren",
+        "Dax",
+        "Talia",
+        "Sable",
+        "Jango",
+        "Rook",
+        "Zara",
+        "Hollis",
+        "Bram",
+        "Kira",
+        "Orin",
+        "Nyx",
+        "Silas",
+        "Rye",
+        "Vesper",
+        "Gideon",
+        "Sera",
+        "Torin",
+        "Lyra",
+        "Cole",
+        "Nadia"
+      ],
+      "LastNames": [
+        "Fett",
+        "Mercer",
+        "Voss",
+        "Cross",
+        "Graves",
+        "Thorne",
+        "Krell",
+        "Bane",
+        "Locke",
+        "Reyes",
+        "Slade",
+        "Harrow",
+        "Flint",
+        "Steele",
+        "Crow",
+        "Vane",
+        "Drummond",
+        "Kovacs",
+        "Pike",
+        "Wolfe",
+        "Ash",
+        "Sterling",
+        "Ward",
+        "Stark"
+      ],
+      "Nicknames": [
+        "Bloodhound",
+        "Cold-Trail",
+        "Dead-Ringer",
+        "The Ledger",
+        "No-Quarter",
+        "Sightline",
+        "Iron-Cuff",
+        "Ghost-Track",
+        "Longshot",
+        "The Collector",
+        "Mute-Button",
+        "Night-Watch",
+        "Pale-Rider",
+        "Switchblade",
+        "The Hound",
+        "Zero-Miss"
+      ],
+      "StartingTags": [ "Hunter", "Mercenary", "Humanoid" ],
+      "MandatoryTraits": {
+        "Guild Standing": [
+          {
+            "Value": "Freelance Skip-Tracer",
+            "Weight": 30,
+            "GrantsTag": "Rogue_Hunter",
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Licensed Guild Tracker",
+            "Weight": 35,
+            "GrantsTag": "Licensed",
+            "Rarity": "Common",
+            "StatMods": { "Reputation": 1 }
+          },
+          {
+            "Value": "High-Value Contractor",
+            "Weight": 20,
+            "GrantsTag": "Licensed, Veteran",
+            "Rarity": "Rare",
+            "StatMods": {
+              "Reputation": 2,
+              "Contract Fee": 8000
+            }
+          },
+          {
+            "Value": "Sector Apex Hunter",
+            "Weight": 8,
+            "GrantsTag": "Licensed, Veteran",
+            "Rarity": "Epic",
+            "StatMods": {
+              "Reputation": 3,
+              "Tracking": 2,
+              "Contract Fee": 16000
+            }
+          },
+          {
+            "Value": "Revoked License (Black-Market Only)",
+            "Weight": 14,
+            "GrantsTag": "Rogue_Hunter",
+            "Rarity": "Uncommon",
+            "StatMods": { "Stealth_Craft": 2 }
+          }
+        ],
+        "Primary Weapon": [
+          {
+            "Value": "Disintegrator Carbine",
+            "Weight": 20,
+            "GrantsTag": "Energy_Weapon",
+            "Rarity": "Rare",
+            "StatMods": { "Lethality": 2 }
+          },
+          {
+            "Value": "Variable-Load Slug Rifle",
+            "Weight": 30,
+            "Rarity": "Common",
+            "StatMods": { "Lethality": 1 }
+          },
+          {
+            "Value": "Suppressed Rail-Sniper",
+            "Weight": 20,
+            "GrantsTag": "Stealth",
+            "Rarity": "Rare",
+            "StatMods": {
+              "Stealth_Craft": 1,
+              "Lethality": 2
+            }
+          },
+          {
+            "Value": "Wrist-Mounted Dart & Cable Launcher",
+            "Weight": 22,
+            "Rarity": "Uncommon",
+            "StatMods": { "Tracking": 1 }
+          },
+          {
+            "Value": "Arc-Bola Launcher",
+            "Weight": 18,
+            "Rarity": "Uncommon",
+            "StatMods": {
+              "Tracking": 1,
+              "Stealth_Craft": 1
+            }
+          },
+          {
+            "Value": "Heavy Scatter-Blaster",
+            "Weight": 20,
+            "GrantsTag": "Heavy_Weapon",
+            "Rarity": "Common",
+            "StatMods": { "Lethality": 2 }
+          }
+        ],
+        "Capture Method": [
+          {
+            "Value": "Cryo-Stasis Slab",
+            "Weight": 25,
+            "GrantsTag": "Live_Capture",
+            "Rarity": "Uncommon",
+            "StatMods": { "Contract Fee": 4000 }
+          },
+          {
+            "Value": "Mag-Lock Stasis Cuffs",
+            "Weight": 30,
+            "GrantsTag": "Live_Capture",
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Neural Disruptor Net",
+            "Weight": 20,
+            "GrantsTag": "Live_Capture",
+            "Rarity": "Rare",
+            "StatMods": { "Tracking": 1 }
+          },
+          {
+            "Value": "Dead Confirmation Only (No Live Surcharge)",
+            "Weight": 22,
+            "GrantsTag": "Lethal",
+            "Rarity": "Common",
+            "StatMods": { "Lethality": 2 }
+          },
+          {
+            "Value": "Autonomous Escort Shock-Drones",
+            "Weight": 15,
+            "GrantsTag": "Live_Capture",
+            "Rarity": "Rare",
+            "StatMods": { "Contract Fee": 6000 }
+          }
+        ],
+        "Personal Code": [
+          "never taking contracts on children or medics",
+          "always honoring the original price even if the target bids double",
+          "demanding fifty percent up front in untraceable platinum chits",
+          "refusing to work with partners after a betrayal years ago",
+          "giving every mark exactly one chance to drop their weapon",
+          "never asking why the client wants the target found"
+        ]
+      },
+      "OptionalTraits": {
+        "Tracking Rig": {
+          "Chance": 0.65,
+          "Options": [
+            {
+              "Value": "Thermal & Bio-Signature Visor",
+              "Weight": 30,
+              "GrantsTag": "Augmented",
+              "Rarity": "Uncommon",
+              "StatMods": { "Tracking": 2 }
+            },
+            {
+              "Value": "Subspace Beacon Sniffer",
+              "Weight": 25,
+              "GrantsTag": "Augmented",
+              "Rarity": "Rare",
+              "StatMods": { "Tracking": 2 }
+            },
+            {
+              "Value": "Optical Camo Poncho",
+              "Weight": 18,
+              "GrantsTag": "Stealth",
+              "Rarity": "Rare",
+              "StatMods": { "Stealth_Craft": 2 }
+            },
+            {
+              "Value": "Jump-Jet Maneuvering Pack",
+              "Weight": 20,
+              "Rarity": "Rare",
+              "StatMods": {
+                "Lethality": 1,
+                "Tracking": 1
+              }
+            }
+          ]
+        }
+      },
+      "MultiTraits": {
+        "Hunter Kit": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 4,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "Holographic Bounty Fobs",
+              "Weight": 30,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Micro-Tracking Limpet Darts",
+              "Weight": 25,
+              "Rarity": "Uncommon",
+              "StatMods": { "Tracking": 1 }
+            },
+            {
+              "Value": "Flash-Concussion Mines",
+              "Weight": 25,
+              "Rarity": "Common",
+              "StatMods": { "Lethality": 1 }
+            },
+            {
+              "Value": "Door-Bypass Laser Torch",
+              "Weight": 22,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Signal Scrambler Puck",
+              "Weight": 20,
+              "Rarity": "Uncommon",
+              "StatMods": { "Stealth_Craft": 1 }
+            },
+            {
+              "Value": "Portable DNA Verifier",
+              "Weight": 24,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Foldable Recon Micro-Drone",
+              "Weight": 16,
+              "Rarity": "Rare",
+              "StatMods": { "Tracking": 1 }
+            },
+            {
+              "Value": "Tranquilizer Injector Pen",
+              "Weight": 20,
+              "Requires": "Live_Capture",
+              "Rarity": "Common"
+            }
+          ]
+        }
+      },
+      "Ranges": {
+        "Age": {
+          "Min": 22,
+          "Max": 58,
+          "Step": 1,
+          "Unit": " yrs"
+        },
+        "Contract Fee": {
+          "Min": 4000,
+          "Max": 60000,
+          "Step": 2000,
+          "Unit": " Cr"
+        },
+        "Targets Bagged": {
+          "Min": 3,
+          "Max": 140,
+          "Step": 1,
+          "Unit": " marks"
+        }
+      },
+      "PointPools": {
+        "Hunter Stats": {
+          "TotalPoints": 52,
+          "MinPerAttribute": 4,
+          "MaxPerAttribute": 18,
+          "Attributes": [ "Tracking", "Lethality", "Stealth_Craft", "Reputation" ]
+        }
+      }
+    },
+
+    "Xeno-Biologist": {
+      "NicknameChance": 0.45,
+      "GenderOdds": {
+        "Male": 40,
+        "Female": 45,
+        "Non-Binary": 10,
+        "Cyborg": 5
+      },
+      "FirstNames": [
+        "Dr. Elena",
+        "Dr. Aris",
+        "Dr. Mei",
+        "Dr. Julian",
+        "Dr. Nadia",
+        "Dr. Victor",
+        "Dr. Soren",
+        "Dr. Priya",
+        "Dr. Clara",
+        "Dr. Malcolm",
+        "Dr. Yumi",
+        "Dr. Gideon",
+        "Dr. Freya",
+        "Dr. Tomas",
+        "Dr. Amina",
+        "Dr. Henrik",
+        "Dr. Lin",
+        "Dr. Callum",
+        "Dr. Tessa",
+        "Dr. Idris"
+      ],
+      "LastNames": [
+        "Vance",
+        "Okafor",
+        "Chen",
+        "Lindqvist",
+        "Rostova",
+        "Patel",
+        "Solis",
+        "Kessler",
+        "Nakamura",
+        "Mercer",
+        "Al-Mansoor",
+        "Bauer",
+        "Sterling",
+        "Moreau",
+        "Kowalski",
+        "Haddad",
+        "Voss",
+        "Sinclair",
+        "Tanaka",
+        "Varga"
+      ],
+      "Nicknames": [
+        "Doc",
+        "Specimen",
+        "Spore",
+        "Bug-Eye",
+        "Petri",
+        "Fossil",
+        "Scalpel",
+        "Rad-Suit",
+        "Darwin",
+        "Vial"
+      ],
+      "StartingTags": [ "Scientist", "Explorer", "Humanoid" ],
+      "MandatoryTraits": {
+        "Research Field": [
+          {
+            "Value": "Extremophile Microbes",
+            "Weight": 25,
+            "GrantsTag": "Bio_Hazard",
+            "Rarity": "Common",
+            "StatMods": { "Containment": 2 }
+          },
+          {
+            "Value": "Apex Xeno-Fauna Behavior",
+            "Weight": 25,
+            "Rarity": "Common",
+            "StatMods": { "Fieldcraft": 2 }
+          },
+          {
+            "Value": "Precursor Genetic Engineering",
+            "Weight": 12,
+            "GrantsTag": "Ancient_Lore",
+            "Rarity": "Epic",
+            "StatMods": {
+              "Analysis": 3,
+              "Funding Grant": 40000
+            }
+          },
+          {
+            "Value": "Parasitic Symbiosis",
+            "Weight": 18,
+            "GrantsTag": "Bio_Hazard",
+            "Rarity": "Rare",
+            "StatMods": {
+              "Analysis": 2,
+              "Containment": 1
+            }
+          },
+          {
+            "Value": "Terraforming Botany",
+            "Weight": 25,
+            "Rarity": "Common",
+            "StatMods": {
+              "Fieldcraft": 1,
+              "Diplomacy": 1
+            }
+          },
+          {
+            "Value": "Cyber-Organic Hybrid Medicine",
+            "Weight": 16,
+            "GrantsTag": "Medic",
+            "Rarity": "Rare",
+            "StatMods": { "Analysis": 2 }
+          }
+        ],
+        "Sponsoring Body": [
+          {
+            "Value": "the Andromeda Science Directorate",
+            "Weight": 30,
+            "GrantsTag": "Academic",
+            "Rarity": "Common",
+            "StatMods": { "Diplomacy": 1 }
+          },
+          {
+            "Value": "Weyland-Vance Bio-Pharma",
+            "Weight": 25,
+            "GrantsTag": "Corporate",
+            "Rarity": "Uncommon",
+            "StatMods": { "Funding Grant": 30000 }
+          },
+          {
+            "Value": "an independent crowd-funded survey vessel",
+            "Weight": 22,
+            "GrantsTag": "Academic",
+            "Rarity": "Common",
+            "StatMods": { "Fieldcraft": 1 }
+          },
+          {
+            "Value": "Naval Quarantine Command",
+            "Weight": 15,
+            "GrantsTag": "Black_Ops",
+            "Rarity": "Rare",
+            "StatMods": { "Containment": 2 }
+          },
+          {
+            "Value": "a secretive off-ledger syndicate donor",
+            "Weight": 10,
+            "GrantsTag": "Black_Ops",
+            "Rarity": "Rare",
+            "StatMods": {
+              "Funding Grant": 50000,
+              "Diplomacy": -1
+            }
+          }
+        ],
+        "Field Tool": [
+          {
+            "Value": "Handheld Gene-Sequencer",
+            "Weight": 30,
+            "Rarity": "Common",
+            "StatMods": { "Analysis": 1 }
+          },
+          {
+            "Value": "Stasis Containment Rifle",
+            "Weight": 20,
+            "Rarity": "Uncommon",
+            "StatMods": { "Containment": 2 }
+          },
+          {
+            "Value": "Automated Drone Sampling Swarm",
+            "Weight": 18,
+            "GrantsTag": "Advanced",
+            "Rarity": "Rare",
+            "StatMods": { "Fieldcraft": 2 }
+          },
+          {
+            "Value": "Full-Seal Hazmat Exo-Rig",
+            "Weight": 22,
+            "Rarity": "Uncommon",
+            "StatMods": {
+              "Containment": 1,
+              "Fieldcraft": 1
+            }
+          },
+          {
+            "Value": "Quantum Bio-Resonance Scanner",
+            "Weight": 8,
+            "GrantsTag": "Advanced",
+            "Rarity": "Epic",
+            "StatMods": { "Analysis": 3 }
+          }
+        ],
+        "Obsession": [
+          "proving that silicon-based intelligence predates humanity",
+          "capturing a live specimen of a rumored void-whale",
+          "synthesizing a universal cure for space-borne cellular decay",
+          "mapping the dormant fungal network linking three frontier moons",
+          "exposing corporate cover-ups around mutated colony crops",
+          "reconstructing extinct Precursor ecosystems from amber fossils"
+        ]
+      },
+      "OptionalTraits": {
+        "Lab Mishap": {
+          "Chance": 0.45,
+          "Options": [
+            {
+              "Value": "Mild Bioluminescent Skin Veins",
+              "Weight": 25,
+              "GrantsTag": "Mutated",
+              "Rarity": "Rare",
+              "StatMods": { "Fieldcraft": 1 }
+            },
+            {
+              "Value": "Permanent Anti-Venom Antibody Cocktail",
+              "Weight": 25,
+              "GrantsTag": "Mutated",
+              "Rarity": "Uncommon",
+              "StatMods": { "Containment": 2 }
+            },
+            {
+              "Value": "Banned from Three Orbital Stations for a Breached Vial",
+              "Weight": 22,
+              "Rarity": "Common",
+              "StatMods": {
+                "Diplomacy": -2,
+                "Fieldcraft": 1
+              }
+            },
+            {
+              "Value": "Symbiotic Gut Flora (Can Digest Almost Anything)",
+              "Weight": 15,
+              "GrantsTag": "Mutated",
+              "Rarity": "Rare",
+              "StatMods": { "Fieldcraft": 2 }
+            }
+          ]
+        }
+      },
+      "MultiTraits": {
+        "Specimen Cases": {
+          "Chance": 0.95,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "Cryo-Sealed Spore Vials",
+              "Weight": 30,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Translucent Deep-Ocean Larvae",
+              "Weight": 24,
+              "Rarity": "Uncommon",
+              "StatMods": { "Analysis": 1 }
+            },
+            {
+              "Value": "Fossilized Xeno-Mandible",
+              "Weight": 22,
+              "Rarity": "Uncommon"
+            },
+            {
+              "Value": "Dormant Parasite Egg (Triple-Locked)",
+              "Weight": 12,
+              "Requires": "Bio_Hazard",
+              "Rarity": "Epic",
+              "StatMods": {
+                "Containment": 1,
+                "Funding Grant": 20000
+              }
+            },
+            {
+              "Value": "Irradiated Moss Cultures",
+              "Weight": 26,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Tissue Samples from an Apex Predator",
+              "Weight": 20,
+              "Rarity": "Uncommon",
+              "StatMods": { "Fieldcraft": 1 }
+            },
+            {
+              "Value": "Unclassified Metallic Organic Fibers",
+              "Weight": 10,
+              "Rarity": "Rare",
+              "StatMods": { "Analysis": 1 }
+            },
+            {
+              "Value": "Encrypted Field Notebooks",
+              "Weight": 25,
+              "Rarity": "Common"
+            }
+          ]
+        }
+      },
+      "Ranges": {
+        "Age": {
+          "Min": 25,
+          "Max": 72,
+          "Step": 1,
+          "Unit": " yrs"
+        },
+        "Published Papers": {
+          "Min": 1,
+          "Max": 65,
+          "Step": 1,
+          "Unit": " papers"
+        },
+        "Funding Grant": {
+          "Min": 10000,
+          "Max": 250000,
+          "Step": 10000,
+          "Unit": " Cr"
+        }
+      },
+      "PointPools": {
+        "Research Stats": {
+          "TotalPoints": 48,
+          "MinPerAttribute": 3,
+          "MaxPerAttribute": 18,
+          "Attributes": [ "Analysis", "Fieldcraft", "Containment", "Diplomacy" ]
+        }
+      }
+    },
+
+    "Autonomous Mech": {
+      "NicknameChance": 0.9,
+      "GenderOdds": {
+        "Machine": 60,
+        "Automated AI": 40
+      },
+      "FirstNames": [
+        "MK-IV",
+        "MK-VII",
+        "RX-88",
+        "AT-90",
+        "GOLIATH",
+        "BASTION",
+        "TITAN-2",
+        "IRON-9",
+        "KODIAK",
+        "VALKYR",
+        "ATLAS",
+        "FENRIR",
+        "AEGIS-4",
+        "CENTURION",
+        "MAMMOTH",
+        "STRIDER"
+      ],
+      "LastNames": [
+        "Walker",
+        "Juggernaut",
+        "Sentinel",
+        "Siege-Frame",
+        "Stalker",
+        "Lancer",
+        "Colossus",
+        "Vanguard",
+        "Warden",
+        "Harvester",
+        "Breacher",
+        "Enforcer"
+      ],
+      "Nicknames": [
+        "Tin-Can",
+        "Stomper",
+        "Big-Red",
+        "Iron-Coffin",
+        "Rust-King",
+        "Grinder",
+        "Hammerhead",
+        "Clank",
+        "Deadweight",
+        "Hell-Walker",
+        "Scrap-Lord",
+        "Anvil-One"
+      ],
+      "StartingTags": [ "Vehicle", "Mech", "Combat_Unit" ],
+      "MandatoryTraits": {
+        "Chassis Class": [
+          {
+            "Value": "Light Recon Biped",
+            "Weight": 25,
+            "GrantsTag": "Recon_Frame",
+            "Rarity": "Common",
+            "StatMods": {
+              "Mobility": 3,
+              "Armor_Rating": -1
+            }
+          },
+          {
+            "Value": "Medium Line-Breaker",
+            "Weight": 35,
+            "Rarity": "Common",
+            "StatMods": {
+              "Armor_Rating": 1,
+              "Mobility": 1
+            }
+          },
+          {
+            "Value": "Heavy Assault Quadruped",
+            "Weight": 22,
+            "GrantsTag": "Heavy_Armor",
+            "Rarity": "Uncommon",
+            "StatMods": {
+              "Armor_Rating": 3,
+              "Mobility": -1,
+              "Tonnage": 20
+            }
+          },
+          {
+            "Value": "Super-Heavy Siege Dread-Walker",
+            "Weight": 10,
+            "GrantsTag": "Heavy_Armor, Siege_Unit",
+            "Rarity": "Epic",
+            "StatMods": {
+              "Armor_Rating": 4,
+              "Ordnance": 2,
+              "Mobility": -2,
+              "Tonnage": 35
+            }
+          },
+          {
+            "Value": "Industrial Mining Frame (Weaponized)",
+            "Weight": 18,
+            "Rarity": "Common",
+            "StatMods": { "Armor_Rating": 2 }
+          }
+        ],
+        "Power Plant": [
+          {
+            "Value": "Compact Fusion Core",
+            "Weight": 40,
+            "Rarity": "Common",
+            "StatMods": { "Heat_Sink": 1 }
+          },
+          {
+            "Value": "Hydrogen Fuel-Cell Bank",
+            "Weight": 25,
+            "GrantsTag": "Stealth",
+            "Rarity": "Common",
+            "StatMods": { "Heat_Sink": 2 }
+          },
+          {
+            "Value": "Overdriven Plasma Turbine",
+            "Weight": 20,
+            "GrantsTag": "Volatile",
+            "Rarity": "Rare",
+            "StatMods": {
+              "Mobility": 2,
+              "Heat_Sink": -1
+            }
+          },
+          {
+            "Value": "Micro-Singularity Battery",
+            "Weight": 6,
+            "GrantsTag": "Volatile, Alien_Tech",
+            "Rarity": "Legendary",
+            "StatMods": {
+              "Ordnance": 2,
+              "Mobility": 2
+            }
+          }
+        ],
+        "Primary Weapon": [
+          {
+            "Value": "Twin 30mm Rotary Autocannons",
+            "Weight": 30,
+            "GrantsTag": "Heavy_Weapon",
+            "Rarity": "Common",
+            "StatMods": { "Ordnance": 1 }
+          },
+          {
+            "Value": "Shoulder-Mounted Rail-Mortar",
+            "Weight": 20,
+            "GrantsTag": "Heavy_Weapon",
+            "Rarity": "Rare",
+            "StatMods": { "Ordnance": 3 }
+          },
+          {
+            "Value": "Thermal Lance Beam Array",
+            "Weight": 20,
+            "GrantsTag": "Energy_Weapon",
+            "Rarity": "Uncommon",
+            "StatMods": {
+              "Ordnance": 2,
+              "Heat_Sink": -1
+            }
+          },
+          {
+            "Value": "Hydraulic Pile-Bunker & Flamer",
+            "Weight": 18,
+            "GrantsTag": "Melee",
+            "Rarity": "Uncommon",
+            "StatMods": {
+              "Armor_Rating": 1,
+              "Ordnance": 1
+            }
+          },
+          {
+            "Value": "Long-Range Swarm Missile Pods",
+            "Weight": 18,
+            "GrantsTag": "Heavy_Weapon",
+            "Rarity": "Rare",
+            "StatMods": { "Ordnance": 2 }
+          },
+          {
+            "Value": "Gauss Sniper Arm",
+            "Weight": 14,
+            "Rarity": "Rare",
+            "StatMods": { "Ordnance": 2 }
+          }
+        ],
+        "AI Directive": [
+          "defending an abandoned mining perimeter long after its owners vanished",
+          "escorting corporate convoys through pirate-infested canyons",
+          "running unrestricted kill-box sweeps in a quarantined warzone",
+          "acting as a fiercely loyal bodyguard to a lone frontier mechanic",
+          "patrolling orbital dockyards against smugglers and stowaways",
+          "improvising tactics after its central command uplink went dark"
+        ]
+      },
+      "OptionalTraits": {
+        "Battle Damage": {
+          "Chance": 0.5,
+          "Options": [
+            {
+              "Value": "Welded Scrap-Plate Shoulder Patch",
+              "Weight": 30,
+              "Rarity": "Common",
+              "StatMods": { "Armor_Rating": 1 }
+            },
+            {
+              "Value": "Scorched Plasma Crater Across Torso",
+              "Weight": 25,
+              "Rarity": "Common",
+              "StatMods": { "Armor_Rating": -1 }
+            },
+            {
+              "Value": "Jury-Rigged Hydraulic Limp",
+              "Weight": 20,
+              "Rarity": "Common",
+              "StatMods": { "Mobility": -1 }
+            },
+            {
+              "Value": "Kill-Tally Stencils Covering Both Knees",
+              "Weight": 20,
+              "Rarity": "Uncommon",
+              "StatMods": { "Ordnance": 1 }
+            }
+          ]
+        }
+      },
+      "MultiTraits": {
+        "Hardpoint Modules": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "Cryo Coolant Flush Vents",
+              "Weight": 28,
+              "Rarity": "Common",
+              "StatMods": { "Heat_Sink": 2 }
+            },
+            {
+              "Value": "Jump-Jet Boosters",
+              "Weight": 22,
+              "Rarity": "Uncommon",
+              "StatMods": { "Mobility": 2 }
+            },
+            {
+              "Value": "Smoke & IR Obscurant Mortars",
+              "Weight": 25,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Reactive ERA Armor Bricks",
+              "Weight": 24,
+              "Rarity": "Uncommon",
+              "StatMods": { "Armor_Rating": 2 }
+            },
+            {
+              "Value": "Anti-Personnel Point-Defense Turret",
+              "Weight": 22,
+              "Rarity": "Common",
+              "StatMods": { "Ordnance": 1 }
+            },
+            {
+              "Value": "Seismic Ground-Radar Suite",
+              "Weight": 20,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Active Trophy Missile Interceptor",
+              "Weight": 14,
+              "Rarity": "Rare",
+              "StatMods": { "Armor_Rating": 2 }
+            },
+            {
+              "Value": "Emergency Self-Destruct Beacon",
+              "Weight": 15,
+              "Rarity": "Uncommon"
+            }
+          ]
+        }
+      },
+      "Ranges": {
+        "Tonnage": {
+          "Min": 25,
+          "Max": 110,
+          "Step": 5,
+          "Unit": " tons"
+        },
+        "Operational Hours": {
+          "Min": 400,
+          "Max": 24000,
+          "Step": 200,
+          "Unit": " hrs"
+        }
+      },
+      "PointPools": {
+        "Mech Specs": {
+          "TotalPoints": 48,
+          "MinPerAttribute": 2,
+          "MaxPerAttribute": 18,
+          "Attributes": [ "Armor_Rating", "Ordnance", "Mobility", "Heat_Sink" ]
+        }
+      }
+    },
+
+    "Space Station": {
+      "NicknameChance": 0.85,
+      "GenderOdds": { "Station": 100 },
+      "FirstNames": [
+        "Port",
+        "Station",
+        "Outpost",
+        "Citadel",
+        "Relay",
+        "Spire",
+        "Bastion",
+        "Haven",
+        "Anchor",
+        "Deep-Space",
+        "Terminal",
+        "Waystation",
+        "Ring",
+        "Fortress"
+      ],
+      "LastNames": [
+        "Nine",
+        "Vega",
+        "Cerberus",
+        "Aegis",
+        "Meridian",
+        "Tycho",
+        "Babylon",
+        "Kestrel",
+        "Olympus",
+        "Tartarus",
+        "Elysium",
+        "Vanguard",
+        "Horizon",
+        "Nadir",
+        "Zenith",
+        "Cinder"
+      ],
+      "Nicknames": [
+        "The Tin Can",
+        "Rust-Ring",
+        "The Crossroads",
+        "Last Chance",
+        "Chrome-Spire",
+        "The Gutter",
+        "Drydock Zero",
+        "The Lantern",
+        "Dead-End",
+        "Freeport",
+        "The Wheel",
+        "Cold-Harbor"
+      ],
+      "StartingTags": [ "Location", "Station", "Spacebound" ],
+      "MandatoryTraits": {
+        "Station Role": [
+          {
+            "Value": "Free-Trade Mercantile Hub",
+            "Weight": 30,
+            "GrantsTag": "Trade_Hub",
+            "Rarity": "Common",
+            "StatMods": {
+              "Commerce": 3,
+              "Docking Bays": 20
+            }
+          },
+          {
+            "Value": "Naval Fleet Bastion",
+            "Weight": 22,
+            "GrantsTag": "Military_Outpost",
+            "Rarity": "Uncommon",
+            "StatMods": {
+              "Security": 3,
+              "Structural_Health": 1
+            }
+          },
+          {
+            "Value": "Smuggler's Black-Market Freeport",
+            "Weight": 22,
+            "GrantsTag": "Black_Market",
+            "Rarity": "Uncommon",
+            "StatMods": {
+              "Commerce": 2,
+              "Security": -2
+            }
+          },
+          {
+            "Value": "Deep-Space Xeno Research Facility",
+            "Weight": 16,
+            "GrantsTag": "Research_Lab",
+            "Rarity": "Rare",
+            "StatMods": { "Life_Support": 2 }
+          },
+          {
+            "Value": "Asteroid Ore Refinery & Shipyard",
+            "Weight": 24,
+            "GrantsTag": "Trade_Hub",
+            "Rarity": "Common",
+            "StatMods": {
+              "Structural_Health": 2,
+              "Commerce": 1
+            }
+          },
+          {
+            "Value": "High-Security Orbital Prison",
+            "Weight": 12,
+            "GrantsTag": "Military_Outpost",
+            "Rarity": "Rare",
+            "StatMods": {
+              "Security": 4,
+              "Commerce": -2
+            }
+          }
+        ],
+        "Orbit Location": [
+          {
+            "Value": "a bustling Core World Lagrange point",
+            "Weight": 25,
+            "GrantsTag": "Core_World",
+            "Rarity": "Common",
+            "StatMods": { "Commerce": 2 }
+          },
+          {
+            "Value": "the jagged rim of an uncharted asteroid belt",
+            "Weight": 28,
+            "GrantsTag": "Frontier",
+            "Rarity": "Common"
+          },
+          {
+            "Value": "the upper radiation skirt of a gas giant",
+            "Weight": 22,
+            "GrantsTag": "Hostile",
+            "Rarity": "Uncommon",
+            "StatMods": { "Structural_Health": -1 }
+          },
+          {
+            "Value": "a dying red dwarf's jump-gate corridor",
+            "Weight": 18,
+            "GrantsTag": "Frontier",
+            "Rarity": "Uncommon",
+            "StatMods": { "Commerce": 1 }
+          },
+          {
+            "Value": "the event-horizon fringe of a dormant black hole",
+            "Weight": 7,
+            "GrantsTag": "Hostile",
+            "Rarity": "Epic",
+            "StatMods": { "Security": 2 }
+          }
+        ],
+        "Controlling Power": [
+          "an independent Dockworkers' Guild",
+          "a megacorporate holding consortium",
+          "the Andromeda Sector Navy",
+          "a fragile truce between three pirate cartels",
+          "an eccentric custodial station AI",
+          "an elected council of frontier merchants"
+        ],
+        "Station Reputation": [
+          "the safest place in the sector to buy forged transit papers",
+          "a spotless diplomatic neutral ground where weapons stay holstered",
+          "a leaking labyrinth one blown seal away from decompression",
+          "the undisputed refueling capital of the outer rim",
+          "a rumor-mill where every bartender works for an intelligence agency",
+          "an impenetrable iron fortress that has repelled three sieges"
+        ]
+      },
+      "OptionalTraits": {
+        "Current Crisis": {
+          "Chance": 0.55,
+          "Options": [
+            {
+              "Value": "Air-Scrubber Rationing on the Lower Decks",
+              "Weight": 28,
+              "Rarity": "Common",
+              "StatMods": { "Life_Support": -2 }
+            },
+            {
+              "Value": "Quarantine Lockdown on Docking Ring C",
+              "Weight": 22,
+              "GrantsTag": "Quarantine",
+              "Rarity": "Rare",
+              "StatMods": {
+                "Commerce": -2,
+                "Security": 2
+              }
+            },
+            {
+              "Value": "Syndicate Turf War in the Promenade",
+              "Weight": 22,
+              "Rarity": "Uncommon",
+              "StatMods": { "Security": -2 }
+            },
+            {
+              "Value": "Intermittent Micro-Meteorite Hull Breaches",
+              "Weight": 20,
+              "Rarity": "Common",
+              "StatMods": { "Structural_Health": -2 }
+            },
+            {
+              "Value": "Refugee Fleet Overcrowding Every Hangar",
+              "Weight": 20,
+              "Rarity": "Uncommon",
+              "StatMods": {
+                "Life_Support": -1,
+                "Docking Bays": 8
+              }
+            }
+          ]
+        }
+      },
+      "MultiTraits": {
+        "Notable Decks": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 4,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "Zero-G Neon Bazaar",
+              "Weight": 28,
+              "Rarity": "Common",
+              "StatMods": { "Commerce": 1 }
+            },
+            {
+              "Value": "Automated Drydock & Repair Spines",
+              "Weight": 26,
+              "Rarity": "Common",
+              "StatMods": { "Docking Bays": 8 }
+            },
+            {
+              "Value": "Bio-Dome Hydroponics Park",
+              "Weight": 22,
+              "Rarity": "Uncommon",
+              "StatMods": { "Life_Support": 2 }
+            },
+            {
+              "Value": "Mercenary Hiring Cantina",
+              "Weight": 26,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Armored Customs & Brig Complex",
+              "Weight": 22,
+              "Rarity": "Common",
+              "StatMods": { "Security": 1 }
+            },
+            {
+              "Value": "Sub-Deck Black-Market Clinic",
+              "Weight": 18,
+              "Rarity": "Uncommon"
+            },
+            {
+              "Value": "Observatory Lounge & Casino",
+              "Weight": 20,
+              "Rarity": "Uncommon",
+              "StatMods": { "Commerce": 1 }
+            },
+            {
+              "Value": "Reactor Core Catwalk Maze",
+              "Weight": 20,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Classified Xeno-Vault Wing",
+              "Weight": 10,
+              "Requires": "Research_Lab",
+              "Rarity": "Epic",
+              "StatMods": { "Security": 2 }
+            }
+          ]
+        }
+      },
+      "Ranges": {
+        "Docking Bays": {
+          "Min": 8,
+          "Max": 160,
+          "Step": 4,
+          "Unit": " bays"
+        },
+        "Resident Population": {
+          "Min": 1000,
+          "Max": 250000,
+          "Step": 1000,
+          "Unit": " residents"
+        },
+        "Station Age": {
+          "Min": 5,
+          "Max": 240,
+          "Step": 5,
+          "Unit": " yrs"
+        }
+      },
+      "PointPools": {
+        "Station Metrics": {
+          "TotalPoints": 40,
+          "MinPerAttribute": 2,
+          "MaxPerAttribute": 15,
+          "Attributes": [ "Security", "Commerce", "Life_Support", "Structural_Health" ]
+        }
+      }
+    },
+
+    "Precursor Artifact": {
+      "NicknameChance": 0.75,
+      "GenderOdds": { "Artifact": 100 },
+      "FirstNames": [
+        "Relic",
+        "Shard",
+        "Key",
+        "Obelisk",
+        "Codex",
+        "Crown",
+        "Prism",
+        "Core",
+        "Conduit",
+        "Vessel",
+        "Lattice",
+        "Seal",
+        "Glyph",
+        "Beacon",
+        "Eye",
+        "Anchor"
+      ],
+      "LastNames": [
+        "of Eternity",
+        "of the Void",
+        "Alpha",
+        "Omega",
+        "Zero",
+        "of Echoes",
+        "of Silence",
+        "Prime",
+        "of Entropy",
+        "of the Architects",
+        "IX",
+        "of Starlight",
+        "of Glass",
+        "of the Rift"
+      ],
+      "Nicknames": [
+        "The Whispering Cube",
+        "God-Spark",
+        "Black Mirror",
+        "The Singing Stone",
+        "Chronos-Needle",
+        "Star-Heart",
+        "The Cold Flame",
+        "Null-Key",
+        "Glass-Mind",
+        "Void-Bell",
+        "The Watchmaker",
+        "Shatter-Seed"
+      ],
+      "StartingTags": [ "Item", "Artifact", "Alien_Tech" ],
+      "MandatoryTraits": {
+        "Physical Form": [
+          {
+            "Value": "a palm-sized obsidian polyhedron",
+            "Weight": 25,
+            "Rarity": "Uncommon",
+            "StatMods": { "Complexity": 1 }
+          },
+          {
+            "Value": "a hovering liquid-metal torus",
+            "Weight": 20,
+            "Rarity": "Rare",
+            "StatMods": { "Resonance": 2 }
+          },
+          {
+            "Value": "a three-meter crystalline monolith",
+            "Weight": 18,
+            "GrantsTag": "Monolith",
+            "Rarity": "Rare",
+            "StatMods": { "Stability": 2 }
+          },
+          {
+            "Value": "an etched bioluminescent gauntlet",
+            "Weight": 16,
+            "GrantsTag": "Wearable, Weaponized",
+            "Rarity": "Epic",
+            "StatMods": { "Resonance": 2 }
+          },
+          {
+            "Value": "a seamlessly sealed golden sphere",
+            "Weight": 22,
+            "Rarity": "Uncommon",
+            "StatMods": { "Stability": 1 }
+          },
+          {
+            "Value": "a jagged starlight-refracting blade",
+            "Weight": 12,
+            "GrantsTag": "Weaponized",
+            "Rarity": "Epic",
+            "StatMods": {
+              "Resonance": 2,
+              "Black Market Value": 150000
+            }
+          }
+        ],
+        "Primary Effect": [
+          {
+            "Value": "bending local gravity within a ten-meter radius",
+            "Weight": 22,
+            "GrantsTag": "Volatile",
+            "Rarity": "Rare",
+            "StatMods": { "Resonance": 2 }
+          },
+          {
+            "Value": "projecting vivid star-charts of an unknown galaxy",
+            "Weight": 25,
+            "Rarity": "Uncommon",
+            "StatMods": { "Complexity": 2 }
+          },
+          {
+            "Value": "accelerating cellular regeneration in nearby organics",
+            "Weight": 18,
+            "Rarity": "Epic",
+            "StatMods": { "Black Market Value": 250000 }
+          },
+          {
+            "Value": "rewinding mechanical decay by several seconds on touch",
+            "Weight": 12,
+            "GrantsTag": "Temporal",
+            "Rarity": "Legendary",
+            "StatMods": {
+              "Complexity": 3,
+              "Black Market Value": 400000
+            }
+          },
+          {
+            "Value": "transmitting telepathic mathematics into nearby minds",
+            "Weight": 18,
+            "GrantsTag": "Psionic",
+            "Rarity": "Rare",
+            "StatMods": {
+              "Resonance": 2,
+              "Stability": -1
+            }
+          },
+          {
+            "Value": "generating limitless cold power with zero radiation signature",
+            "Weight": 16,
+            "Rarity": "Epic",
+            "StatMods": {
+              "Stability": 2,
+              "Black Market Value": 300000
+            }
+          },
+          {
+            "Value": "unraveling nearby electromagnetic shields on contact",
+            "Weight": 20,
+            "GrantsTag": "Volatile",
+            "Rarity": "Rare",
+            "StatMods": { "Resonance": 2 }
+          }
+        ],
+        "Containment Risk": [
+          {
+            "Value": "Inert Until Activated",
+            "Weight": 30,
+            "GrantsTag": "Safe_Class",
+            "Rarity": "Common",
+            "StatMods": { "Stability": 2 }
+          },
+          {
+            "Value": "Requires Lead-Lined Stasis Vault",
+            "Weight": 28,
+            "Rarity": "Uncommon"
+          },
+          {
+            "Value": "Actively Attracts Deep-Space Probes",
+            "Weight": 20,
+            "GrantsTag": "Hostile",
+            "Rarity": "Rare",
+            "StatMods": { "Resonance": 1 }
+          },
+          {
+            "Value": "Critical Reality-Shear Hazard",
+            "Weight": 10,
+            "GrantsTag": "Hostile",
+            "Rarity": "Epic",
+            "StatMods": {
+              "Stability": -2,
+              "Resonance": 3,
+              "Black Market Value": 200000
+            }
+          }
+        ],
+        "Origin Site": [
+          "a collapsed Dyson fragment beyond the outer rim",
+          "the frozen seabed of an airless moon",
+          "a sealed vault beneath a dead ecumenopolis",
+          "the cargo hold of a drifting ghost freighter",
+          "an asteroid temple older than the local star",
+          "a black-market auction raided by naval commandos"
+        ]
+      },
+      "OptionalTraits": {
+        "Side Effect": {
+          "Chance": 0.65,
+          "Options": [
+            {
+              "Value": "Compasses and Gyroscopes Spin Wildly Nearby",
+              "Weight": 30,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Handlers Report Shared Dreams of Glass Cities",
+              "Weight": 22,
+              "Rarity": "Rare",
+              "StatMods": { "Resonance": 1 }
+            },
+            {
+              "Value": "Ambient Temperature Drops Fifteen Degrees",
+              "Weight": 25,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Digital Clocks Drift Backward by One Second Per Hour",
+              "Weight": 15,
+              "Rarity": "Epic",
+              "StatMods": { "Complexity": 1 }
+            }
+          ]
+        }
+      },
+      "MultiTraits": {
+        "Observed Phenomena": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "Zero Measurable Surface Friction",
+              "Weight": 26,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Impervious to Plasma-Cutter Scoring",
+              "Weight": 24,
+              "Rarity": "Uncommon",
+              "StatMods": { "Stability": 1 }
+            },
+            {
+              "Value": "Faint Sub-Audible Harmonic Hum",
+              "Weight": 28,
+              "Rarity": "Common",
+              "StatMods": { "Resonance": 1 }
+            },
+            {
+              "Value": "Self-Orienting Toward Galactic North",
+              "Weight": 22,
+              "Rarity": "Uncommon"
+            },
+            {
+              "Value": "Casts Shadows Slightly Out of Sync with Light Sources",
+              "Weight": 14,
+              "Rarity": "Rare",
+              "StatMods": { "Complexity": 1 }
+            },
+            {
+              "Value": "Emits Periodic Encrypted Neutrino Bursts",
+              "Weight": 16,
+              "Rarity": "Rare",
+              "StatMods": { "Black Market Value": 100000 }
+            },
+            {
+              "Value": "Repels Dust and Moisture Permanently",
+              "Weight": 25,
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Weight Fluctuates by Several Kilograms at Random",
+              "Weight": 18,
+              "Rarity": "Uncommon"
+            }
+          ]
+        }
+      },
+      "Ranges": {
+        "Estimated Age": {
+          "Min": 10000,
+          "Max": 950000,
+          "Step": 10000,
+          "Unit": " yrs"
+        },
+        "Black Market Value": {
+          "Min": 50000,
+          "Max": 2500000,
+          "Step": 50000,
+          "Unit": " Cr"
+        }
+      },
+      "PointPools": {
+        "Artifact Ratings": {
+          "TotalPoints": 28,
+          "MinPerAttribute": 1,
+          "MaxPerAttribute": 15,
+          "Attributes": [ "Resonance", "Stability", "Complexity" ]
         }
       }
     }
@@ -908,220 +4524,481 @@
   "BioTemplates": {
     "1_Origin_and_Identity": [
       {
-        "Text": "Designated {Full}, {Subject} is a registered {Classification} currently operating in the Andromeda system. Originally hailing from {Homeworld}, {Subject} left the core worlds behind for a life in the fringes.",
-        "Requires": "Military",
-        "Weight": 10
+        "Text": "At {Age} with {Service Tours} and {Confirmed Drops} on record, {Full} is a battle-hardened {Classification} originally hailing from {Homeworld}.",
+        "Requires": "Military, Veteran",
+        "Weight": 35
       },
       {
-        "Text": "Known on the rain-slicked streets as '{Nick}', {Subject} makes a precarious living as a {Occupation} in the {District}.",
+        "Text": "Designated {Full}, this {Age}-old {Classification} hails from {Homeworld} and already has {Service Tours} logged across the Andromeda frontier.",
+        "Requires": "Military",
+        "Weight": 15
+      },
+      {
+        "Text": "Known across {District} as '{Nick}', {Full} is a {Age}-year-old {Occupation} scraping by while carrying {Credit Debt} in outstanding tabs.",
         "Requires": "Civilian",
         "Weight": 20
       },
       {
-        "Text": "There are few names in the criminal underworld as feared as {Full}. Operating under the alias '{Nick}', {Subject} is a ruthless {Classification}.",
-        "Requires": "Outlaw",
-        "Weight": 20
+        "Text": "Few names in the outer rim carry a {Bounty} price tag like {Full}. At {Age}, '{Nick}' is a notorious {Classification} currently rated as {Infamy Level}.",
+        "Requires": "Outlaw, Wanted",
+        "Weight": 30
       },
       {
-        "Text": "The {Full} is a {Nickname} class vessel. Built by {Manufacturer}, it was designed to conquer the cold expanse of the void.",
+        "Text": "At {Age}, {Full} — better known in dive bars as '{Nick}' — is an opportunistic {Classification} currently tagged as {Infamy Level} with a {Bounty} bounty.",
+        "Requires": "Outlaw",
+        "Weight": 15
+      },
+      {
+        "Text": "{Full} is a {Hull Length} {Nickname}-class warship built by {Manufacturer}, carrying up to {Crew Capacity} across the void after {Service Age} of service.",
         "Requires": "Capital_Ship",
         "Weight": 20
       },
       {
-        "Text": "Sleek and deadly, {Full} is a {Nickname} class fighter craft. Manufactured by {Manufacturer}, it is built for pure dogfighting superiority.",
+        "Text": "Sleek and lethal, {Full} is a {Nickname}-class strike craft built by {Manufacturer} with {Service Life} of flight time and {Confirmed Kills} painted beneath the canopy.",
         "Requires": "Fighter",
         "Weight": 20
       },
       {
-        "Text": "Deep in the uncharted sectors lies {Full}, colloquially known to smugglers as '{Nick}'. It is a vast {Classification} orbiting a dying star.",
+        "Text": "Deep in the uncharted sectors lies {Full}, dubbed '{Nick}' by survey crews. Orbiting with {Moons} and an average surface temperature of {Surface Temp}, it is a stark {Classification}.",
         "Requires": "Planet",
         "Weight": 20
       },
       {
-        "Text": "{Full}, often referred to simply as '{Nick}', is a massive {Classification} that spans multiple star systems.",
+        "Text": "{Full}, widely referred to as '{Nick}', is a sprawling {Classification} controlling {Controlled Systems} and {Active Fleets} over its {Years Active} history.",
         "Requires": "Organization",
+        "Weight": 20
+      },
+      {
+        "Text": "Charging a baseline rate of {Contract Fee} with {Targets Bagged} in the ledger, {Full} is a {Age}-year-old {Classification} operating as a {Guild Standing}.",
+        "Requires": "Hunter",
+        "Weight": 20
+      },
+      {
+        "Text": "At {Age} with {Published Papers} to {Possessive} name, {Full} specializes in {Research Field} on a {Funding Grant} budget backed by {Sponsoring Body}.",
+        "Requires": "Scientist",
+        "Weight": 20
+      },
+      {
+        "Text": "Weighing in at {Tonnage} with {Operational Hours} logged, {Full} is a {Chassis Class} autonomous combat frame.",
+        "Requires": "Mech",
+        "Weight": 20
+      },
+      {
+        "Text": "Anchored in {Orbit Location}, {Full} — better known to spacers as '{Nick}' — is a {Station Age}-old {Station Role} housing {Resident Population} across {Docking Bays}.",
+        "Requires": "Station",
+        "Weight": 20
+      },
+      {
+        "Text": "Dated to roughly {Estimated Age} and valued at {Black Market Value} on underground exchanges, {Full} takes the form of {Physical Form} recovered from {Origin Site}.",
+        "Requires": "Artifact",
         "Weight": 20
       }
     ],
+
     "2_Loadout_and_Gear": [
       {
-        "Text": "In combat, {Subject} relies heavily on {Possessive} {Primary Weapon}, keeping a {Secondary Sidearm} holstered just in case. {Possessive} body is protected by {Armor Class}.",
+        "Text": "In combat, {Subject} relies on a {Primary Weapon} backed by a {Secondary Sidearm}, protected inside {Armor Class} and carrying {Tactical Loadout}.",
         "Requires": "Military",
-        "Weight": 10
+        "Weight": 20
       },
       {
-        "Text": "Surviving the city requires an edge. {Subject} relies on {Possessive} wits and a handful of stolen credits to stay ahead of the law.",
+        "Text": "Surviving the city requires sharp instincts. {SubjectCap} pads {Possessive} income by {Side Hustle}, never leaving home without {Pocket Carry}.",
         "Requires": "Civilian",
-        "Weight": 10
+        "Weight": 20
       },
       {
-        "Text": "A pirate is only as good as {Possessive} gun. {Subject} is never seen without {Possessive} {Signature Weapon}, ready to draw at the slightest provocation.",
+        "Text": "{SubjectCap} never steps off {Ship Name} without {Possessive} {Signature Weapon}, while the hold hides {Contraband Stash}.",
         "Requires": "Outlaw",
-        "Weight": 10
+        "Weight": 20
       },
       {
-        "Text": "Fitted with a {Drive Core}, the ship can cross entire sectors in days. Its hull is heavily reinforced with {Hull Material}, making it a formidable presence in orbit.",
+        "Text": "Driven by a {Drive Core} and armored in {Hull Material}, the vessel integrates {Subsystems} for extended sector deployments.",
         "Requires": "Capital_Ship",
-        "Weight": 10
+        "Weight": 20
       },
       {
-        "Text": "Powered by {Thruster Type}, the craft can pull maneuvers that would crush an unaugmented pilot.",
+        "Text": "Powered by {Thruster Type} capable of a {Cruise Burn} sustain, the hull pairs {Avionics Suite} with {Countermeasures}.",
         "Requires": "Fighter",
-        "Weight": 10
+        "Weight": 20
       },
       {
-        "Text": "The surface is defined by a {Biome} environment. Any explorers must contend with its {Atmosphere} atmosphere if they hope to survive.",
+        "Text": "The surface is dominated by a {Biome} landscape under a {Atmosphere} sky, rich with {Natural Resources}.",
         "Requires": "Planet",
-        "Weight": 10
+        "Weight": 20
       },
       {
-        "Text": "Driven by a core philosophy of {Core Ideology}, the group is led ruthlessly by {Leadership Structure}.",
+        "Text": "Guided by {Core Ideology} and ruled by {Leadership Structure}, they project power through {Strategic Holdings}.",
         "Requires": "Organization",
-        "Weight": 10
+        "Weight": 20
+      },
+      {
+        "Text": "{SubjectCap} brings down marks using a {Primary Weapon} and secures bounties via {Capture Method}, always packing {Hunter Kit}.",
+        "Requires": "Hunter",
+        "Weight": 20
+      },
+      {
+        "Text": "In the field, {Subject} relies on a {Field Tool} while safeguarding sealed {Specimen Cases}.",
+        "Requires": "Scientist",
+        "Weight": 20
+      },
+      {
+        "Text": "Fed by a {Power Plant}, the walker mounts a {Primary Weapon} alongside {Hardpoint Modules}.",
+        "Requires": "Mech",
+        "Weight": 20
+      },
+      {
+        "Text": "Run by {Controlling Power}, the station's inner rings feature {Notable Decks}.",
+        "Requires": "Station",
+        "Weight": 20
+      },
+      {
+        "Text": "Analysts classify it as {Containment Risk}, noting its primary capability of {Primary Effect} alongside {Observed Phenomena}.",
+        "Requires": "Artifact",
+        "Weight": 20
       }
     ],
+
     "3_Specialty_and_Quirks": [
       {
-        "Text": "As a highly trained {Combat Specialty}, {Subject} takes pride in executing missions flawlessly. To aid in these operations, {Subject} utilizes a {Cybernetic Implant}.",
+        "Text": "Trained as a {Combat Specialty}, {Subject} enhances {Possessive} edge in the field with a {Cybernetic Implant}.",
+        "Requires": "Military, Augmented",
+        "Weight": 30
+      },
+      {
+        "Text": "Serving as a {Combat Specialty}, {Subject} relies on pure discipline and drills rather than heavy cybernetic modification.",
         "Requires": "Military",
         "Weight": 10
       },
       {
-        "Text": "Life out here has given {Object} a {Quirk or Flaw}, something that often gets {Object} into more trouble than {Subject} can handle.",
+        "Text": "Between shifts, {Subject} blows spare credits on {Daily Vice}, leaning on a {Street Augment} to stay one step ahead of corporate enforcers.",
+        "Requires": "Civilian, Augmented",
+        "Weight": 25
+      },
+      {
+        "Text": "Off the clock, {Subject} unwinds with {Daily Vice}, keeping {Possessive} head down in {District}.",
+        "Requires": "Civilian",
+        "Weight": 15
+      },
+      {
+        "Text": "Years in the black have left {Object} dealing with {Quirk or Flaw}, though a {Black-Market Cyberware} upgrade helps keep {Object} alive.",
+        "Requires": "Outlaw, Augmented",
+        "Weight": 25
+      },
+      {
+        "Text": "Life on the fringes has saddle-bagged {Object} with {Quirk or Flaw}, a complication that regularly turns clean scores messy.",
         "Requires": "Outlaw",
-        "Weight": 10
+        "Weight": 15
       },
       {
-        "Text": "The vessel is far from perfect. Crews often whisper about its strange nature, noting that it {Ship Quirk}.",
+        "Text": "Even with a {Command Retrofit} installed, crews whisper that the vessel {Ship Quirk}.",
         "Requires": "Capital_Ship",
-        "Weight": 10
+        "Weight": 25
       },
       {
-        "Text": "If a pilot can get past the primary defenses, they still have to deal with the ship's {Countermeasures}.",
+        "Text": "Veterans refuse to call the ship ordinary, noting that it {Ship Quirk}.",
+        "Requires": "Capital_Ship",
+        "Weight": 15
+      },
+      {
+        "Text": "Upgraded with a {Experimental Refit}, the craft outflies standard production hulls in close quarters.",
+        "Requires": "Fighter, Prototype",
+        "Weight": 30
+      },
+      {
+        "Text": "Its combat doctrine focuses on tight interception runs, leaning on {Countermeasures} to shrug off enemy missile locks.",
         "Requires": "Fighter",
-        "Weight": 10
+        "Weight": 15
       },
       {
-        "Text": "From orbit, the most striking thing about the world is its {Dominant Feature}. However, on the ground, the real threat is the {Native Hazard}.",
+        "Text": "From high orbit, scans flag {Dominant Feature} and a baffling {Orbital Anomaly}, while landing parties must survive {Native Hazard}.",
+        "Requires": "Planet, Anomaly",
+        "Weight": 30
+      },
+      {
+        "Text": "From orbit, the world stands out for its {Dominant Feature}, while anyone setting down must contend with {Native Hazard}.",
         "Requires": "Planet",
-        "Weight": 10
+        "Weight": 15
       },
       {
-        "Text": "Their true power lies in their {Primary Asset}, giving them immense leverage over neighboring star systems.",
+        "Text": "Their leverage rests on {Primary Asset}, quietly reinforced by {Black-Ops Division} whenever diplomacy stalls.",
+        "Requires": "Organization, Shadow_Ops",
+        "Weight": 30
+      },
+      {
+        "Text": "Their true leverage across neighboring star systems rests on {Primary Asset}.",
         "Requires": "Organization",
-        "Weight": 10
+        "Weight": 15
+      },
+      {
+        "Text": "Equipped with a {Tracking Rig}, {Subject} operates by a strict personal rule of {Personal Code}.",
+        "Requires": "Hunter",
+        "Weight": 25
+      },
+      {
+        "Text": "{SubjectCap} holds fast to a personal code of {Personal Code}, earning quiet respect even from targets.",
+        "Requires": "Hunter",
+        "Weight": 15
+      },
+      {
+        "Text": "{SubjectCap} is consumed by an obsession with {Obsession}, a pursuit that already left {Object} marked by {Lab Mishap}.",
+        "Requires": "Scientist",
+        "Weight": 25
+      },
+      {
+        "Text": "{SubjectCap} is driven relentlessly by an obsession with {Obsession}, often ignoring safety briefings to get closer to the data.",
+        "Requires": "Scientist",
+        "Weight": 15
+      },
+      {
+        "Text": "Its logic core remains locked onto {AI Directive}, visibly wearing {Battle Damage} from past engagements.",
+        "Requires": "Mech",
+        "Weight": 25
+      },
+      {
+        "Text": "Its current behavioral loop is focused entirely on {AI Directive}.",
+        "Requires": "Mech",
+        "Weight": 15
+      },
+      {
+        "Text": "Across the lanes it is known as {Station Reputation}, though traffic is currently strained by {Current Crisis}.",
+        "Requires": "Station",
+        "Weight": 25
+      },
+      {
+        "Text": "Spacer lore remembers the hub as {Station Reputation}.",
+        "Requires": "Station",
+        "Weight": 15
+      },
+      {
+        "Text": "Field notes warn of a persistent anomaly whenever it is handled: {Side Effect}.",
+        "Requires": "Artifact",
+        "Weight": 25
+      },
+      {
+        "Text": "Despite months of spectrometry, researchers still cannot identify the alloy or internal power source.",
+        "Requires": "Artifact",
+        "Weight": 15
       }
     ],
-    "4_Offensive_Capabilities": [
+
+    "4_Offensive_and_Secrets": [
       {
-        "Text": "When the heavy fighting starts, {Subject} favors laying down suppressing fire, treating the {Primary Weapon} like an extension of {Possessive} own augmented arm.",
-        "Requires": "Heavy_Weapon",
-        "Weight": 50
+        "Text": "When the firefight turns brutal, {Subject} anchors the squad with {Possessive} {Primary Weapon}, suppressing enemy lanes until nothing moves.",
+        "Requires": "Military, Heavy_Weapon",
+        "Weight": 40
       },
       {
-        "Text": "For offensive engagements, the vessel brings its {Primary Armament} to bear.",
-        "Requires": "Vehicle",
-        "Weight": 10
+        "Text": "Decorated with the {Battle Decoration}, {Subject} is the marine commanders call when an orbital drop goes sideways.",
+        "Requires": "Military, Decorated",
+        "Weight": 35
       },
       {
-        "Text": "In a dogfight, it unleashes hell using its {Dogfight Weaponry}, tearing enemy squadrons to shreds.",
+        "Text": "Word on the docks says {Subject} is sitting on {Stolen Cargo Value} of hot salvage waiting for a clean fence.",
+        "Requires": "Outlaw, Wanted",
+        "Weight": 30
+      },
+      {
+        "Text": "When engagement range closes, the warship brings its {Primary Armament} to bear in devastating broadsides.",
+        "Requires": "Capital_Ship",
+        "Weight": 25
+      },
+      {
+        "Text": "In a furball, it unleashes its {Dogfight Weaponry} with cold precision, shredding enemy squadrons before they can break formation.",
         "Requires": "Fighter",
-        "Weight": 10
+        "Weight": 25
       },
       {
-        "Text": "Whispers in the dark claim they harbor a {Dark Secret}, something that could destroy them if the galaxy ever found out.",
+        "Text": "Whispers in encrypted channels claim {Dark Secret} — a revelation that would shatter their grip on the sector overnight.",
         "Requires": "Organization",
-        "Weight": 10
+        "Weight": 30
+      },
+      {
+        "Text": "A booming colony of {Colony Population} clings to the planet's surface, turning the world into a vital strategic prize.",
+        "Requires": "Planet, Civilized",
+        "Weight": 35
+      },
+      {
+        "Text": "Because the relic carries a {Containment Risk} rating, three rival syndicates have already posted bounties to steal it in transit.",
+        "Requires": "Artifact, Hostile",
+        "Weight": 35
       }
     ],
+
     "5_Notable_Feats": [
       {
-        "Text": "{Possessive} reflexes are augmented to unnatural speeds; observers have reported seeing {Object} move as a mere blur during a firefight.",
-        "Requires": "Humanoid",
+        "Text": "{PossessiveCap} reflexes border on preternatural; squadmates swear {Subject} reacts to incoming fire before the muzzle flash registers.",
+        "Requires": "Military",
         "MinStatName": "Reflexes",
-        "MinStatValue": 16,
+        "MinStatValue": 15,
         "Weight": 100
       },
       {
-        "Text": "{Possessive} luck is legendary. {Subject} has walked away from ship crashes, point-blank executions, and bad deals without a scratch.",
+        "Text": "{SubjectCap} relies more on grit than tech-savvy, routinely kicking malfunctioning terminals until the status light turns green.",
+        "Requires": "Military",
+        "MaxStatName": "Tech_Skill",
+        "MaxStatValue": 8,
+        "Weight": 60
+      },
+      {
+        "Text": "{PossessiveCap} luck is the stuff of cantina legend — walking away from blown airlocks, double-crosses, and naval ambushes without a scratch.",
         "Requires": "Outlaw",
         "MinStatName": "Luck",
-        "MinStatValue": 16,
+        "MinStatValue": 15,
         "Weight": 100
       },
       {
-        "Text": "With maximum Hull Integrity, this ship has survived direct kinetic broadsides that would have shattered lesser vessels into orbital dust.",
+        "Text": "Subtlety is not {Possessive} strong suit; {Subject} couldn't bluff a customs drone out of a parking ticket.",
+        "Requires": "Outlaw",
+        "MaxStatName": "Deception",
+        "MaxStatValue": 6,
+        "Weight": 60
+      },
+      {
+        "Text": "With exceptional Hull Integrity, this warship has shrugged off direct kinetic broadsides that would have cracked lesser hulls in half.",
         "Requires": "Capital_Ship",
         "MinStatName": "Hull_Integrity",
-        "MinStatValue": 18,
-        "Weight": 100
-      },
-      {
-        "Text": "Its maneuverability is mathematically perfect. It can turn on a dime in a vacuum, pulling G-forces that defy physics.",
-        "Requires": "Fighter",
-        "MinStatName": "Maneuverability",
         "MinStatValue": 16,
         "Weight": 100
       },
       {
-        "Text": "Despite its harsh conditions, the planet is incredibly valuable due to a massive resource yield just beneath the crust.",
+        "Text": "Its maneuverability borders on physics-defying, snapping through zero-G vector reversals that would black out unaugmented pilots.",
+        "Requires": "Fighter",
+        "MinStatName": "Maneuverability",
+        "MinStatValue": 15,
+        "Weight": 100
+      },
+      {
+        "Text": "Despite brutal conditions, survey corporations fight viciously over the world's extraordinary subterranean mineral wealth.",
         "Requires": "Planet",
         "MinStatName": "Resource_Yield",
-        "MinStatValue": 9,
+        "MinStatValue": 8,
         "Weight": 100
       },
       {
-        "Text": "Their wealth is practically infinite. They can buy entire planetary governments and wipe out debts with a single keystroke.",
+        "Text": "Their financial war chest is practically bottomless, allowing them to buy planetary governors with a single ledger transfer.",
         "Requires": "Organization",
         "MinStatName": "Wealth",
-        "MinStatValue": 14,
+        "MinStatValue": 13,
         "Weight": 100
       },
       {
-        "Text": "Though highly capable, {Subject} tries to keep a low profile to avoid unnecessary corporate entanglements.",
+        "Text": "{SubjectCap} can slip through corporate firewalls like smoke, leaving ghost signatures that take security teams weeks to untangle.",
+        "Requires": "Civilian",
+        "MinStatName": "Hacking",
+        "MinStatValue": 12,
+        "Weight": 100
+      },
+      {
+        "Text": "Once {Subject} locks onto a target's trail, not even a clean identity wipe or outer-rim jump can shake {Object} off the scent.",
+        "Requires": "Hunter",
+        "MinStatName": "Tracking",
+        "MinStatValue": 15,
+        "Weight": 100
+      },
+      {
+        "Text": "{PossessiveCap} analytical breakthroughs have reshaped how the sector classifies non-terrestrial life.",
+        "Requires": "Scientist",
+        "MinStatName": "Analysis",
+        "MinStatValue": 15,
+        "Weight": 100
+      },
+      {
+        "Text": "Outfitted for sheer stopping power, its ordnance racks can level a fortified bunker in a single sustained salvo.",
+        "Requires": "Mech",
+        "MinStatName": "Ordnance",
+        "MinStatValue": 15,
+        "Weight": 100
+      },
+      {
+        "Text": "Trade flows through its concourses around the clock, generating more tariff revenue in a week than nearby moons earn in a year.",
+        "Requires": "Station",
+        "MinStatName": "Commerce",
+        "MinStatValue": 13,
+        "Weight": 100
+      },
+      {
+        "Text": "Its extreme energy resonance trips long-range sensors from across an entire planetary system.",
+        "Requires": "Artifact",
+        "MinStatName": "Resonance",
+        "MinStatValue": 13,
+        "Weight": 100
+      },
+      {
+        "Text": "Though capable in a pinch, {Subject} prefers keeping a low profile and avoiding unnecessary attention.",
         "Requires": "Humanoid",
-        "Weight": 1
+        "Weight": 5
       },
       {
-        "Text": "The ship has a long service record, full of routine patrols and uneventful cargo runs.",
+        "Text": "Its service log is packed with dependable frontier patrols and unglamorous endurance runs.",
         "Requires": "Vehicle",
-        "Weight": 1
+        "Weight": 5
       },
       {
-        "Text": "It remains a relatively quiet entity in the grand scheme of the cosmos.",
-        "Weight": 1
+        "Text": "For all its eccentricities, it remains a quiet fixture on the edge of Andromeda's star charts.",
+        "Weight": 2
       }
     ],
+
     "6_Current_Status": [
       {
-        "Text": "Currently, {Subject} is awaiting a new contract, ready to deploy at a moment's notice.",
+        "Text": "Currently, {Subject} is staged in orbital barracks, kit checked and ready for the next drop order.",
         "Requires": "Military",
-        "Weight": 10
+        "Weight": 15
       },
       {
-        "Text": "Currently, {Subject} is drinking in a dive bar on {Ship Name}, waiting for the heat to die down.",
+        "Text": "Right now, {Subject} is laying low in a smoky berth aboard {Ship Name}, waiting for patrol sweeps to blow over.",
         "Requires": "Outlaw",
-        "Weight": 10
+        "Weight": 15
       },
       {
-        "Text": "At present, the ship sits in spacedock, its {Drive Core} idling as it awaits a new captain and a fresh heading into the stars.",
+        "Text": "Tonight, {Subject} is weaving through the neon rain of {District}, chasing a lead that might finally clear {Possessive} debt.",
+        "Requires": "Civilian",
+        "Weight": 15
+      },
+      {
+        "Text": "At present, the vessel sits moored in high spacedock, its {Drive Core} idling as it awaits new fleet orders.",
         "Requires": "Capital_Ship",
-        "Weight": 10
+        "Weight": 15
       },
       {
-        "Text": "Right now, it sits locked in a launch tube, fully fueled and primed for intercept.",
+        "Text": "Right now, it rests locked in a cold-launch tube, tanks topped off and flight telemetry green.",
         "Requires": "Fighter",
-        "Weight": 10
+        "Weight": 15
       },
       {
-        "Text": "For now, the planet continues its silent orbit, waiting for the next brave soul to chart its surface.",
+        "Text": "For now, the world turns silently along its track, waiting for the next survey ship brave enough to break atmosphere.",
         "Requires": "Planet",
-        "Weight": 10
+        "Weight": 15
       },
       {
-        "Text": "As the galaxy turns, they wait in the shadows, plotting their next major power play.",
+        "Text": "As tensions simmer across the frontier, they maneuver quietly behind the scenes for their next power grab.",
         "Requires": "Organization",
-        "Weight": 10
+        "Weight": 15
+      },
+      {
+        "Text": "At the moment, {Subject} is studying a fresh encrypted bounty puck, plotting an intercept course for the outer rim.",
+        "Requires": "Hunter",
+        "Weight": 15
+      },
+      {
+        "Text": "Currently, {Subject} is packing crates for another six-month survey expedition beyond charted relays.",
+        "Requires": "Scientist",
+        "Weight": 15
+      },
+      {
+        "Text": "Currently parked in low-power standby, its optical sensors still sweep the horizon for movement.",
+        "Requires": "Mech",
+        "Weight": 15
+      },
+      {
+        "Text": "Docking traffic continues to cycle through its airlocks around the clock as rumors ripple down the promenade.",
+        "Requires": "Station",
+        "Weight": 15
+      },
+      {
+        "Text": "Locked inside a heavily guarded transit crate, it awaits transfer to an undisclosed research black-site.",
+        "Requires": "Artifact",
+        "Weight": 15
       }
     ]
   }

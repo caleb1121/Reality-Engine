@@ -1,14 +1,19 @@
 {
   "UniverseName": "The Great Library: Character Portraits",
-  "Modules": {
-    "ShowRarity": true,
-    "UseNarrative": true,
-    "UsePointPools": true
-  },
   "ArchetypeTitle": "Narrative Role",
+  "Modules": {
+    "ShowRarity": false,
+    "UseNarrative": true,
+    "UsePointPools": true,
+    "UseGender": true,
+    "ShowTags": true,
+    "ShowStatBars": true,
+    "UseRanges": true,
+    "UseMultiTraits": true
+  },
   "Archetypes": {
     "The Protagonist": {
-      "NicknameChance": 0.4,
+      "NicknameChance": 0.3,
       "GenderOdds": {
         "Male": 45,
         "Female": 45,
@@ -17,146 +22,3058 @@
       "FirstNames": [
         {
           "Value": "Elias",
+          "Weight": 10,
           "Requires": "Male"
         },
         {
           "Value": "Julian",
+          "Weight": 10,
           "Requires": "Male"
         },
         {
           "Value": "Silas",
+          "Weight": 10,
           "Requires": "Male"
         },
         {
           "Value": "Caspian",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Nathaniel",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Callum",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Gideon",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Thomas",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Arthur",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Owen",
+          "Weight": 10,
           "Requires": "Male"
         },
         {
           "Value": "Lyra",
+          "Weight": 10,
           "Requires": "Female"
         },
         {
           "Value": "Elara",
+          "Weight": 10,
           "Requires": "Female"
         },
         {
           "Value": "Seraphina",
+          "Weight": 10,
           "Requires": "Female"
         },
         {
           "Value": "Evangeline",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Clara",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Nadia",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Maren",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Helena",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Iris",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Tamsin",
+          "Weight": 10,
           "Requires": "Female"
         },
         {
           "Value": "Arlowe",
-          "Weight": 10
+          "Weight": 3
         },
         {
           "Value": "Sutton",
-          "Weight": 10
+          "Weight": 3
+        },
+        {
+          "Value": "Rowan",
+          "Weight": 3
+        },
+        {
+          "Value": "Jules",
+          "Weight": 3
+        },
+        {
+          "Value": "Avery",
+          "Weight": 3
         }
       ],
-      "LastNames": [ "Blackwood", "Thorne", "Sterling", "Holloway", "Vane", "Ashford", "Nightshade" ],
-      "Nicknames": [ "The Brave", "The Kind", "The Damned", "The Prophet", "Golden-Child" ],
-      "StartingTags": [ "Lead-Character" ],
+      "LastNames": [
+        "Blackwood",
+        "Thorne",
+        "Sterling",
+        "Holloway",
+        "Vane",
+        "Ashford",
+        "Nightshade",
+        "Mercer",
+        "Hale",
+        "Whitaker",
+        "Bell",
+        "Harrow",
+        "Kestrel",
+        "Bramwell",
+        "Alder",
+        "Rook",
+        "Voss",
+        "Redding"
+      ],
+      "Nicknames": [
+        "The Stray",
+        "Half-Light",
+        "Glass-Heart",
+        "The Borrowed Heir",
+        "Quiet-Storm",
+        "The Holdout",
+        "Red-Thread",
+        "The Witness"
+      ],
+      "StartingTags": [ "Lead-Character", "Protagonist" ],
       "MandatoryTraits": {
         "Body Build": [
           {
-            "Value": "lanky and lean",
-            "Weight": 30,
-            "GrantsTag": "Agile"
+            "Value": "a lanky, coiled-wire frame that moves faster than expected",
+            "Weight": 25,
+            "GrantsTag": "Agile",
+            "StatMods": { "Height": 6 }
           },
           {
-            "Value": "broad-shouldered and powerful",
-            "Weight": 30,
-            "GrantsTag": "Strong"
+            "Value": "a broad-shouldered, grounded frame built to absorb impact",
+            "Weight": 25,
+            "GrantsTag": "Imposing",
+            "StatMods": {
+              "Height": 7,
+              "Authority": 1
+            }
           },
           {
-            "Value": "slight and fragile",
-            "Weight": 20,
-            "GrantsTag": "Delicate"
+            "Value": "a slight, angular frame that people routinely underestimate",
+            "Weight": 25,
+            "GrantsTag": "Slight",
+            "StatMods": {
+              "Height": -6,
+              "Guile": 1
+            }
           },
           {
-            "Value": "stocky and enduring",
-            "Weight": 20,
-            "GrantsTag": "Tough"
+            "Value": "a compact, weather-toughened build with steady posture",
+            "Weight": 25,
+            "GrantsTag": "Enduring",
+            "StatMods": {
+              "Height": -3,
+              "Resolve": 1
+            }
           }
         ],
-        "Eye Color": [ "piercing emerald", "cold flint-grey", "warm amber", "mismatched sapphire and gold" ],
-        "Facial Feature": [ "a sharp, aristocratic jawline", "a nose broken many times", "high, wind-swept cheekbones", "a heavy, thoughtful brow" ]
+        "Eyes & Gaze": [
+          {
+            "Value": "pale flint-grey eyes that catalogue every exit upon entering a room",
+            "Weight": 25,
+            "GrantsTag": "Observant",
+            "StatMods": {
+              "Composure": 1,
+              "Guile": 1
+            }
+          },
+          {
+            "Value": "warm amber eyes that give away sympathy half a beat too soon",
+            "Weight": 25,
+            "GrantsTag": "Expressive",
+            "StatMods": {
+              "Empathy": 2,
+              "Warmth": 1
+            }
+          },
+          {
+            "Value": "dark, unblinking eyes that hold a stare until the other person yields",
+            "Weight": 20,
+            "GrantsTag": "Guarded",
+            "StatMods": {
+              "Authority": 1,
+              "Resolve": 1
+            }
+          },
+          {
+            "Value": "clear emerald eyes shadowed by chronic sleeplessness",
+            "Weight": 20,
+            "GrantsTag": "Observant",
+            "StatMods": { "Vulnerability": 1 }
+          },
+          {
+            "Value": "hazel eyes that soften unexpectedly around children and strays",
+            "Weight": 20,
+            "GrantsTag": "Expressive",
+            "StatMods": {
+              "Empathy": 1,
+              "Warmth": 2
+            }
+          }
+        ],
+        "Facial Feature": [
+          "a sharp, aristocratic jawline perpetually tightened in restraint",
+          "a crooked nose that healed badly after a long-ago fight",
+          "high, wind-chapped cheekbones and a faint crease between the brows",
+          "an open, earnest face that looks younger than its years until the smile fades",
+          "a narrow, watchful face framed by hair cut unevenly by their own hand",
+          "deep laugh-lines that rarely reach the eyes anymore"
+        ],
+        "Voice & Cadence": [
+          {
+            "Value": "measured and low, pausing a full breath before answering hard questions",
+            "Weight": 25,
+            "StatMods": { "Composure": 2 }
+          },
+          {
+            "Value": "quick and dry, deflecting tension with half-jokes before anyone can probe deeper",
+            "Weight": 25,
+            "StatMods": {
+              "Warmth": 1,
+              "Vulnerability": -1
+            }
+          },
+          {
+            "Value": "blunt and unadorned, stripping polite phrasing down to bare facts",
+            "Weight": 25,
+            "StatMods": {
+              "Authority": 1,
+              "Warmth": -1
+            }
+          },
+          {
+            "Value": "quiet and velvety, forcing noisy rooms to lean in to hear",
+            "Weight": 20,
+            "StatMods": {
+              "Authority": 1,
+              "Composure": 1
+            }
+          },
+          {
+            "Value": "warm and rhythmic, carrying the cadence of an older, slower town",
+            "Weight": 20,
+            "StatMods": {
+              "Warmth": 2,
+              "Empathy": 1
+            }
+          }
+        ],
+        "Formative Wound": [
+          {
+            "Value": "being quietly sacrificed by someone they loved to protect a reputation",
+            "Weight": 25,
+            "GrantsTag": "Betrayed",
+            "StatMods": {
+              "Guile": 1,
+              "Vulnerability": -2
+            }
+          },
+          {
+            "Value": "failing to arrive in time on the one night a promise truly mattered",
+            "Weight": 25,
+            "GrantsTag": "Grieving",
+            "StatMods": {
+              "Resolve": 2,
+              "Empathy": 1
+            }
+          },
+          {
+            "Value": "growing up as the dutiful peacekeeper inside a house built on lies",
+            "Weight": 25,
+            "GrantsTag": "Caretaker",
+            "StatMods": {
+              "Empathy": 2,
+              "Composure": 1
+            }
+          },
+          {
+            "Value": "watching an institution they believed in bury the truth for convenience",
+            "Weight": 25,
+            "GrantsTag": "Disillusioned",
+            "StatMods": {
+              "Resolve": 1,
+              "Volatility": 1
+            }
+          },
+          {
+            "Value": "surviving a disaster others did not, leaving a permanent debt of guilt",
+            "Weight": 20,
+            "GrantsTag": "Grieving",
+            "StatMods": {
+              "Resolve": 2,
+              "Vulnerability": -1
+            }
+          }
+        ],
+        "The Lie They Believe": [
+          {
+            "Value": "relying on anyone else guarantees you will eventually be left holding the wreckage",
+            "Weight": 25,
+            "Requires": "Betrayed",
+            "GrantsTag": "Cynical",
+            "StatMods": {
+              "Vulnerability": -2,
+              "Resolve": 1
+            }
+          },
+          {
+            "Value": "if you hold everything together tightly enough, nothing else can break",
+            "Weight": 25,
+            "GrantsTag": "Perfectionist",
+            "StatMods": {
+              "Composure": 1,
+              "Volatility": 1
+            }
+          },
+          {
+            "Value": "you are only worth keeping around while you remain useful",
+            "Weight": 25,
+            "GrantsTag": "Self-Sacrificing",
+            "StatMods": {
+              "Empathy": 1,
+              "Authority": -1
+            }
+          },
+          {
+            "Value": "showing mercy in a rigged world is just volunteering to lose",
+            "Weight": 20,
+            "GrantsTag": "Cynical",
+            "StatMods": {
+              "Guile": 2,
+              "Warmth": -1
+            }
+          },
+          {
+            "Value": "the past stays buried so long as you never look back over your shoulder",
+            "Weight": 25,
+            "GrantsTag": "Avoidant",
+            "StatMods": {
+              "Composure": 1,
+              "Vulnerability": -1
+            }
+          }
+        ],
+        "External Goal": [
+          "clearing a ruined family name before the final deadline closes",
+          "recovering something stolen that never belonged on the open ledger",
+          "securing enough independence to never answer to a patron or magistrate again",
+          "exposing the quiet conspiracy that reshaped their home district",
+          "escorting someone vulnerable safely across hostile territory",
+          "earning a place at the table that once locked them outside"
+        ],
+        "Internal Need": [
+          "learning that accepting help is not the same as surrendering control",
+          "forgiving themselves for a mistake no single person could have prevented",
+          "realizing that being seen honestly is worth the risk of being hurt",
+          "letting go of vengeance before it hollows out what they are trying to save",
+          "trusting their own judgment instead of chasing approval from ghosts",
+          "choosing a quiet, real life over an endless penance"
+        ],
+        "Core Contradiction": [
+          "ruthlessly steady during an actual crisis, yet rattled by unasked-for domestic kindness",
+          "fiercely loyal to broken underdogs while keeping close friends at polite arm's length",
+          "obsessively punctual and orderly in public, yet living out of half-unpacked bags at home",
+          "convinced they are cynical and unsentimental, while secretly keeping every handwritten letter ever given to them",
+          "quick to challenge authority figures, yet quietly terrified of disappointing ordinary people",
+          "painfully honest about their flaws, while hiding their actual hopes behind dry humor"
+        ]
       },
       "OptionalTraits": {
-        "Markings": {
-          "Chance": 0.4,
+        "Distinguishing Mark": {
+          "Chance": 0.65,
           "Options": [
             {
-              "Value": "a jagged scar across the left eye",
-              "GrantsTag": "Battle-Scarred"
+              "Value": "a pale, crescent-shaped scar curving beneath the left cheekbone",
+              "Weight": 25,
+              "GrantsTag": "Marked",
+              "StatMods": { "Authority": 1 }
             },
             {
-              "Value": "a constellation of freckles",
-              "Weight": 10
+              "Value": "a faint ink-smudge tattoo on the inside of the wrist, half-faded from scrubbing",
+              "Weight": 25,
+              "GrantsTag": "Marked"
+            },
+            {
+              "Value": "a stiff ring finger that never quite straightens in damp weather",
+              "Weight": 25,
+              "GrantsTag": "Marked",
+              "StatMods": { "Resolve": 1 }
+            },
+            {
+              "Value": "a streak of premature silver threading cleanly through one temple",
+              "Weight": 25,
+              "GrantsTag": "Marked",
+              "StatMods": { "Composure": 1 }
+            }
+          ]
+        },
+        "Unspoken Secret": {
+          "Chance": 0.75,
+          "Options": [
+            {
+              "Value": "they quietly burned a piece of evidence years ago to shield someone undeserving",
+              "Weight": 25,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": {
+                "Guile": 1,
+                "Vulnerability": -1
+              }
+            },
+            {
+              "Value": "they still send anonymous money each month to a household that hates their name",
+              "Weight": 25,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Empathy": 2 }
+            },
+            {
+              "Value": "they walked away from the turning point out of panic, not principle",
+              "Weight": 25,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Vulnerability": 1 }
+            },
+            {
+              "Value": "they know the real identity of the person pulling the strings, and have not told a soul",
+              "Weight": 20,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Guile": 2 }
+            }
+          ]
+        },
+        "Quiet Soft Spot": {
+          "Chance": 0.65,
+          "Options": [
+            {
+              "Value": "badly cooked home meals shared over a cluttered kitchen table",
+              "Weight": 25,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Warmth": 1 }
+            },
+            {
+              "Value": "stray dogs and injured birds that follow them home",
+              "Weight": 25,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Empathy": 1 }
+            },
+            {
+              "Value": "old, annotated books with strangers' margin notes inside",
+              "Weight": 25,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Composure": 1 }
+            },
+            {
+              "Value": "people who stubbornly tell the truth even when their voice shakes",
+              "Weight": 25,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": {
+                "Empathy": 1,
+                "Warmth": 1
+              }
             }
           ]
         }
       },
+      "MultiTraits": {
+        "Physical Tells": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "twisting a loose coat button whenever forced to lie",
+              "Weight": 25
+            },
+            {
+              "Value": "counting stair treads or windowsills under their breath to stay calm",
+              "Weight": 25,
+              "StatMods": { "Composure": 1 }
+            },
+            {
+              "Value": "shifting weight onto the balls of their feet the instant a voice rises",
+              "Weight": 25
+            },
+            {
+              "Value": "going eerily still and polite right before losing their temper",
+              "Weight": 20,
+              "StatMods": { "Volatility": 1 }
+            },
+            {
+              "Value": "rubbing the back of their neck when caught off guard by praise",
+              "Weight": 25,
+              "StatMods": { "Warmth": 1 }
+            },
+            {
+              "Value": "leaving an inch of untouched tea in every cup out of restless habit",
+              "Weight": 20
+            },
+            {
+              "Value": "tapping a quiet two-beat rhythm against their thumb when thinking",
+              "Weight": 25
+            },
+            {
+              "Value": "glancing at a speaker's hands rather than their face during negotiations",
+              "Weight": 20,
+              "StatMods": { "Guile": 1 }
+            }
+          ]
+        },
+        "Pockets & Keepsakes": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "a brass watch stopped at the exact minute they left home",
+              "Weight": 22,
+              "Requires": "Grieving"
+            },
+            {
+              "Value": "a worn stub of carpenter's pencil and folded scraps of list paper",
+              "Weight": 28
+            },
+            {
+              "Value": "a heavy brass key to a door that no longer exists",
+              "Weight": 24
+            },
+            {
+              "Value": "a tin of bitter mints shared sparingly on long nights",
+              "Weight": 26
+            },
+            {
+              "Value": "a folded letter with the wax seal still unbroken",
+              "Weight": 22
+            },
+            {
+              "Value": "a dull silver coin rubbed smooth on one face",
+              "Weight": 26
+            },
+            {
+              "Value": "a small pocketknife with a notch cut into the wooden handle",
+              "Weight": 26
+            },
+            {
+              "Value": "a creased railway timetable marked with three circled towns",
+              "Weight": 22
+            }
+          ]
+        }
+      },
+      "Ranges": {
+        "Age": {
+          "Min": 20,
+          "Max": 42,
+          "Step": 1,
+          "Unit": " yrs"
+        },
+        "Height": {
+          "Min": 160,
+          "Max": 192,
+          "Step": 1,
+          "Unit": " cm"
+        },
+        "Years Since Turning Point": {
+          "Min": 1,
+          "Max": 14,
+          "Step": 1,
+          "Unit": " yrs"
+        }
+      },
       "PointPools": {
-        "Physicality": {
-          "TotalPoints": 45,
-          "MinPerAttribute": 5,
-          "MaxPerAttribute": 18,
-          "Attributes": [ "Strength", "Agility", "Presence" ]
+        "Inner World": {
+          "TotalPoints": 26,
+          "MinPerAttribute": 1,
+          "MaxPerAttribute": 10,
+          "Attributes": [ "Empathy", "Resolve", "Guile", "Vulnerability", "Volatility" ]
+        },
+        "Outward Bearing": {
+          "TotalPoints": 17,
+          "MinPerAttribute": 1,
+          "MaxPerAttribute": 10,
+          "Attributes": [ "Warmth", "Authority", "Composure" ]
+        }
+      }
+    },
+
+    "The Antagonist": {
+      "NicknameChance": 0.45,
+      "GenderOdds": {
+        "Male": 46,
+        "Female": 46,
+        "Non-Binary": 8
+      },
+      "FirstNames": [
+        {
+          "Value": "Victor",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Alistair",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Lucian",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Damien",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Henrik",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Cassius",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Sebastian",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Edward",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Malachi",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Roman",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Vivienne",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Catherine",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Octavia",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Beatrice",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Valeria",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Isolde",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Margaux",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Evelyn",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Lavinia",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Sabine",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Sterling",
+          "Weight": 3
+        },
+        {
+          "Value": "Ellis",
+          "Weight": 3
+        },
+        {
+          "Value": "Sloane",
+          "Weight": 3
+        },
+        {
+          "Value": "Morgan",
+          "Weight": 3
+        },
+        {
+          "Value": "Blair",
+          "Weight": 3
+        }
+      ],
+      "LastNames": [
+        "Vance",
+        "Crowley",
+        "Balfour",
+        "Drummond",
+        "Kessler",
+        "Moreau",
+        "Hargreaves",
+        "Sinclair",
+        "Vane",
+        "Lockhart",
+        "Rostova",
+        "Graves",
+        "Wainwright",
+        "Aldridge",
+        "Delacroix",
+        "Kovacs",
+        "Sterling",
+        "Black"
+      ],
+      "Nicknames": [
+        "The Architect",
+        "The Pale Ledger",
+        "Iron-Polite",
+        "The Undertaker",
+        "The Bellwether",
+        "Velvet-Noose",
+        "The Auditor",
+        "Cold-Crown"
+      ],
+      "StartingTags": [ "Antagonist", "Opposition" ],
+      "MandatoryTraits": {
+        "Body Build": [
+          {
+            "Value": "a tall, impeccably tailored silhouette that commands rooms without effort",
+            "Weight": 30,
+            "GrantsTag": "Imposing",
+            "StatMods": {
+              "Height": 8,
+              "Authority": 2
+            }
+          },
+          {
+            "Value": "a spare, ascetic frame with an unnerving economy of motion",
+            "Weight": 30,
+            "GrantsTag": "Agile",
+            "StatMods": {
+              "Height": 3,
+              "Composure": 2
+            }
+          },
+          {
+            "Value": "a heavy, immovable presence dressed in understated dark wool",
+            "Weight": 20,
+            "GrantsTag": "Enduring",
+            "StatMods": {
+              "Height": 4,
+              "Resolve": 1,
+              "Authority": 1
+            }
+          },
+          {
+            "Value": "a deceptively modest, bird-boned build that disarms rivals before the trap shuts",
+            "Weight": 20,
+            "GrantsTag": "Slight",
+            "StatMods": {
+              "Height": -6,
+              "Guile": 2
+            }
+          }
+        ],
+        "Eyes & Gaze": [
+          {
+            "Value": "cool slate eyes that appraise people like assets on a balance sheet",
+            "Weight": 30,
+            "GrantsTag": "Observant",
+            "StatMods": {
+              "Guile": 1,
+              "Warmth": -1
+            }
+          },
+          {
+            "Value": "bright, disarmingly cordial eyes that never quite blink on cue",
+            "Weight": 25,
+            "GrantsTag": "Expressive",
+            "StatMods": {
+              "Warmth": 2,
+              "Guile": 1
+            }
+          },
+          {
+            "Value": "sunken, fever-bright dark eyes burning with sleepless conviction",
+            "Weight": 25,
+            "GrantsTag": "Zealous",
+            "StatMods": {
+              "Resolve": 2,
+              "Volatility": 1
+            }
+          },
+          {
+            "Value": "hooded amber eyes heavy with patient, theatrical disappointment",
+            "Weight": 20,
+            "GrantsTag": "Guarded",
+            "StatMods": {
+              "Authority": 2,
+              "Composure": 1
+            }
+          }
+        ],
+        "Facial Feature": [
+          "razor-clean cheekbones and a smile practiced in front of mirrors",
+          "silver-dusted temples that lend a dangerous air of paternal reasonableness",
+          "a pale, unlined face whose expression barely shifts when bad news arrives",
+          "a severe aquiline nose and a faint vertical furrow of perpetual critique",
+          "a disarmingly gentle mouth contradicted by the cold precision of their posture"
+        ],
+        "Voice & Cadence": [
+          {
+            "Value": "silky and unhurried, delivering ultimatums with the tone of a gracious host",
+            "Weight": 30,
+            "StatMods": {
+              "Composure": 2,
+              "Warmth": 1
+            }
+          },
+          {
+            "Value": "clipped and surgical, cutting through excuses in three words or fewer",
+            "Weight": 25,
+            "StatMods": {
+              "Authority": 2,
+              "Warmth": -1
+            }
+          },
+          {
+            "Value": "resonant and persuasive, able to make ruthless necessity sound like mercy",
+            "Weight": 25,
+            "StatMods": {
+              "Authority": 2,
+              "Guile": 1
+            }
+          },
+          {
+            "Value": "soft almost to a whisper, turning silence itself into an interrogation tool",
+            "Weight": 20,
+            "StatMods": {
+              "Composure": 2,
+              "Authority": 1
+            }
+          }
+        ],
+        "The Grievance": [
+          {
+            "Value": "watching the lawful order fail catastrophically when they begged it to act",
+            "Weight": 28,
+            "GrantsTag": "Fallen-Idealist",
+            "StatMods": { "Resolve": 2 }
+          },
+          {
+            "Value": "being stripped of a birthright by softer, less competent heirs",
+            "Weight": 24,
+            "GrantsTag": "Dispossessed",
+            "StatMods": {
+              "Volatility": 1,
+              "Authority": 1
+            }
+          },
+          {
+            "Value": "losing the one person who kept them tethered to mercy in a preventable tragedy",
+            "Weight": 24,
+            "GrantsTag": "Grieving",
+            "StatMods": {
+              "Empathy": -1,
+              "Resolve": 2
+            }
+          },
+          {
+            "Value": "serving as the unseen fixer for powerful hypocrites until they decided to take the crown instead",
+            "Weight": 24,
+            "GrantsTag": "Betrayed",
+            "StatMods": { "Guile": 2 }
+          }
+        ],
+        "Ideological Conviction": [
+          {
+            "Value": "order purchased at a terrible price is still kinder than honest chaos",
+            "Weight": 28,
+            "GrantsTag": "Authoritarian",
+            "StatMods": {
+              "Authority": 2,
+              "Empathy": -1
+            }
+          },
+          {
+            "Value": "history only forgives the people bold enough to finish what cowards started",
+            "Weight": 24,
+            "GrantsTag": "Visionary",
+            "StatMods": { "Resolve": 2 }
+          },
+          {
+            "Value": "everyone is corruptible; the only honest people are those who admit their price",
+            "Weight": 24,
+            "GrantsTag": "Cynical",
+            "StatMods": {
+              "Guile": 2,
+              "Empathy": -2
+            }
+          },
+          {
+            "Value": "a rotting system cannot be reformed from within—it must be burned to clean ash",
+            "Weight": 24,
+            "Requires": "Fallen-Idealist",
+            "GrantsTag": "Zealous",
+            "StatMods": {
+              "Volatility": 2,
+              "Resolve": 1
+            }
+          },
+          {
+            "Value": "survival belongs to the prepared, not the sentimental",
+            "Weight": 24,
+            "GrantsTag": "Pragmatist",
+            "StatMods": {
+              "Composure": 1,
+              "Empathy": -1
+            }
+          }
+        ],
+        "Method of Control": [
+          "buying debts and quietly owning the people their rivals trust most",
+          "framing every ruthless move as a reluctant public service",
+          "creating crises just severe enough that only they appear capable of solving them",
+          "rewarding competence extravagantly while making disloyalty ruinously public",
+          "withholding vital information until allies have no exit left"
+        ],
+        "Fatal Blind Spot": [
+          "assuming genuine altruism is always a cover for a hidden angle",
+          "believing they can still stop and walk away once the final piece is in place",
+          "underestimating ordinary people who act out of love rather than leverage",
+          "needing the protagonist to admit that their logic was right all along",
+          "confusing fear-driven obedience with true loyalty"
+        ],
+        "Core Contradiction": [
+          "orders brutal reprisals without flinching, yet genuinely abhors petty cruelty or sloppy work",
+          "preaches cold unsentimental logic, while structuring their entire empire around an old personal wound",
+          "treats household staff with scrupulous courtesy while ruining entire districts from a desk",
+          "respects an honest enemy far more than a flattering subordinate",
+          "keeps a spotless public charity record funded entirely by the wreckage they leave behind"
+        ]
+      },
+      "OptionalTraits": {
+        "Distinguishing Mark": {
+          "Chance": 0.55,
+          "Options": [
+            {
+              "Value": "a thin white burn scar hidden neatly beneath starched cufflinks",
+              "Weight": 30,
+              "GrantsTag": "Marked"
+            },
+            {
+              "Value": "an antique signet ring turned inward so the crest presses against the palm",
+              "Weight": 30,
+              "GrantsTag": "Marked",
+              "StatMods": { "Authority": 1 }
+            },
+            {
+              "Value": "a subtle tremor in the left hand concealed behind a silver-headed cane",
+              "Weight": 20,
+              "GrantsTag": "Marked",
+              "StatMods": { "Vulnerability": 1 }
+            },
+            {
+              "Value": "a faint dueling nick along the jawline worn without vanity",
+              "Weight": 20,
+              "GrantsTag": "Marked",
+              "StatMods": { "Authority": 1 }
+            }
+          ]
+        },
+        "Unspoken Secret": {
+          "Chance": 0.75,
+          "Options": [
+            {
+              "Value": "they secretly funded the protagonist's earliest escape, hoping to forge a worthy rival",
+              "Weight": 25,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Guile": 1 }
+            },
+            {
+              "Value": "the person they are trying to honor would be horrified by what they have become",
+              "Weight": 25,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Vulnerability": 2 }
+            },
+            {
+              "Value": "their own inner circle holds a contingency ledger that could topple them overnight",
+              "Weight": 25,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Volatility": 1 }
+            },
+            {
+              "Value": "they are quietly running out of time due to an undisclosed illness",
+              "Weight": 25,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Resolve": 2 }
+            }
+          ]
+        },
+        "Quiet Soft Spot": {
+          "Chance": 0.65,
+          "Options": [
+            {
+              "Value": "an elderly music teacher or mentor they still visit under an assumed name",
+              "Weight": 25,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Empathy": 1 }
+            },
+            {
+              "Value": "tending a locked conservatory of fragile winter orchids",
+              "Weight": 25,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Composure": 1 }
+            },
+            {
+              "Value": "ensuring orphaned dependents of fallen rivals are quietly provided for",
+              "Weight": 25,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Empathy": 2 }
+            },
+            {
+              "Value": "a dogged fondness for one brutally honest subordinate who never flatters them",
+              "Weight": 25,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Warmth": 1 }
+            }
+          ]
+        }
+      },
+      "MultiTraits": {
+        "Physical Tells": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "aligning cutlery, pens, or papers to strict right angles when irritated",
+              "Weight": 26,
+              "StatMods": { "Composure": 1 }
+            },
+            {
+              "Value": "removing their spectacles slowly whenever a conversation turns dangerous",
+              "Weight": 26,
+              "StatMods": { "Authority": 1 }
+            },
+            {
+              "Value": "pouring tea for guests personally to control the exact pace of the meeting",
+              "Weight": 24,
+              "StatMods": { "Guile": 1 }
+            },
+            {
+              "Value": "folding both hands behind their back so no one sees their knuckles whiten",
+              "Weight": 24,
+              "StatMods": { "Volatility": 1 }
+            },
+            {
+              "Value": "tilting their head slightly when genuinely intrigued by defiance",
+              "Weight": 24
+            },
+            {
+              "Value": "checking a pocket watch once as a silent signal that mercy has expired",
+              "Weight": 22,
+              "StatMods": { "Authority": 1 }
+            },
+            {
+              "Value": "speaking more gently the angrier they actually become",
+              "Weight": 22,
+              "StatMods": {
+                "Composure": 1,
+                "Volatility": 1
+              }
+            }
+          ]
+        },
+        "Pockets & Keepsakes": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "a leather-bound black ledger written in private shorthand",
+              "Weight": 28,
+              "StatMods": { "Guile": 1 }
+            },
+            {
+              "Value": "a fountain pen loaded with iron-gall ink that never fades",
+              "Weight": 25
+            },
+            {
+              "Value": "a single pressed flower sealed inside a gold locket",
+              "Weight": 20,
+              "Requires": "Grieving"
+            },
+            {
+              "Value": "a monogrammed silver cigarette case kept filled even though they quit years ago",
+              "Weight": 24
+            },
+            {
+              "Value": "a crisp linen handkerchief smelling faintly of cedarwood",
+              "Weight": 26
+            },
+            {
+              "Value": "a small ivory chess knight carried as a private reminder",
+              "Weight": 24
+            },
+            {
+              "Value": "two unmarked bank drafts ready for instant disappearance",
+              "Weight": 22
+            }
+          ]
+        }
+      },
+      "Ranges": {
+        "Age": {
+          "Min": 30,
+          "Max": 64,
+          "Step": 1,
+          "Unit": " yrs"
+        },
+        "Height": {
+          "Min": 162,
+          "Max": 196,
+          "Step": 1,
+          "Unit": " cm"
+        },
+        "Years in Motion": {
+          "Min": 3,
+          "Max": 22,
+          "Step": 1,
+          "Unit": " yrs"
+        }
+      },
+      "PointPools": {
+        "Inner World": {
+          "TotalPoints": 26,
+          "MinPerAttribute": 1,
+          "MaxPerAttribute": 10,
+          "Attributes": [ "Empathy", "Resolve", "Guile", "Vulnerability", "Volatility" ]
+        },
+        "Outward Bearing": {
+          "TotalPoints": 17,
+          "MinPerAttribute": 1,
+          "MaxPerAttribute": 10,
+          "Attributes": [ "Warmth", "Authority", "Composure" ]
+        }
+      }
+    },
+
+    "The Confidant & Foil": {
+      "NicknameChance": 0.4,
+      "GenderOdds": {
+        "Male": 44,
+        "Female": 44,
+        "Non-Binary": 12
+      },
+      "FirstNames": [
+        {
+          "Value": "Jonah",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Theo",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Daniel",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Felix",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Soren",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Miles",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Rory",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Isaac",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Bram",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Peter",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Hannah",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Maeve",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Tessa",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Nora",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Camille",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Linnea",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Freya",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Miriam",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Sadie",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "June",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Kit",
+          "Weight": 3
+        },
+        {
+          "Value": "Wren",
+          "Weight": 3
+        },
+        {
+          "Value": "Robin",
+          "Weight": 3
+        },
+        {
+          "Value": "Quinn",
+          "Weight": 3
+        },
+        {
+          "Value": "Sage",
+          "Weight": 3
+        }
+      ],
+      "LastNames": [
+        "Finch",
+        "Marlowe",
+        "Okafor",
+        "Gallagher",
+        "Tanner",
+        "Solis",
+        "Bauer",
+        "Mercer",
+        "Keller",
+        "Ward",
+        "Vega",
+        "Hollis",
+        "Lind",
+        "Bennett",
+        "Sato",
+        "Corbin",
+        "Marsh",
+        "Doyle"
+      ],
+      "Nicknames": [
+        "The Anchor",
+        "True-North",
+        "Sparks",
+        "Half-Penny",
+        "The Conscience",
+        "Sundial",
+        "Steady",
+        "The Alibi"
+      ],
+      "StartingTags": [ "Confidant", "Supporting-Cast" ],
+      "MandatoryTraits": {
+        "Body Build": [
+          {
+            "Value": "an easy, loose-limbed build that makes any chair look comfortable",
+            "Weight": 30,
+            "GrantsTag": "Agile",
+            "StatMods": {
+              "Height": 3,
+              "Warmth": 1
+            }
+          },
+          {
+            "Value": "a sturdy, dependable frame with rolled sleeves and capable hands",
+            "Weight": 30,
+            "GrantsTag": "Enduring",
+            "StatMods": {
+              "Height": 2,
+              "Resolve": 1
+            }
+          },
+          {
+            "Value": "a quick, compact frame always half a step ahead in a crowd",
+            "Weight": 20,
+            "GrantsTag": "Slight",
+            "StatMods": {
+              "Height": -5,
+              "Guile": 1
+            }
+          },
+          {
+            "Value": "a tall, slightly stooped silhouette that leans down to listen properly",
+            "Weight": 20,
+            "GrantsTag": "Imposing",
+            "StatMods": {
+              "Height": 7,
+              "Empathy": 1
+            }
+          }
+        ],
+        "Eyes & Gaze": [
+          {
+            "Value": "quick brown eyes that catch a half-truth before the sentence finishes",
+            "Weight": 30,
+            "GrantsTag": "Observant",
+            "StatMods": {
+              "Empathy": 1,
+              "Guile": 1
+            }
+          },
+          {
+            "Value": "bright, teasing blue eyes framed by genuine crow's-feet",
+            "Weight": 25,
+            "GrantsTag": "Expressive",
+            "StatMods": { "Warmth": 2 }
+          },
+          {
+            "Value": "steady olive eyes that stay calm when everyone else starts shouting",
+            "Weight": 25,
+            "GrantsTag": "Grounded",
+            "StatMods": { "Composure": 2 }
+          },
+          {
+            "Value": "restless dark eyes always scanning two steps ahead for trouble",
+            "Weight": 20,
+            "GrantsTag": "Observant",
+            "StatMods": {
+              "Guile": 1,
+              "Composure": 1
+            }
+          }
+        ],
+        "Facial Feature": [
+          "a crooked grin that immediately lowers the temperature in tense rooms",
+          "a scatter of freckles across the bridge of the nose and expressive brows",
+          "a square, honest jaw stubbled or smudge-inked from late nights",
+          "soft cheeks paired with an unexpectedly stubborn set to the chin",
+          "an animated face that refuses to hide disbelief when someone bluffs"
+        ],
+        "Voice & Cadence": [
+          {
+            "Value": "easygoing and dryly sarcastic, calling out self-pity before it takes root",
+            "Weight": 30,
+            "StatMods": {
+              "Warmth": 1,
+              "Authority": 1
+            }
+          },
+          {
+            "Value": "brisk and practical, turning spiraling panic into a three-item checklist",
+            "Weight": 25,
+            "StatMods": { "Composure": 2 }
+          },
+          {
+            "Value": "unhurried and warm, leaving comfortable silence where others rush to fill it",
+            "Weight": 25,
+            "StatMods": {
+              "Empathy": 2,
+              "Warmth": 2
+            }
+          },
+          {
+            "Value": "sharp and theatrical, talking their way past locked doors with sheer nerve",
+            "Weight": 20,
+            "StatMods": {
+              "Guile": 2,
+              "Warmth": 1
+            }
+          }
+        ],
+        "Bond to the Lead": [
+          {
+            "Value": "childhood friends who survived the same lean years together",
+            "Weight": 28,
+            "GrantsTag": "Old-Friend",
+            "StatMods": {
+              "Empathy": 1,
+              "Years of History": 6
+            }
+          },
+          {
+            "Value": "estranged siblings newly forced back into the same trench",
+            "Weight": 22,
+            "GrantsTag": "Blood-Tie",
+            "StatMods": {
+              "Volatility": 1,
+              "Years of History": 10
+            }
+          },
+          {
+            "Value": "former rivals whose grudging respect turned into unspoken trust",
+            "Weight": 24,
+            "GrantsTag": "Rival-Turned-Partner",
+            "StatMods": {
+              "Guile": 1,
+              "Authority": 1
+            }
+          },
+          {
+            "Value": "a quiet, unresolved romantic tension neither is brave enough to name yet",
+            "Weight": 26,
+            "GrantsTag": "Unspoken-Love",
+            "StatMods": {
+              "Vulnerability": 2,
+              "Warmth": 1
+            }
+          }
+        ],
+        "What They See Clearly": [
+          "the exact moment the lead starts lying to themselves out of pride",
+          "when a noble principle is quietly hardening into reckless martyrdom",
+          "which polite allies in the room are already planning an exit",
+          "the small ordinary life the lead is accidentally destroying to win",
+          "the difference between genuine courage and stubborn self-punishment"
+        ],
+        "Personal Blind Spot": [
+          "putting their own ambitions permanently on hold to clean up someone else's fires",
+          "using humor to dodge the fact that they are genuinely terrified",
+          "assuming loyalty alone is enough to keep reckless people alive",
+          "forgiving repeated hurts until the resentment quietly calcifies",
+          "refusing to ask for help even when their own footing gives way"
+        ],
+        "Loyalty's Limit": [
+          {
+            "Value": "the day the lead asks them to sacrifice an innocent bystander for the mission",
+            "Weight": 30,
+            "StatMods": {
+              "Empathy": 1,
+              "Resolve": 1
+            }
+          },
+          {
+            "Value": "being kept in the dark about a danger that threatens their own family",
+            "Weight": 28,
+            "StatMods": { "Volatility": 1 }
+          },
+          {
+            "Value": "watching the lead turn into a mirror image of the person they are fighting",
+            "Weight": 28,
+            "StatMods": { "Resolve": 1 }
+          },
+          {
+            "Value": "a single deliberate lie told to their face after everything they have bled through",
+            "Weight": 24,
+            "Requires": "Old-Friend",
+            "StatMods": { "Vulnerability": 1 }
+          }
+        ],
+        "Core Contradiction": [
+          "acts like the irresponsible comic relief, yet secretly keeps track of every spare bandage, map, and exit route",
+          "gives razor-sharp emotional advice to everyone else while refusing to untangle their own heart",
+          "complains loudly about every reckless plan, then steps straight through the doorway first",
+          "claims to hate sentimentality, yet remembers every single birthday and minor preference",
+          "craves a quiet, predictable life while instinctively gravitating toward the most dangerous person in the room"
+        ]
+      },
+      "OptionalTraits": {
+        "Distinguishing Mark": {
+          "Chance": 0.55,
+          "Options": [
+            {
+              "Value": "a notched left eyebrow from an old fall they still blame on the lead",
+              "Weight": 30,
+              "GrantsTag": "Marked"
+            },
+            {
+              "Value": "a faded twine bracelet braided years ago and never cut off",
+              "Weight": 30,
+              "GrantsTag": "Marked",
+              "StatMods": { "Warmth": 1 }
+            },
+            {
+              "Value": "perpetual ink or grease stains tucked into the creases of their knuckles",
+              "Weight": 25,
+              "GrantsTag": "Marked"
+            },
+            {
+              "Value": "a small silver hoop earring mismatched with an empty second piercing",
+              "Weight": 20,
+              "GrantsTag": "Marked"
+            }
+          ]
+        },
+        "Unspoken Secret": {
+          "Chance": 0.7,
+          "Options": [
+            {
+              "Value": "they were offered a clean way out months ago and turned it down without saying a word",
+              "Weight": 30,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Resolve": 2 }
+            },
+            {
+              "Value": "they already met the antagonist once in private to try to buy the lead more time",
+              "Weight": 25,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Guile": 2 }
+            },
+            {
+              "Value": "they are carrying a steep personal debt they refuse to lay on the lead's shoulders",
+              "Weight": 25,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Vulnerability": 1 }
+            },
+            {
+              "Value": "they kept a spare copy of something the lead believes was destroyed",
+              "Weight": 20,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Guile": 1 }
+            }
+          ]
+        },
+        "Quiet Soft Spot": {
+          "Chance": 0.7,
+          "Options": [
+            {
+              "Value": "making sure everyone gets fed before talking strategy",
+              "Weight": 30,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Warmth": 2 }
+            },
+            {
+              "Value": "terrible street musicians whom they always tip too generously",
+              "Weight": 25,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Empathy": 1 }
+            },
+            {
+              "Value": "late-night roof conversations when the city finally goes quiet",
+              "Weight": 25,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Vulnerability": 1 }
+            },
+            {
+              "Value": "patching up torn coats and broken gear rather than throwing them away",
+              "Weight": 20,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Empathy": 1 }
+            }
+          ]
+        }
+      },
+      "MultiTraits": {
+        "Physical Tells": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "raising one eyebrow in silent verdict whenever a plan sounds suicidal",
+              "Weight": 28
+            },
+            {
+              "Value": "tossing and catching a spare coin or key while thinking aloud",
+              "Weight": 25
+            },
+            {
+              "Value": "dropping their joking tone instantly the moment someone is genuinely hurt",
+              "Weight": 28,
+              "StatMods": { "Empathy": 1 }
+            },
+            {
+              "Value": "leaning shoulder-first against doorframes as if perpetually ready to leave",
+              "Weight": 22
+            },
+            {
+              "Value": "fidgeting with their collar whenever emotions get too earnest",
+              "Weight": 24,
+              "StatMods": { "Vulnerability": 1 }
+            },
+            {
+              "Value": "talking faster when trying to distract someone from bad news",
+              "Weight": 24,
+              "StatMods": { "Warmth": 1 }
+            },
+            {
+              "Value": "resting a brief, grounding hand on an arm before stepping into trouble",
+              "Weight": 22,
+              "StatMods": { "Warmth": 1 }
+            }
+          ]
+        },
+        "Pockets & Keepsakes": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "a battered tin of travel biscuits and two sugar cubes",
+              "Weight": 28
+            },
+            {
+              "Value": "a spare house key entrusted to them years ago",
+              "Weight": 26
+            },
+            {
+              "Value": "a deck of dog-eared playing cards missing the nine of spades",
+              "Weight": 24
+            },
+            {
+              "Value": "a small roll of linen tape and a needle threaded with dark cotton",
+              "Weight": 26
+            },
+            {
+              "Value": "a smudged charcoal sketch folded into quarters",
+              "Weight": 22
+            },
+            {
+              "Value": "two stubby candles and a waterproof match safe",
+              "Weight": 24
+            },
+            {
+              "Value": "an IOU written on a tavern napkin and kept purely for teasing",
+              "Weight": 24
+            }
+          ]
+        }
+      },
+      "Ranges": {
+        "Age": {
+          "Min": 20,
+          "Max": 44,
+          "Step": 1,
+          "Unit": " yrs"
+        },
+        "Height": {
+          "Min": 158,
+          "Max": 190,
+          "Step": 1,
+          "Unit": " cm"
+        },
+        "Years of History": {
+          "Min": 1,
+          "Max": 18,
+          "Step": 1,
+          "Unit": " yrs"
+        }
+      },
+      "PointPools": {
+        "Inner World": {
+          "TotalPoints": 26,
+          "MinPerAttribute": 1,
+          "MaxPerAttribute": 10,
+          "Attributes": [ "Empathy", "Resolve", "Guile", "Vulnerability", "Volatility" ]
+        },
+        "Outward Bearing": {
+          "TotalPoints": 17,
+          "MinPerAttribute": 1,
+          "MaxPerAttribute": 10,
+          "Attributes": [ "Warmth", "Authority", "Composure" ]
+        }
+      }
+    },
+
+    "The Reluctant Mentor": {
+      "NicknameChance": 0.5,
+      "GenderOdds": {
+        "Male": 46,
+        "Female": 46,
+        "Non-Binary": 8
+      },
+      "FirstNames": [
+        {
+          "Value": "Gideon",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Aldous",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Malcolm",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Walter",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Simeon",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Hector",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Bernard",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Anselm",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Edmund",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Cormac",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Agnes",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Martha",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Eleanor",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Sigrid",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Esther",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Judith",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Beatrix",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Harriet",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Mireille",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Ingrid",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Francis",
+          "Weight": 3
+        },
+        {
+          "Value": "Sidney",
+          "Weight": 3
+        },
+        {
+          "Value": "Gray",
+          "Weight": 3
+        },
+        {
+          "Value": "Vale",
+          "Weight": 3
+        }
+      ],
+      "LastNames": [
+        "Ashcroft",
+        "Bramwell",
+        "Hawthorne",
+        "Kestrel",
+        "Varga",
+        "Oakhart",
+        "Caldwell",
+        "Parrish",
+        "Voss",
+        "Thornton",
+        "Cromwell",
+        "Mercer",
+        "Whitmore",
+        "Fletcher",
+        "Garrick",
+        "Stroud"
+      ],
+      "Nicknames": [
+        "Old Iron",
+        "The Ghost of the Guild",
+        "Ash-Hands",
+        "The Pensioner",
+        "Last-Watch",
+        "The Hermit",
+        "Grey-Wolf",
+        "The Broken Compass"
+      ],
+      "StartingTags": [ "Mentor", "Supporting-Cast", "Seasoned" ],
+      "MandatoryTraits": {
+        "Body Build": [
+          {
+            "Value": "a weathered, broad-backed frame gone slightly stiff at the joints",
+            "Weight": 30,
+            "GrantsTag": "Enduring",
+            "StatMods": {
+              "Height": 4,
+              "Resolve": 1
+            }
+          },
+          {
+            "Value": "a gaunt, sinewy frame draped in oversized wool coats",
+            "Weight": 30,
+            "GrantsTag": "Agile",
+            "StatMods": {
+              "Height": 3,
+              "Composure": 1
+            }
+          },
+          {
+            "Value": "a heavy, unhurried frame that still moves with sudden muscle memory when startled",
+            "Weight": 20,
+            "GrantsTag": "Imposing",
+            "StatMods": {
+              "Height": 5,
+              "Authority": 2
+            }
+          },
+          {
+            "Value": "a small, wiry build with the upright carriage of someone who refuses to look fragile",
+            "Weight": 20,
+            "GrantsTag": "Slight",
+            "StatMods": {
+              "Height": -6,
+              "Resolve": 1,
+              "Authority": 1
+            }
+          }
+        ],
+        "Eyes & Gaze": [
+          {
+            "Value": "tired grey eyes that have already seen every mistake a newcomer is about to make",
+            "Weight": 30,
+            "GrantsTag": "Observant",
+            "StatMods": { "Composure": 2 }
+          },
+          {
+            "Value": "sharp, unforgiving brown eyes that soften only when they think no one is looking",
+            "Weight": 25,
+            "GrantsTag": "Guarded",
+            "StatMods": {
+              "Authority": 1,
+              "Empathy": 1
+            }
+          },
+          {
+            "Value": "pale blue eyes ringed with old smoke-lines and wry amusement",
+            "Weight": 25,
+            "GrantsTag": "Expressive",
+            "StatMods": {
+              "Warmth": 1,
+              "Guile": 1
+            }
+          },
+          {
+            "Value": "deep-set dark eyes carrying the heavy stillness of someone long accustomed to solitude",
+            "Weight": 20,
+            "GrantsTag": "Guarded",
+            "StatMods": {
+              "Composure": 2,
+              "Warmth": -1
+            }
+          }
+        ],
+        "Facial Feature": [
+          "deeply carved weathering around the eyes and mouth that tells decades of history",
+          "a stern brow permanently creased above half-moon reading spectacles",
+          "thick, iron-grey hair swept carelessly back from a scarred forehead",
+          "hollow cheeks and a quiet, wry half-smile that rarely becomes a laugh",
+          "calloused hands and a jaw set with the stubbornness of old granite"
+        ],
+        "Voice & Cadence": [
+          {
+            "Value": "gravelly and economical, answering ten panicked questions with one pointed observation",
+            "Weight": 30,
+            "StatMods": {
+              "Authority": 2,
+              "Composure": 1
+            }
+          },
+          {
+            "Value": "dry and mildly exasperated, like a veteran craftsperson watching an apprentice hold a chisel backward",
+            "Weight": 30,
+            "StatMods": {
+              "Warmth": 1,
+              "Authority": 1
+            }
+          },
+          {
+            "Value": "quiet and unhurried, carrying the calm weight of someone who no longer fears being wrong",
+            "Weight": 25,
+            "StatMods": {
+              "Composure": 2,
+              "Empathy": 1
+            }
+          },
+          {
+            "Value": "hoarse and blunt, stripping away romantic illusions before they can get a student killed",
+            "Weight": 20,
+            "StatMods": {
+              "Authority": 2,
+              "Warmth": -1
+            }
+          }
+        ],
+        "Former Calling": [
+          {
+            "Value": "a decorated field commander who walked away from the banner",
+            "Weight": 26,
+            "GrantsTag": "Ex-Soldier",
+            "StatMods": {
+              "Authority": 2,
+              "Resolve": 1
+            }
+          },
+          {
+            "Value": "a disgraced archivist expelled for questioning official doctrine",
+            "Weight": 26,
+            "GrantsTag": "Ex-Scholar",
+            "StatMods": {
+              "Guile": 1,
+              "Composure": 1
+            }
+          },
+          {
+            "Value": "a retired smuggler and fixer who knew every back door in the realm",
+            "Weight": 24,
+            "GrantsTag": "Ex-Criminal",
+            "StatMods": { "Guile": 2 }
+          },
+          {
+            "Value": "a former royal envoy who negotiated one fatal treaty too many",
+            "Weight": 24,
+            "GrantsTag": "Ex-Diplomat",
+            "StatMods": {
+              "Composure": 2,
+              "Empathy": 1
+            }
+          }
+        ],
+        "The Failure That Broke Them": [
+          {
+            "Value": "training a brilliant earlier protégé who used those exact lessons for ruin",
+            "Weight": 30,
+            "GrantsTag": "Haunted",
+            "StatMods": {
+              "Vulnerability": -1,
+              "Resolve": 1
+            }
+          },
+          {
+            "Value": "obeying a lawful order they knew was wrong until the cost could never be repaid",
+            "Weight": 26,
+            "GrantsTag": "Haunted",
+            "StatMods": {
+              "Empathy": 1,
+              "Volatility": 1
+            }
+          },
+          {
+            "Value": "choosing safety and silence on the night their closest ally stood alone",
+            "Weight": 24,
+            "GrantsTag": "Grieving",
+            "StatMods": { "Vulnerability": 1 }
+          },
+          {
+            "Value": "missing a single tiny flaw in a plan that cost a whole unit their lives",
+            "Weight": 24,
+            "GrantsTag": "Haunted",
+            "StatMods": {
+              "Composure": 1,
+              "Guile": 1
+            }
+          }
+        ],
+        "What They Refuse to Teach": [
+          {
+            "Value": "the ruthless shortcut that wins fast by hollowing out your conscience",
+            "Weight": 30,
+            "StatMods": { "Empathy": 1 }
+          },
+          {
+            "Value": "how to switch off empathy cleanly enough to treat people like chess pieces",
+            "Weight": 28,
+            "StatMods": { "Empathy": 2 }
+          },
+          {
+            "Value": "the sealed techniques that ruined their last apprentice",
+            "Weight": 24,
+            "Requires": "Haunted",
+            "StatMods": { "Resolve": 1 }
+          },
+          {
+            "Value": "how to disappear completely without leaving a ghost behind",
+            "Weight": 24,
+            "Requires": "Ex-Criminal",
+            "StatMods": { "Guile": 1 }
+          },
+          {
+            "Value": "the habit of fighting wars long after the peace has been signed",
+            "Weight": 24,
+            "StatMods": { "Composure": 1 }
+          }
+        ],
+        "Buried Hope": [
+          "seeing someone younger finish the work cleanly without paying the same bitter toll",
+          "earning a single quiet day where the old ghosts stop knocking at dusk",
+          "proving that their past failure can still serve as a warning that saves a life",
+          "watching their student outgrow them and walk away whole",
+          "making peace with one surviving witness from their former life"
+        ],
+        "Core Contradiction": [
+          "insists loudly that they are done helping anyone, while staying up past midnight patching their student's gear",
+          "mocks idealism as naive, yet is secretly moved every time the protagonist refuses to bend",
+          "preaches strict emotional detachment, yet remembers the exact name of every person they ever failed",
+          "keeps a cluttered, dusty room where every single dangerous object is somehow oiled and within reach",
+          "acts gruff enough to drive strangers off the porch, yet brews strong tea before asking why they came"
+        ]
+      },
+      "OptionalTraits": {
+        "Distinguishing Mark": {
+          "Chance": 0.7,
+          "Options": [
+            {
+              "Value": "a slight winter limp from a knee shattered twenty years back",
+              "Weight": 30,
+              "GrantsTag": "Marked"
+            },
+            {
+              "Value": "a network of faded burn scars across both forearms",
+              "Weight": 25,
+              "GrantsTag": "Marked",
+              "StatMods": { "Resolve": 1 }
+            },
+            {
+              "Value": "a missing knuckle on the off-hand that never slows their grip",
+              "Weight": 25,
+              "GrantsTag": "Marked"
+            },
+            {
+              "Value": "a cloudy cataract edge in one eye compensated by uncanny hearing",
+              "Weight": 20,
+              "GrantsTag": "Marked",
+              "StatMods": { "Composure": 1 }
+            }
+          ]
+        },
+        "Unspoken Secret": {
+          "Chance": 0.75,
+          "Options": [
+            {
+              "Value": "they personally know the antagonist from before the fall—and once called them a friend",
+              "Weight": 30,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Vulnerability": 1 }
+            },
+            {
+              "Value": "they are living under a dead comrade's name to avoid an old warrant",
+              "Weight": 25,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Guile": 2 }
+            },
+            {
+              "Value": "their retirement was not voluntary; they struck a quiet bargain to protect a hostage",
+              "Weight": 25,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Resolve": 2 }
+            },
+            {
+              "Value": "they still keep a hidden trunk packed in the floorboards in case the past catches up",
+              "Weight": 20,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Guile": 1 }
+            }
+          ]
+        },
+        "Quiet Soft Spot": {
+          "Chance": 0.65,
+          "Options": [
+            {
+              "Value": "whittling small wooden birds while listening to other people think aloud",
+              "Weight": 25,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Composure": 1 }
+            },
+            {
+              "Value": "a half-deaf hound that sleeps across their boots by the hearth",
+              "Weight": 25,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Warmth": 1 }
+            },
+            {
+              "Value": "quiet pride disguised as a grunt whenever a student finally gets a lesson right",
+              "Weight": 30,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": {
+                "Warmth": 1,
+                "Empathy": 1
+              }
+            },
+            {
+              "Value": "baking coarse, over-salted bread from a grandmother's recipe",
+              "Weight": 20,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Warmth": 1 }
+            }
+          ]
+        }
+      },
+      "MultiTraits": {
+        "Physical Tells": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "answering foolish questions with a long, patient silence until the speaker corrects themselves",
+              "Weight": 28,
+              "StatMods": { "Composure": 1 }
+            },
+            {
+              "Value": "massaging an aching wrist whenever storms roll in or old memories surface",
+              "Weight": 26
+            },
+            {
+              "Value": "always taking the seat with their back to a solid stone wall",
+              "Weight": 28,
+              "StatMods": { "Guile": 1 }
+            },
+            {
+              "Value": "peering over the rim of spectacles instead of through them to signal disbelief",
+              "Weight": 24
+            },
+            {
+              "Value": "pouring two mugs without asking whenever someone arrives looking ragged",
+              "Weight": 24,
+              "StatMods": { "Warmth": 1 }
+            },
+            {
+              "Value": "tapping a knuckle twice on the table to cut off circular arguments",
+              "Weight": 24,
+              "StatMods": { "Authority": 1 }
+            },
+            {
+              "Value": "closing their eyes for two seconds before delivering a hard truth",
+              "Weight": 22
+            }
+          ]
+        },
+        "Pockets & Keepsakes": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "a tarnished service medal kept in a coat lining rather than pinned to the chest",
+              "Weight": 26
+            },
+            {
+              "Value": "a cracked brass compass whose needle still points steadily north",
+              "Weight": 26
+            },
+            {
+              "Value": "a leather spectacle case stuffed with folded clippings and maps",
+              "Weight": 26
+            },
+            {
+              "Value": "a pocket flask filled with bitter herbal tea rather than spirits",
+              "Weight": 26
+            },
+            {
+              "Value": "a well-oiled whetstone worn hollow down the center",
+              "Weight": 24
+            },
+            {
+              "Value": "a faded portrait wrapped carefully in oilcloth",
+              "Weight": 24
+            },
+            {
+              "Value": "three iron keys strung on frayed bootlace",
+              "Weight": 24
+            }
+          ]
+        }
+      },
+      "Ranges": {
+        "Age": {
+          "Min": 48,
+          "Max": 74,
+          "Step": 1,
+          "Unit": " yrs"
+        },
+        "Height": {
+          "Min": 158,
+          "Max": 192,
+          "Step": 1,
+          "Unit": " cm"
+        },
+        "Years in Withdrawal": {
+          "Min": 4,
+          "Max": 28,
+          "Step": 1,
+          "Unit": " yrs"
+        }
+      },
+      "PointPools": {
+        "Inner World": {
+          "TotalPoints": 26,
+          "MinPerAttribute": 1,
+          "MaxPerAttribute": 10,
+          "Attributes": [ "Empathy", "Resolve", "Guile", "Vulnerability", "Volatility" ]
+        },
+        "Outward Bearing": {
+          "TotalPoints": 17,
+          "MinPerAttribute": 1,
+          "MaxPerAttribute": 10,
+          "Attributes": [ "Warmth", "Authority", "Composure" ]
+        }
+      }
+    },
+
+    "The Wildcard": {
+      "NicknameChance": 0.65,
+      "GenderOdds": {
+        "Male": 42,
+        "Female": 42,
+        "Non-Binary": 16
+      },
+      "FirstNames": [
+        {
+          "Value": "Dorian",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Rafael",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Locke",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Bastien",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Nico",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Kieran",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Jude",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Milo",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Dante",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Corbin",
+          "Weight": 10,
+          "Requires": "Male"
+        },
+        {
+          "Value": "Sable",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Zara",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Cleo",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Vesper",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Kira",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Ines",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Yara",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Roxanne",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Nyx",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Talia",
+          "Weight": 10,
+          "Requires": "Female"
+        },
+        {
+          "Value": "Rook",
+          "Weight": 3
+        },
+        {
+          "Value": "Lark",
+          "Weight": 3
+        },
+        {
+          "Value": "Vex",
+          "Weight": 3
+        },
+        {
+          "Value": "Ash",
+          "Weight": 3
+        },
+        {
+          "Value": "Mercer",
+          "Weight": 3
+        }
+      ],
+      "LastNames": [
+        "Cross",
+        "Vane",
+        "Reyes",
+        "Krell",
+        "Bellamy",
+        "Morrow",
+        "Fox",
+        "Delgado",
+        "Slythe",
+        "Quick",
+        "Black",
+        "Crow",
+        "Mercer",
+        "Rookwood",
+        "Sterling",
+        "Vale"
+      ],
+      "Nicknames": [
+        "Two-Door",
+        "The Magpie",
+        "Loose-Coin",
+        "Silk-Knife",
+        "The Broker",
+        "Quick-Silver",
+        "No-Flag",
+        "The Gamble"
+      ],
+      "StartingTags": [ "Wildcard", "Unpredictable" ],
+      "MandatoryTraits": {
+        "Body Build": [
+          {
+            "Value": "a lean, cat-footed build that slips through crowds without brushing a shoulder",
+            "Weight": 30,
+            "GrantsTag": "Agile",
+            "StatMods": {
+              "Height": 2,
+              "Guile": 1
+            }
+          },
+          {
+            "Value": "a sharp, flamboyantly dressed frame that draws eyes exactly where they want them",
+            "Weight": 25,
+            "GrantsTag": "Imposing",
+            "StatMods": {
+              "Height": 5,
+              "Warmth": 1,
+              "Authority": 1
+            }
+          },
+          {
+            "Value": "an unremarkable, chameleon-like build that vanishes into any tavern background",
+            "Weight": 25,
+            "GrantsTag": "Slight",
+            "StatMods": {
+              "Height": -4,
+              "Guile": 2
+            }
+          },
+          {
+            "Value": "a wiry, spring-loaded frame scarred by too many narrow escapes",
+            "Weight": 20,
+            "GrantsTag": "Enduring",
+            "StatMods": {
+              "Height": 0,
+              "Resolve": 1
+            }
+          }
+        ],
+        "Eyes & Gaze": [
+          {
+            "Value": "dancing, mischief-lit dark eyes that look delighted whenever a plan catches fire",
+            "Weight": 30,
+            "GrantsTag": "Expressive",
+            "StatMods": {
+              "Warmth": 1,
+              "Volatility": 1
+            }
+          },
+          {
+            "Value": "hooded green eyes calculating odds faster than anyone else can count cards",
+            "Weight": 30,
+            "GrantsTag": "Observant",
+            "StatMods": { "Guile": 2 }
+          },
+          {
+            "Value": "cool, unreadable silver-grey eyes that give away nothing during a bluff",
+            "Weight": 20,
+            "GrantsTag": "Guarded",
+            "StatMods": { "Composure": 2 }
+          },
+          {
+            "Value": "bright, restless amber eyes darting between faces like a hawk hunting movement",
+            "Weight": 20,
+            "GrantsTag": "Observant",
+            "StatMods": { "Guile": 1 }
+          }
+        ],
+        "Facial Feature": [
+          "an effortless, slightly wicked half-smile that looks identical whether they are helping or robbing you",
+          "sharp, expressive brows that turn every silent glance into commentary",
+          "a narrow fox-like face framed by a collar perpetually turned up against the rain",
+          "dimples that make blatant lies sound almost endearing",
+          "high cheekbones and a faint bruise or scratch that never comes with the same story twice"
+        ],
+        "Voice & Cadence": [
+          {
+            "Value": "bright and rapid-fire, burying the real bargain inside three entertaining tangents",
+            "Weight": 30,
+            "StatMods": {
+              "Guile": 2,
+              "Warmth": 1
+            }
+          },
+          {
+            "Value": "lazy and amused, as if every mortal crisis is a mildly entertaining stage play",
+            "Weight": 25,
+            "StatMods": { "Composure": 2 }
+          },
+          {
+            "Value": "velvety and conspiratorial, making every stranger feel like a co-conspirator",
+            "Weight": 25,
+            "StatMods": {
+              "Warmth": 2,
+              "Guile": 1
+            }
+          },
+          {
+            "Value": "raspy and blunt, dropping the charm the exact second real money hits the table",
+            "Weight": 20,
+            "StatMods": {
+              "Authority": 1,
+              "Guile": 1
+            }
+          }
+        ],
+        "Public Mask": [
+          {
+            "Value": "a charmingly harmless opportunist who claims to care only about the payout",
+            "Weight": 30,
+            "GrantsTag": "Charming-Mask",
+            "StatMods": {
+              "Warmth": 1,
+              "Guile": 1
+            }
+          },
+          {
+            "Value": "a cynical mercenary who insists allegiance lasts only until the coin runs dry",
+            "Weight": 28,
+            "GrantsTag": "Cynical",
+            "StatMods": {
+              "Composure": 1,
+              "Vulnerability": -1
+            }
+          },
+          {
+            "Value": "a reckless thrill-seeker who acts as though consequences belong to other people",
+            "Weight": 22,
+            "GrantsTag": "Reckless-Mask",
+            "StatMods": { "Volatility": 2 }
+          },
+          {
+            "Value": "a polite neutral broker who sells favors to both sides of every feud",
+            "Weight": 25,
+            "GrantsTag": "Broker-Mask",
+            "StatMods": {
+              "Guile": 2,
+              "Composure": 1
+            }
+          }
+        ],
+        "True Motive": [
+          "buying back a stolen contract that still owns someone they love",
+          "staying perpetually mobile so an old syndicate can never pin them to one address",
+          "quietly sabotaging the powerful faction that once treated them as disposable",
+          "collecting enough leverage to vanish to a quiet coastal town and never run again",
+          "testing whether anyone in this rotten city actually keeps their word when it hurts"
+        ],
+        "Lever That Controls Them": [
+          "a younger dependent hidden safely in a boarding house no one else knows about",
+          "a real name and past crime that would turn every guild in the city hostile overnight",
+          "a debt owed to a dangerous creditor who prefers favors over gold",
+          "an impulsive inability to walk away from a rigged game once challenged",
+          "one old friend whose life is tangled directly in the antagonist's machinery"
+        ],
+        "Unbreakable Rule": [
+          "never handing a helpless mark over to torturers, no matter the bonus",
+          "always settling a personal debt in full—even if it ruins the next heist",
+          "never betraying someone who shared their last meal or safe house without asking",
+          "leaving a clean escape route open for civilians before lighting the fuse",
+          "never signing their real name to any promise they do not intend to keep"
+        ],
+        "Core Contradiction": [
+          "swears they have no loyalties, yet repeatedly risks their neck for the worst-paying causes in the city",
+          "lies effortlessly about trivial details while being startlingly blunt about uncomfortable truths",
+          "acts allergic to commitment, yet knows the names and troubles of every bartender and street kid in three wards",
+          "brags about never looking back, while keeping an immaculate mental tally of everyone who ever stood by them",
+          "treats danger like a joke until someone threatens the one person they pretend not to care about"
+        ]
+      },
+      "OptionalTraits": {
+        "Distinguishing Mark": {
+          "Chance": 0.6,
+          "Options": [
+            {
+              "Value": "a thin silver scar along the collarbone peeking above an unbuttoned shirt",
+              "Weight": 28,
+              "GrantsTag": "Marked"
+            },
+            {
+              "Value": "a geometric guild brand deliberately obscured beneath fresh ink",
+              "Weight": 28,
+              "GrantsTag": "Marked",
+              "StatMods": { "Guile": 1 }
+            },
+            {
+              "Value": "a chipped front tooth that makes their grin look sharper",
+              "Weight": 24,
+              "GrantsTag": "Marked",
+              "StatMods": { "Warmth": 1 }
+            },
+            {
+              "Value": "three mismatched silver rings worn on the right hand",
+              "Weight": 24,
+              "GrantsTag": "Marked"
+            }
+          ]
+        },
+        "Unspoken Secret": {
+          "Chance": 0.75,
+          "Options": [
+            {
+              "Value": "they were originally hired to spy on the protagonist—and quietly stopped sending reports",
+              "Weight": 30,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": {
+                "Guile": 1,
+                "Empathy": 1
+              }
+            },
+            {
+              "Value": "they already stole the prize everyone is fighting over and hid it in plain sight",
+              "Weight": 25,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Guile": 2 }
+            },
+            {
+              "Value": "they are the disinherited black sheep of a powerful noble house",
+              "Weight": 25,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Authority": 1 }
+            },
+            {
+              "Value": "they survived a past betrayal only by faking their own death",
+              "Weight": 20,
+              "GrantsTag": "Hidden-Past",
+              "StatMods": { "Resolve": 1 }
+            }
+          ]
+        },
+        "Quiet Soft Spot": {
+          "Chance": 0.65,
+          "Options": [
+            {
+              "Value": "slipping coins into the pockets of runaways and pickpockets without being caught",
+              "Weight": 30,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Empathy": 2 }
+            },
+            {
+              "Value": "beautifully crafted mechanical puzzles and music boxes",
+              "Weight": 25,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Composure": 1 }
+            },
+            {
+              "Value": "honest, earnest people who are catastrophically bad at lying",
+              "Weight": 25,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Warmth": 2 }
+            },
+            {
+              "Value": "watching sunrises from rooftops after a long night of chaos",
+              "Weight": 20,
+              "GrantsTag": "Soft-Spot",
+              "StatMods": { "Vulnerability": 1 }
+            }
+          ]
+        }
+      },
+      "MultiTraits": {
+        "Physical Tells": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "smiling widest at the exact moment they are most cornered",
+              "Weight": 28,
+              "StatMods": { "Composure": 1 }
+            },
+            {
+              "Value": "rolling a weighted brass die across their knuckles during negotiations",
+              "Weight": 26,
+              "StatMods": { "Guile": 1 }
+            },
+            {
+              "Value": "dropping their theatrical drawl completely when telling a rare truth",
+              "Weight": 26
+            },
+            {
+              "Value": "casing locks and window latches purely out of reflex",
+              "Weight": 26,
+              "StatMods": { "Guile": 1 }
+            },
+            {
+              "Value": "changing the subject with a sharp compliment whenever someone gets too close to their past",
+              "Weight": 24,
+              "StatMods": { "Warmth": 1 }
+            },
+            {
+              "Value": "sitting backward in wooden chairs so they can face both the room and the door",
+              "Weight": 22
+            },
+            {
+              "Value": "tucking one hand lightly near a hidden cuff-pocket when tension spikes",
+              "Weight": 24
+            }
+          ]
+        },
+        "Pockets & Keepsakes": {
+          "Chance": 1.0,
+          "MinPicks": 2,
+          "MaxPicks": 3,
+          "AllowDuplicates": false,
+          "Options": [
+            {
+              "Value": "three forged transit papers under different plausible names",
+              "Weight": 28,
+              "StatMods": { "Guile": 1 }
+            },
+            {
+              "Value": "a slim leather roll of lockpicks tucked inside a boot cuff",
+              "Weight": 26
+            },
+            {
+              "Value": "a pair of subtly loaded ivory dice",
+              "Weight": 26
+            },
+            {
+              "Value": "a pawn ticket they keep renewing every month without fail",
+              "Weight": 24
+            },
+            {
+              "Value": "a stolen wax seal belonging to a mid-level magistrate",
+              "Weight": 22
+            },
+            {
+              "Value": "a silver whistle tuned to carry down foggy alleys",
+              "Weight": 24
+            },
+            {
+              "Value": "a small vial of smelling salts and two clean bandages",
+              "Weight": 24
+            }
+          ]
+        }
+      },
+      "Ranges": {
+        "Age": {
+          "Min": 21,
+          "Max": 45,
+          "Step": 1,
+          "Unit": " yrs"
+        },
+        "Height": {
+          "Min": 160,
+          "Max": 190,
+          "Step": 1,
+          "Unit": " cm"
+        },
+        "Bridges Burned": {
+          "Min": 2,
+          "Max": 24,
+          "Step": 1,
+          "Unit": " bridges"
+        }
+      },
+      "PointPools": {
+        "Inner World": {
+          "TotalPoints": 26,
+          "MinPerAttribute": 1,
+          "MaxPerAttribute": 10,
+          "Attributes": [ "Empathy", "Resolve", "Guile", "Vulnerability", "Volatility" ]
+        },
+        "Outward Bearing": {
+          "TotalPoints": 17,
+          "MinPerAttribute": 1,
+          "MaxPerAttribute": 10,
+          "Attributes": [ "Warmth", "Authority", "Composure" ]
         }
       }
     }
   },
+
   "BioTemplates": {
-    "1_Introduction": [
+    "1_First_Impression": [
       {
-        "Text": "{Full} stands before you, a figure defined by {Possessive} {Body Build}.",
+        "Text": "At {Age} and {Height}, {Full} stepped into a room with {Body Build}. People noticed {Possessive} {Eyes & Gaze} first, followed closely by {Facial Feature} and {Distinguishing Mark}.",
+        "Requires": "Marked",
+        "Weight": 35
+      },
+      {
+        "Text": "At {Age} and {Height}, {Full} carried {Body Build}. {PossessiveCap} face was anchored by {Facial Feature}, though it was {Possessive} {Eyes & Gaze} that stayed with strangers long after they left.",
+        "Weight": 15
+      }
+    ],
+
+    "2_Voice_and_Presence": [
+      {
+        "Text": "When {Subject} spoke, {Possessive} voice was {Voice & Cadence}. With effortless authority, {First} reshaped the mood of a room simply by entering it, betraying {Possessive} inner gears only through {Physical Tells}.",
+        "MinStatName": "Authority",
+        "MinStatValue": 8,
+        "Weight": 45
+      },
+      {
+        "Text": "{PossessiveCap} voice ran {Voice & Cadence}, carrying an approachable warmth that made guarded people confess far more than they intended—even as {First} gave away small tells like {Physical Tells}.",
+        "MinStatName": "Warmth",
+        "MinStatValue": 8,
+        "Weight": 45
+      },
+      {
+        "Text": "{SubjectCap} spoke in a voice {Voice & Cadence}, maintaining iron composure under scrutiny; only close observers caught {Physical Tells}.",
+        "MinStatName": "Composure",
+        "MinStatValue": 8,
+        "Weight": 45
+      },
+      {
+        "Text": "With a voice {Voice & Cadence}, {First} rarely hid irritation or nerves well—{Possessive} poise cracked early, exposing {Physical Tells}.",
+        "MaxStatName": "Composure",
+        "MaxStatValue": 3,
+        "Weight": 40
+      },
+      {
+        "Text": "{SubjectCap} spoke in a tone {Voice & Cadence}, holding strangers at a cool distance while quietly displaying {Physical Tells}.",
+        "MaxStatName": "Warmth",
+        "MaxStatValue": 3,
+        "Weight": 40
+      },
+      {
+        "Text": "{PossessiveCap} speech was {Voice & Cadence}, punctuated in quiet moments by {Physical Tells}.",
         "Weight": 10
       }
     ],
-    "2_The_Body": [
+
+    "3_The_Inner_Engine": [
       {
-        "Text": "{Subject} possesses a towering physical presence, muscles rippling like corded iron beneath {Possessive} skin.",
-        "MinStatName": "Strength",
-        "MinStatValue": 16,
+        "Text": "{Years Since Turning Point} after {Formative Wound}, {First} still lived by a quiet, damaging lie: that {The Lie They Believe}. On the surface {Subject} pursued {External Goal}, though what {Subject} truly needed was {Internal Need}.",
+        "Requires": "Protagonist",
+        "Weight": 25
+      },
+      {
+        "Text": "Everything {First} built over {Years in Motion} grew from {The Grievance}. Convinced that {Ideological Conviction}, {Subject} kept rivals off-balance by {Method of Control}, never quite noticing a fatal blind spot: {Fatal Blind Spot}.",
+        "Requires": "Antagonist",
+        "Weight": 25
+      },
+      {
+        "Text": "Across {Years of History} as {Bond to the Lead}, {First} had an uncanny gift for spotting {What They See Clearly}—yet struggled with {Personal Blind Spot}, knowing {Possessive} loyalty would finally snap at {Loyalty's Limit}.",
+        "Requires": "Confidant",
+        "Weight": 25
+      },
+      {
+        "Text": "Once {Former Calling}, {First} spent {Years in Withdrawal} trying to outlive {The Failure That Broke Them}. {SubjectCap} flatly refused to pass on {What They Refuse to Teach}, yet still nursed a buried hope of {Buried Hope}.",
+        "Requires": "Mentor",
+        "Weight": 25
+      },
+      {
+        "Text": "With {Bridges Burned} already smoldering behind {Object}, {First} wore the mask of {Public Mask} to hide a truer aim: {True Motive}. Anyone hoping to corner {Object} had to find {Lever That Controls Them}, though {First} still clung to one rule: {Unbreakable Rule}.",
+        "Requires": "Wildcard",
+        "Weight": 25
+      }
+    ],
+
+    "4_Contradictions_and_Secrets": [
+      {
+        "Text": "What made {Nick} feel unmistakably human was a core contradiction: {Core Contradiction}. In {Possessive} coat pockets sat {Pockets & Keepsakes}, while behind closed doors {Subject} carried a hidden truth—{Unspoken Secret}—alongside an unexpected fondness for {Quiet Soft Spot}.",
+        "Requires": "Hidden-Past, Soft-Spot",
+        "Weight": 45
+      },
+      {
+        "Text": "Beneath the surface lay a sharp contradiction: {Core Contradiction}. {SubjectCap} kept {Pockets & Keepsakes} close at hand, guarding a secret no one had uncovered yet: {Unspoken Secret}.",
+        "Requires": "Hidden-Past",
+        "Weight": 25
+      },
+      {
+        "Text": "{First} lived inside a quiet contradiction—{Core Contradiction}—carrying {Pockets & Keepsakes} everywhere and harboring an unguarded soft spot for {Quiet Soft Spot}.",
+        "Requires": "Soft-Spot",
+        "Weight": 25
+      },
+      {
+        "Text": "What lingered in a reader's memory was {Possessive} defining contradiction: {Core Contradiction}, reflected in the small clutter of {Pockets & Keepsakes}.",
+        "Weight": 10
+      }
+    ],
+
+    "5_Psychological_Pressure": [
+      {
+        "Text": "Under pressure, {First} bent rarely and broke almost never; once {Subject} chose a course, stubborn resolve outlasted fear, exhaustion, and better advice alike.",
+        "MinStatName": "Resolve",
+        "MinStatValue": 8,
+        "Weight": 55
+      },
+      {
+        "Text": "{SubjectCap} felt other people's quiet suffering acutely—an empathy that made {Object} deeply humane, yet dangerously easy to manipulate through guilt.",
+        "MinStatName": "Empathy",
+        "MinStatValue": 8,
+        "Weight": 55
+      },
+      {
+        "Text": "{PossessiveCap} mind always ran three contingencies deep, instinctively reading rooms for angles, leverage, and quiet escape hatches.",
+        "MinStatName": "Guile",
+        "MinStatValue": 8,
+        "Weight": 55
+      },
+      {
+        "Text": "A sharp, sudden volatility simmered just beneath {Possessive} restraint; when pushed past the final line, {First} burned bridges before thinking of the winter ahead.",
+        "MinStatName": "Volatility",
+        "MinStatValue": 8,
+        "Weight": 55
+      },
+      {
+        "Text": "{SubjectCap} kept emotional armor bolted so tightly that even allies struggled to tell whether {First} was unbothered or quietly drowning.",
+        "MaxStatName": "Vulnerability",
+        "MaxStatValue": 3,
         "Weight": 50
       },
       {
-        "Text": "{Subject} moves with a cat-like grace, every step silent and calculated, a testament to {Possessive} {Agile} nature.",
-        "Requires": "Agile",
-        "MinStatName": "Agility",
-        "MinStatValue": 15,
+        "Text": "Almost painfully transparent when trying to scheme, {First} lacked the guile for long cons and survived instead on grit and timing.",
+        "MaxStatName": "Guile",
+        "MaxStatValue": 3,
         "Weight": 50
       },
       {
-        "Text": "There is a quiet, unassuming quality to the way {Subject} holds {Object}self.",
+        "Text": "When the story tightened its grip, {First} revealed a temperament caught evenly between caution and conviction.",
         "Weight": 10
       }
     ],
-    "3_The_Face": [
+
+    "6_The_Dramatic_Question": [
       {
-        "Text": "The first thing anyone notices are {Possessive} {Eye Color} eyes, which seem to hold a depth of ancient wisdom.",
-        "MinStatName": "Presence",
-        "MinStatValue": 14,
-        "Weight": 10
+        "Text": "The central question hanging over {Nick}'s arc was stark: could {Subject} unlearn cynicism before the fight turned {Object} into everything {Subject} despised?",
+        "Requires": "Protagonist, Cynical",
+        "Weight": 40
       },
       {
-        "Text": "{Possessive} face is marked by {Facial Feature}, often shadowed by a look of intense concentration.",
-        "Weight": 10
+        "Text": "Everything in {Nick}'s story converged on one test: what {Subject} would still be willing to sacrifice when winning finally demanded the very thing {Subject} set out to protect.",
+        "Requires": "Protagonist",
+        "Weight": 20
       },
       {
-        "Text": "Adding to {Possessive} striking appearance is {OptionalTraits: Markings}.",
-        "Requires": "Battle-Scarred",
-        "Weight": 100
-      }
-    ],
-    "4_Closing": [
+        "Text": "In the end, the tragedy of {Nick} was never a lack of intelligence—it was how close {Subject} came to sounding right, even as the cost mounted beyond forgiveness.",
+        "Requires": "Antagonist",
+        "Weight": 20
+      },
       {
-        "Text": "To look upon {Nick} is to see a character shaped by the very world {Subject} seeks to change.",
-        "Weight": 10
+        "Text": "The quiet fault line running through {Nick}'s arc was simple: whether devotion would save the person {Subject} cared for, or finally force {Object} to walk away.",
+        "Requires": "Confidant",
+        "Weight": 20
+      },
+      {
+        "Text": "For {Nick}, the final chapter asked whether old wisdom could still mend a new world—or only buy the next generation enough time to choose better.",
+        "Requires": "Mentor",
+        "Weight": 20
+      },
+      {
+        "Text": "No one in the story could be certain which side {Nick} would stand on when the doors finally locked—not even {Nick}.",
+        "Requires": "Wildcard",
+        "Weight": 20
       }
     ]
   }

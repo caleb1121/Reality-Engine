@@ -1,74 +1,140 @@
 ==========================================================================
-                LEVEL 4: NARRATIVE & STAT-GATING (Elite)
+         LEVEL 4: NARRATIVE ELITE (Tokens, Pronouns & Gating)
 ==========================================================================
-GOAL: Turn raw data into a dynamic, intelligent biography.
 
-In Level 3, we built the "Body" of the character. Level 4 gives them a 
-"Voice." The Narrative Engine stitches sentences together from your 
-BioTemplates to create a cohesive life story.
+GOAL: Turn raw traits, ranges, and stats into a cohesive, living story.
 
---------------------------------------------------------------------------
-1. THE BUCKET SYSTEM (BioTemplates)
---------------------------------------------------------------------------
-The engine looks at your "BioTemplates" dictionary and treats each key 
-(like "1_Origin" or "2_Deeds") as a "Bucket." It picks exactly ONE 
-sentence from every bucket to build a paragraph.
-
-PRO-TIP: Name your buckets with numbers (e.g., "01_Heritage", "02_Life") 
-to ensure the story flows in the correct chronological order.
+In Level 3, we built the brain of the entity. Level 4 gives it a voice.
+When "UseNarrative": true is set in Modules, the Narrative Engine reads
+your BioTemplates and stitches together a custom biography for every roll.
 
 --------------------------------------------------------------------------
-2. SMART PLACEHOLDERS
+[ 1. THE BUCKET SYSTEM (BioTemplates) ]
 --------------------------------------------------------------------------
-Use these tags within your text to inject character-specific data:
 
-PLACEHOLDER   | DESCRIPTION
---------------|-----------------------------------------------------------
-{First}       | Character's First Name.
-{Last}        | Character's Last Name.
-{Full}        | First + (Nickname) + Last.
-{Nick}        | Uses Nickname if they have one; defaults to First Name.
-{Subject}     | he / she / they (based on rolled gender).
-{Object}      | him / her / them.
-{Possessive}  | his / her / their.
-{TraitName}   | Injects the value of a rolled trait (e.g., {Weapon}).
+The engine treats each key inside "BioTemplates" (such as "1_Origin" or
+"2_Loadout") as a Bucket. It filters each bucket down to eligible lines,
+then picks ONE line from each bucket in order to form the final story.
+
+  - Number your buckets ("1_Origin", "2_Gear", "3_Deeds", "4_Ending") so
+    the biography always flows in the right sequence.
+  - If no template in a bucket is eligible, that bucket is cleanly skipped.
 
 --------------------------------------------------------------------------
-3. STAT-GATING: THE ELITE LOGIC
+[ 2. SMART PLACEHOLDERS (Tokens) ]
 --------------------------------------------------------------------------
-New in v0.65! You can now hide sentences behind a "Stat Check." A sentence 
-can require a specific attribute to reach a certain number to trigger.
 
-NEW KEYS:
-* MinStatName: The name of the attribute to check (e.g., "Strength").
-* MinStatValue: The required score (e.g., 18).
+Tokens are case-insensitive and resolved in a single pass:
 
-This allows you to write: "The city fears {Nick}'s legendary power" 
-and ENSURE it only appears if the character actually rolled a massive 
-Strength score.
+  TOKEN            | REPLACED WITH
+  -----------------|------------------------------------------------------
+  {First}          | First Name.
+  {Last}           | Last Name (omitted if archetype has no LastNames).
+  {Full}           | First + 'Nickname' + Last.
+  {Nick}           | Nickname if rolled; otherwise defaults to First Name.
+  {Seed}           | The entity's numeric reproduction seed.
+  {Gender}         | Rolled gender (when UseGender is true).
+  {ArchetypeTitle} | The entity's class/role (uses your ArchetypeTitle).
+  {Subject}        | he / she / they / it (lowercase).
+  {Object}         | him / her / them / it (lowercase).
+  {Possessive}     | his / her / their / its (lowercase).
+  {SubjectCap}     | He / She / They / It (for starting sentences).
+  {ObjectCap}      | Him / Her / Them / It.
+  {PossessiveCap}  | His / Her / Their / Its.
+  {TraitName}      | Value of any rolled Mandatory or Optional trait.
+  {MultiTraitName} | Natural English list ("A", "A and B", "A, B, and C").
+  {RangeName}      | Rolled Range with unit (e.g., "34 yrs", "2500 Cr").
+  {RangeName_Raw}  | Rolled Range number only, without unit (e.g., "34").
+  {StatName}       | Final PointPool score (also supports {Pool: Stat}).
 
 --------------------------------------------------------------------------
-🚀 LEVEL 4 EXAMPLE (The Living Story)
+[ 3. AUTOMATIC OPTIONAL-TOKEN FILTERING ]
 --------------------------------------------------------------------------
+
+If a template references a token that did not roll (such as an Optional
+Trait that missed its Chance, or a tag-gated Range), the engine skips that
+template automatically -- it will NEVER print raw "{Token}" brackets.
+
+Always include at least one fallback template in the same bucket that does
+not rely on optional tokens so the bucket still has a line to pick.
+
+--------------------------------------------------------------------------
+[ 4. TAG-GATING & STAT-GATING (MinStat / MaxStat) ]
+--------------------------------------------------------------------------
+
+Every template inside a bucket supports five optional logic keys:
+
+  - Requires:     Comma-separated tags ALL required (e.g., "Noble, Hero").
+  - Excludes:     Comma-separated tags that BLOCK the line if present.
+  - MinStatName / MinStatValue: Triggers only if stat/range is >= value.
+  - MaxStatName / MaxStatValue: Triggers only if stat/range is <= value.
+  - Weight:       Roll priority among eligible lines (defaults to 1).
+
+Both MinStat and MaxStat work on PointPool stats (including StatMods!),
+Numeric Ranges, and numeric traits. You can even combine MinStat and
+MaxStat on the same template to target a specific middle band.
+
+--------------------------------------------------------------------------
+[ 5. WRITING CLEAN PROSE FOR ALL PRONOUNS ]
+--------------------------------------------------------------------------
+
+  - Always use {SubjectCap} or {PossessiveCap} at the start of a sentence.
+  - If your archetype includes Non-Binary or Neutral genders ("they"),
+    write verbs in past tense ("carried", "kept", "fought") or use modal
+    verbs ("could", "would"). Past tense reads cleanly for he, she, they,
+    and it alike ("he carried" / "they carried" instead of "they carries").
+
+--------------------------------------------------------------------------
+[ LEVEL 4 EXAMPLE (BioTemplates Block) ]
+--------------------------------------------------------------------------
+
 "BioTemplates": {
-  "01_Origin": [
-    { "Text": "{Full} was raised as a noble." }
-  ],
-  "02_Deeds": [
-    { 
-      "Text": "{Nick} once killed a dragon with {Possessive} bare hands!", 
-      "MinStatName": "Strength", 
-      "MinStatValue": 18,
-      "Weight": 50 
+  "1_Origin": [
+    {
+      "Text": "At {Age}, {Full} carried a {Bounty} price tag across the frontier.",
+      "Requires": "Veteran",
+      "Weight": 40
     },
-    { "Text": "{Subject} is known for being a quiet traveler.", "Weight": 10 }
+    {
+      "Text": "At {Age}, {Full} walked the frontier with little more than {Possessive} {Weapon}.",
+      "Weight": 10
+    }
+  ],
+  "2_Loadout": [
+    {
+      "Text": "{SubjectCap} never left camp without {Field Pack}.",
+      "Weight": 20
+    }
+  ],
+  "3_Deeds_and_Flaws": [
+    {
+      "Text": "{Nick} once wrestled a cave-troll unarmed, earning songs across three valleys.",
+      "MinStatName": "Strength",
+      "MinStatValue": 15,
+      "Weight": 60
+    },
+    {
+      "Text": "Hardly built for brute force, {Nick} relied on timing and leverage instead.",
+      "MaxStatName": "Strength",
+      "MaxStatValue": 7,
+      "Weight": 50
+    },
+    {
+      "Text": "{SubjectCap} kept a low profile and rarely lingered in one town for long.",
+      "Weight": 10
+    }
   ]
 }
 
 --------------------------------------------------------------------------
-💡 PRO TIP: WEIGHTED TRUTH
+[ PRO TIPS: WEIGHTED TRUTH & VALIDATION ]
 --------------------------------------------------------------------------
-Give your Stat-Gated sentences a HIGHER Weight (like 50). This means 
-if a character is strong enough to "earn" the cool dragon-slayer line, 
-the engine will almost certainly pick it over the generic traveler line.
+
+  1. Give rare tag- or stat-gated lines a HIGH Weight (40-100) and generic
+     fallbacks a LOW Weight (5-15). When an entity earns a special line,
+     it will almost always surface instead of the generic fallback.
+  2. When you load or reload your module, the Pre-Flight Validator checks
+     every {Token}, tag, and stat name in BioTemplates and flags any typos
+     or impossible MinStat/MaxStat gates before you roll a single sheet.
+
 ==========================================================================

@@ -1,66 +1,94 @@
 ==========================================================================
-                LEVEL 1: THE FOUNDATION (Simple Random)
+               LEVEL 1: THE FOUNDATION (Simple Random)
 ==========================================================================
-GOAL: Create a functional universe with zero logic-headaches.
 
-At Level 1, you are building the "Skeleton" of your world. Everything is 
-handled via "Simple Lists," meaning every item in a list has an equal 
-chance of being picked (33% for a list of 3, 20% for a list of 5, etc.).
+GOAL: Build a working universe module with zero logic headaches.
 
---------------------------------------------------------------------------
-1. THE CORE METADATA
---------------------------------------------------------------------------
-Every file must start with these three keys:
-
-* UniverseName: The name displayed in the engine's "Active Module" status.
-* ArchetypeTitle: The label for your classes (e.g., "Job", "Species").
-* Modules: Toggles for advanced features (Set them to true for now).
+At Level 1, you are building the skeleton of your world. Everything is
+handled via "Simple Lists," meaning every item in a list has an equal
+chance of being picked (25% for a list of 4, 20% for a list of 5, etc.).
 
 --------------------------------------------------------------------------
-2. ARCHETYPES & NAMES
+[ 1. WHERE FILES LIVE ]
 --------------------------------------------------------------------------
-An Archetype is a character template. Inside an archetype, you define 
-who the character is and what they are called.
 
-* FirstNames / LastNames: Simple lists of strings.
-* MandatoryTraits: A dictionary of categories. Each category contains 
-  a list of possible results.
+Save your universe as a .json file inside the "UniverseFiles" folder
+(for example: UniverseFiles/Basic_Fantasy.json).
 
---------------------------------------------------------------------------
-3. THE SYNTAX (The Brackets)
---------------------------------------------------------------------------
-In JSON, square brackets [ ] mean "pick one item from this list."
+Good news for hand-editing: Reality Engine v2.0 uses a forgiving JSON
+reader. It ignores // comments, tolerates trailing commas, and does not
+care about property capitalization.
 
-EXAMPLE:
-"FirstNames": ["John", "Jane", "Alex"]
+(Tip: You can also run Architect Mode from the Main Menu to generate a
+complete starter .json file automatically.)
 
 --------------------------------------------------------------------------
-🚀 LEVEL 1 EXAMPLE FILE (Copy-Paste Ready)
+[ 2. THE CORE METADATA ]
 --------------------------------------------------------------------------
+
+Every universe file starts with these three top-level keys:
+
+  - UniverseName:   The name shown in the "ACTIVE MODULE" header.
+  - ArchetypeTitle: The label for your classes (e.g., "Job", "Species",
+                    "Classification", "Narrative Role").
+  - Modules:        Feature toggles. All 8 flags default to true, so at
+                    Level 1 we switch off the ones we are not using yet.
+
+--------------------------------------------------------------------------
+[ 3. ARCHETYPES, NAMES & TRAITS ]
+--------------------------------------------------------------------------
+
+An Archetype is a single blueprint inside "Archetypes". You can define as
+many archetypes as you like in one file.
+
+  - FirstNames:      A simple list of strings.
+  - LastNames:       Optional. Leave it out for single-name entities.
+  - Nicknames:       Optional. Controlled by NicknameChance (default 0.5).
+  - MandatoryTraits: A group of categories. The engine always picks one
+                     item from each category.
+
+In JSON, square brackets [ ] mean "pick one item from this list":
+
+  "FirstNames": ["Pip", "Merry", "Sam", "Bram"]
+
+--------------------------------------------------------------------------
+[ LEVEL 1 EXAMPLE FILE (Copy-Paste Ready) ]
+--------------------------------------------------------------------------
+
 {
   "UniverseName": "Basic Fantasy Land",
-  "Modules": { "ShowRarity": false, "UseNarrative": false },
   "ArchetypeTitle": "Class",
+  "Modules": {
+    "ShowRarity": false,
+    "UseNarrative": false,
+    "UseGender": false,
+    "ShowTags": false
+  },
   "Archetypes": {
     "Villager": {
-      "FirstNames": ["Pip", "Merry", "Sam"],
-      "LastNames": ["Greenleaf", "Hilltop", "Underhill"],
+      "FirstNames": ["Pip", "Merry", "Sam", "Bram"],
+      "LastNames": ["Greenleaf", "Hilltop", "Underhill", "Miller"],
       "MandatoryTraits": {
-        "Daily Tool": ["Pitchfork", "Shovel", "Bucket"],
-        "Favorite Food": ["Apple Pie", "Stale Bread", "Cheese"]
+        "Daily Tool": ["Pitchfork", "Shovel", "Bucket", "Hand Axe"],
+        "Favorite Food": ["Apple Pie", "Crusty Bread", "Cheese", "Stew"]
       }
     }
   }
 }
 
 --------------------------------------------------------------------------
-💡 WHAT TO EXPECT
+[ WHAT TO EXPECT & FAST TESTING ]
 --------------------------------------------------------------------------
-When you generate a character with this file:
-1. You select "Villager."
-2. The engine rolls "Sam" + "Hilltop."
-3. It rolls one Tool and one Food.
-4. It displays the finished character instantly.
 
-That's it! You've built your first universe.
+1. Load the module from the Main Menu. The Pre-Flight Validator will run
+   and report "[OK] Diagnostics Passed" plus total combinations.
+2. Select "Generate Entity" -> "Villager".
+3. The engine rolls a name (e.g., "Sam Hilltop"), one Daily Tool, one
+   Favorite Food, and a reproducible Seed, then displays the sheet.
+4. Press [R] to reroll immediately, or [S] / [J] to save to Saves/.
+
+Editing workflow: Keep your .json open in a text editor, save a change,
+and select "Reload Active Module" in the Main Menu to test it live.
+
+That is it -- you have built your first universe!
 ==========================================================================
